@@ -15,8 +15,9 @@ namespace SoftwareEngineering
         public Form1()
         {
             InitializeComponent();
-            
-            mwf(8, true);
+
+            mwf(8, false);
+            tr(230, false);
         }
 
         private void mwf(int time, bool show)
@@ -87,5 +88,52 @@ namespace SoftwareEngineering
                 f.Hide();
             }
         }
+
+        private void tr(int time, bool show)
+        {
+            RichTextBox t;
+            RichTextBox r;
+
+            switch (time)
+            {
+                case 8:
+                    t = t8;
+                    r = r8;
+                    break;
+                case 10:
+                    t = t10;
+                    r = r10;
+                    break;
+                case 1130:
+                    t = t1130;
+                    r = r1130;
+                    break;
+                case 1:
+                    t = t1;
+                    r = r1;
+                    break;
+                case 230:
+                    t = t230;
+                    r = r230;
+                    break;
+
+                default:
+                    t = t8;
+                    r = r8;
+                    break;
+            }
+
+            if (show)
+            {
+                t.Show();
+                r.Show();
+            }
+            else
+            {
+                t.Hide();
+                r.Hide();
+            }
+        }
+
     }
 }
