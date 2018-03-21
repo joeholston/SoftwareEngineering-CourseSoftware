@@ -16,8 +16,8 @@ namespace SoftwareEngineering
         {
             InitializeComponent();
 
-            mwf(8, false);
-            tr(230, false);
+            mwfAll(false);
+            trAll(false);
         }
 
         private void mwf(int time, bool show)
@@ -135,5 +135,50 @@ namespace SoftwareEngineering
             }
         }
 
+        private void mwfAll(bool show)
+        {
+            if (show)
+            {
+                mwf(8, true);
+                mwf(9, true);
+                mwf(10, true);
+                mwf(11, true);
+                mwf(12, true);
+                mwf(1, true);
+                mwf(2, true);
+                mwf(3, true);
+            }
+            else
+            {
+                mwf(8, false);
+                mwf(9, false);
+                mwf(10, false);
+                mwf(11, false);
+                mwf(12, false);
+                mwf(1, false);
+                mwf(2, false);
+                mwf(3, false);
+            }
+        }
+
+        private void trAll(bool show)
+        {
+            if (show)
+            {
+                tr(8, true);
+                tr(10, true);
+                tr(1130, true);
+                tr(1, true);
+                tr(215, true);
+            }
+            else
+            {
+                tr(8, false);
+                tr(10, false);
+                tr(1130, false);
+                tr(1, false);
+                tr(215, false);
+            }
+        }
     }
 }
