@@ -20,27 +20,6 @@ namespace SoftwareEngineering
             trAll(false);
         }
  
-        private void richTextBox18_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void courseCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            //Add/delete the newly checked/unchecked course to studentCourses
-
-            if (courseCheckBox.Checked)
-            {
-                //Add course
-
-            }
-            else
-            {
-                //delete course
-            }
-
-        }
-
         private void mwfAll(bool show)
         {
             mwf8(show);

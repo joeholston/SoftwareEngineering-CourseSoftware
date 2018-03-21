@@ -402,7 +402,6 @@
             this.w11.Size = new System.Drawing.Size(101, 37);
             this.w11.TabIndex = 25;
             this.w11.Text = "11 AM";
-            this.w11.TextChanged += new System.EventHandler(this.richTextBox18_TextChanged);
             // 
             // m11
             // 
