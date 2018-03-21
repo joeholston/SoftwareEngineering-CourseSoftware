@@ -16,8 +16,13 @@ namespace SoftwareEngineering
         {
             InitializeComponent();
 
+            createLV();
+            addToLV();
+
             mwfAll(false);
             trAll(false);
+
+            mwf(2, true);
         }
 
         private void mwf(int time, bool show)
@@ -177,8 +182,31 @@ namespace SoftwareEngineering
                 tr(10, false);
                 tr(1130, false);
                 tr(1, false);
-                tr(215, false);
+                tr(230, false);
             }
+        }
+
+        private void createLV()
+        {
+            courseResults.View = View.Details;
+            courseResults.GridLines = true;
+            courseResults.FullRowSelect = true;
+
+            courseResults.CheckBoxes = true;
+            courseResults.Columns.Add("Course Code", 100);
+            courseResults.Columns.Add("Course Name", 100);
+            courseResults.Columns.Add("Course Time", 100);
+        }
+
+        private void addToLV()
+        {
+            ListViewItem itm;
+            string[] arr = new string[4];
+            arr[0] = "COMP141";
+            arr[1] = "Programming 1";
+            arr[2] = "MWF 2PM";
+            itm = new ListViewItem(arr);
+            courseResults.Items.Add(itm);
         }
     }
 }
