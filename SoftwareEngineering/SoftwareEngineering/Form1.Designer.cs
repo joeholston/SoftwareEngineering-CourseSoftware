@@ -321,7 +321,6 @@
             this.t8.Size = new System.Drawing.Size(101, 61);
             this.t8.TabIndex = 39;
             this.t8.Text = "8 - 9:15 AM";
-            this.t8.TextChanged += new System.EventHandler(this.t8_TextChanged);
             // 
             // m8
             // 
