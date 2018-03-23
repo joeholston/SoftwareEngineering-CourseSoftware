@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SoftwareEngineering
 {
     public partial class Form1 : Form
@@ -15,6 +16,9 @@ namespace SoftwareEngineering
         public Form1()
         {
             InitializeComponent();
+
+            BuildDB database = new BuildDB();
+            List<Course> courses = database.buildDB();
 
             createLV();
             addToLV();
@@ -24,6 +28,8 @@ namespace SoftwareEngineering
 
             mwf(2, true);
         }
+    
+        //m, t, w, r, f, mw, wf, mf, mtwf, mwrf, search button
 
         private void mwf(int time, bool show)
         {
