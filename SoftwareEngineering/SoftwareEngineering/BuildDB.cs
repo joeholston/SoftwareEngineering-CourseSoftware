@@ -7,9 +7,10 @@ using System.IO;
 
 namespace SoftwareEngineering
 {
-    class BuildDB
+    public class BuildDB
     {
-        public List<Course> buildDB()
+        private static BuildDB instance;
+        private BuildDB() 
         {
             List<Course> courseDB = new List<Course>();
             using (StreamReader reader = new StreamReader("CourseDB_WithFictionalCapacities.csv"))
@@ -25,7 +26,7 @@ namespace SoftwareEngineering
                     {
                         Console.Write(values[i]);
                         Console.Write("\r\n");
-                        if(values[i] == "NULL")
+                        if (values[i] == "NULL")
                         {
                             values[i] = null;
                         }
@@ -45,8 +46,20 @@ namespace SoftwareEngineering
                     courseDB.Add(new Course(values[0], values[1], values[2], value3, value4, values[5], values[6], values[7], int.Parse(values[8]), int.Parse(values[9])));
                     Console.Write(courseDB[j].courseCode + "\r\n" + courseDB[j].beginTime + "\r\n" + courseDB[j].capacity + "\r\n");
                 }
+                database = courseDB;
             }
-            return courseDB;
         }
+        public static BuildDB Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new BuildDB();
+                }
+                return instance;
+            }
+        }
+        public List<Course> database;
     }
 }
