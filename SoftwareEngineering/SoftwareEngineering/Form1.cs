@@ -17,9 +17,6 @@ namespace SoftwareEngineering
         {
             InitializeComponent();
 
-            BuildDB database = new BuildDB();
-            List<Course> courses = database.buildDB();
-
             createLV();
             addToLV();
 

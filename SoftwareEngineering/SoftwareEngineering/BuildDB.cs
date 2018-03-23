@@ -49,6 +49,7 @@ namespace SoftwareEngineering
                 database = courseDB;
             }
         }
+        private List<Course> database { get; set; }
         public static BuildDB Instance
         {
             get
@@ -60,6 +61,5 @@ namespace SoftwareEngineering
                 return instance;
             }
         }
-        public List<Course> database;
     }
 }
