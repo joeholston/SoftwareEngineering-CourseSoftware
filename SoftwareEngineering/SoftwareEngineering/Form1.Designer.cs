@@ -33,6 +33,7 @@
             this.searchGroup = new System.Windows.Forms.GroupBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.resultsGroup = new System.Windows.Forms.GroupBox();
+            this.courseResults = new System.Windows.Forms.ListView();
             this.courseSeatsAvail = new System.Windows.Forms.Label();
             this.courseDateTime = new System.Windows.Forms.Label();
             this.courseLocation = new System.Windows.Forms.Label();
@@ -78,7 +79,6 @@
             this.f2 = new System.Windows.Forms.RichTextBox();
             this.w2 = new System.Windows.Forms.RichTextBox();
             this.m2 = new System.Windows.Forms.RichTextBox();
-            this.courseResults = new System.Windows.Forms.ListView();
             this.searchGroup.SuspendLayout();
             this.resultsGroup.SuspendLayout();
             this.calendarGroup.SuspendLayout();
@@ -135,6 +135,15 @@
             this.resultsGroup.TabIndex = 3;
             this.resultsGroup.TabStop = false;
             this.resultsGroup.Text = "Results";
+            // 
+            // courseResults
+            // 
+            this.courseResults.Location = new System.Drawing.Point(6, 95);
+            this.courseResults.Name = "courseResults";
+            this.courseResults.Size = new System.Drawing.Size(379, 431);
+            this.courseResults.TabIndex = 5;
+            this.courseResults.UseCompatibleStateImageBehavior = false;
+            this.courseResults.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.courseResults_ItemCheck);
             // 
             // courseSeatsAvail
             // 
@@ -547,14 +556,6 @@
             this.m2.Size = new System.Drawing.Size(101, 37);
             this.m2.TabIndex = 8;
             this.m2.Text = "2 PM";
-            // 
-            // courseResults
-            // 
-            this.courseResults.Location = new System.Drawing.Point(6, 95);
-            this.courseResults.Name = "courseResults";
-            this.courseResults.Size = new System.Drawing.Size(379, 431);
-            this.courseResults.TabIndex = 5;
-            this.courseResults.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 

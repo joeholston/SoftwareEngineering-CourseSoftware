@@ -214,5 +214,19 @@ namespace SoftwareEngineering
             itm = new ListViewItem(arr);
             courseResults.Items.Add(itm);
         }
+
+        private void courseResults_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            //Add/delete the newly checked/unchecked course to studentCourses
+            if (e.CurrentValue == CheckState.Checked) //This is when it gets unchecked
+            {
+                //delete course
+
+            }
+            else
+            {
+                //add course
+            }
+        }
     }
 }
