@@ -9,7 +9,8 @@ namespace SoftwareEngineering
 {
     public class BuildDB
     {
-        private static BuildDB instance;
+        public static BuildDB instance;
+        public List<Course> database { get; set; }
         private BuildDB() 
         {
             List<Course> courseDB = new List<Course>();
@@ -49,7 +50,6 @@ namespace SoftwareEngineering
                 database = courseDB;
             }
         }
-        private List<Course> database { get; set; }
         public static BuildDB Instance
         {
             get
