@@ -9,7 +9,7 @@ namespace SoftwareEngineering
 {
     public class BuildDB
     {
-        public static BuildDB instance;
+        private static BuildDB instance;
         public List<Course> database { get; set; }
         private BuildDB() 
         {
