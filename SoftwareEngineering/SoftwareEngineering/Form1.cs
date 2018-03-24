@@ -218,11 +218,12 @@ namespace SoftwareEngineering
             if (e.CurrentValue == CheckState.Checked) //This is when it gets unchecked
             {
                 //delete course
-
+                string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text;
             }
             else
             {
                 //add course
+                string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text;
             }
         }
     }
