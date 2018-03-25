@@ -13,6 +13,8 @@ namespace SoftwareEngineering
 {
     public partial class Form1 : Form
     {
+        private Student user=new Student();
+
         public Form1()
         {
             InitializeComponent();
@@ -218,11 +220,16 @@ namespace SoftwareEngineering
             if (e.CurrentValue == CheckState.Checked) //This is when it gets unchecked
             {
                 //delete course
-
+                string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text;
+                Course selectedCourse = Student.findCourse(courseCode);
+                user.deleteCourse(selectedCourse);
             }
             else
             {
                 //add course
+                string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text;
+                Course selectedCourse = Student.findCourse(courseCode);
+                user.addCourse(selectedCourse);
             }
         }
     }

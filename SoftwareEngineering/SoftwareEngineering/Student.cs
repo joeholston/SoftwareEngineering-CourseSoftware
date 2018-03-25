@@ -17,5 +17,17 @@ namespace SoftwareEngineering
         {
             studentCourses.Remove(deselectedCourse); //There should not be multiple of the same Course objects, so deleting all instances of the deselected course is fine.
         }
+        static public Course findCourse(string courseCode)
+        {
+            List<Course> courseList = BuildDB.Instance.database;
+            foreach (Course classSection in courseList)
+            {
+                if (courseCode==classSection.courseCode)
+                {
+                    return classSection;
+                }
+            }
+            return null;
+        }
     }
 }

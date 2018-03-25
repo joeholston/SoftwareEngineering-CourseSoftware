@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SoftwareEngineering
 {
-    class Course
+    public class Course
     {
         public Course(string cc, string sT, string lT, DateTime bT, DateTime eT, string mD, string b, string r, int e, int c)
         {
