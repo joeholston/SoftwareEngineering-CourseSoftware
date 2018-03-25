@@ -23,7 +23,7 @@ namespace SoftwareEngineering
             addToLV("COMP 141 A", "Programming 1", "MWF 1PM", "STEM 326", "6");
 
             showAllCourses(false);
-            showCourses(1235, 10, true);
+            showCourses(1345, 2, true);
         }
     
 
@@ -63,11 +63,49 @@ namespace SoftwareEngineering
                     break;
                 case 1235: //mtwf
                     mwf(135, time, show);
-                    tr(2, time, show);
+                    switch (time)
+                    {
+                        case 8:
+                            tr(2, time, show);
+                            break;
+                        case 10:
+                            tr(2, time, show);
+                            break;
+                        case 11:
+                            tr(2, 1130, show);
+                            break;
+                        case 1:
+                            tr(2, time, show);
+                            break;
+                        case 2:
+                            tr(2, 230, show);
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case 1345: //mwrf
                     mwf(135, time, show);
-                    tr(4, time, show);
+                    switch (time)
+                    {
+                        case 8:
+                            tr(4, time, show);
+                            break;
+                        case 10:
+                            tr(4, time, show);
+                            break;
+                        case 11:
+                            tr(4, 1130, show);
+                            break;
+                        case 1:
+                            tr(4, time, show);
+                            break;
+                        case 2:
+                            tr(4, 230, show);
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 default:
                     break;
