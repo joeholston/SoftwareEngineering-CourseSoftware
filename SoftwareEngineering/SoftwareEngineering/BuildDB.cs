@@ -17,16 +17,16 @@ namespace SoftwareEngineering
             using (StreamReader reader = new StreamReader("CourseDB_WithFictionalCapacities.csv"))
             {
                 var line = reader.ReadLine();
-                int j = -1;
+                //int j = -1;
                 while (!reader.EndOfStream)
                 {
-                    j++;
+                    //j++;
                     line = reader.ReadLine();
                     string[] values = line.Split(';');
                     for (int i = 0; i < values.Length; i++)
                     {
-                        Console.Write(values[i]);
-                        Console.Write("\r\n");
+                        //Console.Write(values[i]);
+                        //Console.Write("\r\n");
                         if (values[i] == "NULL")
                         {
                             values[i] = null;
@@ -45,7 +45,7 @@ namespace SoftwareEngineering
                         value4 = DateTime.Parse(values[4]);
                     }
                     courseDB.Add(new Course(values[0], values[1], values[2], value3, value4, values[5], values[6], values[7], int.Parse(values[8]), int.Parse(values[9])));
-                    Console.Write(courseDB[j].courseCode + "\r\n" + courseDB[j].beginTime + "\r\n" + courseDB[j].capacity + "\r\n");
+                    //Console.Write(courseDB[j].courseCode + "\r\n" + courseDB[j].beginTime + "\r\n" + courseDB[j].capacity + "\r\n");
                 }
                 database = courseDB;
             }
