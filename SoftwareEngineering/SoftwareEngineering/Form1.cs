@@ -20,10 +20,21 @@ namespace SoftwareEngineering
             InitializeComponent();
 
             createLV();
-            addToLV("COMP 141 A", "Programming 1", "MWF 1PM", "STEM 326", "6");
-
+            addToLV("COMP 141  A", "Programming 1", "MWF 1PM", "STEM 326", "6");
+            addToLV("COMP 141  B", "Programming 1", "MWF 2PM", "STEM 326", "6");
+            addToLV("COMP 450  A", "--", "MWF 12PM", "--", "6");
+            addToLV("ACCT 202  A", "--", "MWF 8am", "--", "6");
+            addToLV("BIOL 234  A", "--", "MWF 9am", "--", "6");
+            addToLV("BIOL 234  B", "--", "MWF 10am", "--", "6");
+            addToLV("ACCT 302  B", "--", "MWF 11am", "--", "6");
+            addToLV("MECE 416  A", "--", "TR 1005", "--", "6");
+            addToLV("MUSI 103  A", "--", "TR 1130", "--", "6");
+            addToLV("PHYE 102  A", "--", "TR 1130", "--", "6");
+            addToLV("POLS 308  A", "--", "TR 230", "--", "6");
+            addToLV("POLS 204  A", "--", "MWF 3pm", "--", "6");
+            addToLV("PHIL 312  A", "--", "TR 1pm", "--", "6");
             showAllCourses(false);
-            showCourses(1345, 2, true);
+            //showCourses(1345, 2, true);
         }
     
 
@@ -63,6 +74,8 @@ namespace SoftwareEngineering
                     break;
                 case 1235: //mtwf
                     mwf(135, time, show);
+                    tr(2, time, show);
+                    /*
                     switch (time)
                     {
                         case 8:
@@ -72,20 +85,28 @@ namespace SoftwareEngineering
                             tr(2, time, show);
                             break;
                         case 11:
-                            tr(2, 1130, show);
+                            tr(2, time, show);
                             break;
                         case 1:
                             tr(2, time, show);
                             break;
+                        case 13:
+                            tr(2, time, show);
+                            break;
                         case 2:
-                            tr(2, 230, show);
+                            tr(2, 23, show);
+                            break;
+                        case 14:
+                            tr(2, 23, show);
                             break;
                         default:
                             break;
-                    }
+                    }*/
                     break;
                 case 1345: //mwrf
                     mwf(135, time, show);
+                    tr(4, time, show);
+                    /*
                     switch (time)
                     {
                         case 8:
@@ -95,17 +116,23 @@ namespace SoftwareEngineering
                             tr(4, time, show);
                             break;
                         case 11:
-                            tr(4, 1130, show);
+                            tr(4, 113, show);
                             break;
                         case 1:
                             tr(4, time, show);
                             break;
+                        case 13:
+                            tr(4, time, show);
+                            break;
                         case 2:
-                            tr(4, 230, show);
+                            tr(4, 23, show);
+                            break;
+                        case 143:
+                            tr(4, 23, show);
                             break;
                         default:
                             break;
-                    }
+                    }*/
                     break;
                 default:
                     break;
@@ -151,12 +178,27 @@ namespace SoftwareEngineering
                     w = w1;
                     f = f1;
                     break;
+                case 13:
+                    m = m1;
+                    w = w1;
+                    f = f1;
+                    break;
                 case 2:
                     m = m2;
                     w = w2;
                     f = f2;
                     break;
+                case 14:
+                    m = m2;
+                    w = w2;
+                    f = f2;
+                    break;
                 case 3:
+                    m = m3;
+                    w = w3;
+                    f = f3;
+                    break;
+                case 15:
                     m = m3;
                     w = w3;
                     f = f3;
@@ -253,7 +295,7 @@ namespace SoftwareEngineering
                     t = t10;
                     r = r10;
                     break;
-                case 1130:
+                case 11:
                     t = t1130;
                     r = r1130;
                     break;
@@ -261,7 +303,15 @@ namespace SoftwareEngineering
                     t = t1;
                     r = r1;
                     break;
-                case 230:
+                case 13:
+                    t = t1;
+                    r = r1;
+                    break;
+                case 2:
+                    t = t230;
+                    r = r230;
+                    break;
+                case 14:
                     t = t230;
                     r = r230;
                     break;
@@ -324,9 +374,9 @@ namespace SoftwareEngineering
                 mwf(135, 3, true);
                 tr(24, 8, true);
                 tr(24, 10, true);
-                tr(24, 1130, true);
+                tr(24, 11, true);
                 tr(24, 1, true);
-                tr(24, 215, true);
+                tr(24, 2, true);
             }
             else
             {
@@ -340,9 +390,9 @@ namespace SoftwareEngineering
                 mwf(135, 3, false);
                 tr(24, 8, false);
                 tr(24, 10, false);
-                tr(24, 1130, false);
+                tr(24, 11, false);
                 tr(24, 1, false);
-                tr(24, 230, false);
+                tr(24, 2, false);
             }
         }
 
@@ -377,6 +427,7 @@ namespace SoftwareEngineering
                 string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text;
                 Course selectedCourse = Student.findCourse(courseCode);
                 user.deleteCourse(selectedCourse);
+                deleteFromCalender(selectedCourse);
             }
             else
             {
@@ -384,7 +435,89 @@ namespace SoftwareEngineering
                 string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text;
                 Course selectedCourse = Student.findCourse(courseCode);
                 user.addCourse(selectedCourse);
+                addToCalender(selectedCourse);
             }
+        }
+        private int getDayCode(string meetingDays)
+        {
+            int daycode = 0;
+            foreach (char c in meetingDays)
+            {
+                if (c == 'M')
+                {
+                    daycode = daycode * 10 + 1;
+                }
+                else if (c == 'T')
+                {
+                    daycode = daycode * 10 + 2;
+                }
+                else if (c == 'W')
+                {
+                    daycode = daycode * 10 + 3;
+                }
+                else if (c == 'R')
+                {
+                    daycode = daycode * 10 + 4;
+                }
+                else if (c == 'F')
+                {
+                    daycode = daycode * 10 + 5;
+                }
+            }
+            return daycode;
+        }
+        private int getTime(DateTime fullTime)
+        {
+            string stringTime = fullTime.ToString();
+            string charTime="";
+            bool reachedColon= false;
+            bool getFirstTime = false;
+            bool getTime = false;
+            int time = 0;
+            foreach (char c in stringTime)
+            {
+                if (reachedColon && c == ':')
+                {
+                    reachedColon = true;
+                    //Do nothing
+                }
+                else if (c==':')
+                {
+                    break; //Should not go to seconds.
+                }
+                else if(getFirstTime)
+                {
+                    if (c != 0)
+                    {
+                        charTime +=c;
+                        getFirstTime = false;
+                    }
+                }
+                else if(getTime)
+                {
+                    charTime += c;
+                }
+                else if (c==' ')
+                {
+                    getFirstTime = true;
+                    getTime = true;
+                }
+            }
+            time = Int32.Parse(charTime);
+
+            return time;
+        }
+        private void addToCalender(Course addedCourse)
+        {
+            int daycode = getDayCode(addedCourse.meetingDays);
+            int time = getTime(addedCourse.beginTime);
+            showCourses(daycode,time,true);
+        }
+        private void deleteFromCalender(Course deletedCourse)
+        {
+            int daycode = getDayCode(deletedCourse.meetingDays);
+            int time = getTime(deletedCourse.beginTime);
+            showCourses(daycode, time, false);
         }
     }
 }
