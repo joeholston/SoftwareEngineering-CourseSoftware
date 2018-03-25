@@ -22,10 +22,8 @@ namespace SoftwareEngineering
             createLV();
             addToLV();
 
-            mwfAll(false);
-            trAll(false);
-
-            mwf(2, true);
+            mwfAll(true);
+            trAll(true);
         }
     
         //m, t, w, r, f, mw, wf, mf, mtwf, mwrf, search button

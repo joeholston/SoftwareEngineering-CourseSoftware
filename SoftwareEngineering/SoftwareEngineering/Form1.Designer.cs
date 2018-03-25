@@ -79,6 +79,7 @@
             this.f2 = new System.Windows.Forms.RichTextBox();
             this.w2 = new System.Windows.Forms.RichTextBox();
             this.m2 = new System.Windows.Forms.RichTextBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.searchGroup.SuspendLayout();
             this.resultsGroup.SuspendLayout();
             this.calendarGroup.SuspendLayout();
@@ -104,6 +105,7 @@
             // 
             // searchGroup
             // 
+            this.searchGroup.Controls.Add(this.searchButton);
             this.searchGroup.Controls.Add(this.dateTimePicker);
             this.searchGroup.Controls.Add(this.searchBox);
             this.searchGroup.Controls.Add(this.searchDropDown);
@@ -557,6 +559,15 @@
             this.m2.TabIndex = 8;
             this.m2.Text = "2 PM";
             // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(446, 67);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 3;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -630,6 +641,7 @@
         private System.Windows.Forms.RichTextBox r10;
         private System.Windows.Forms.RichTextBox t1130;
         private System.Windows.Forms.ListView courseResults;
+        private System.Windows.Forms.Button searchButton;
     }
 }
 
