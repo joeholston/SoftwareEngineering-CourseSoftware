@@ -34,11 +34,6 @@
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.resultsGroup = new System.Windows.Forms.GroupBox();
             this.courseResults = new System.Windows.Forms.ListView();
-            this.courseSeatsAvail = new System.Windows.Forms.Label();
-            this.courseDateTime = new System.Windows.Forms.Label();
-            this.courseLocation = new System.Windows.Forms.Label();
-            this.courseName = new System.Windows.Forms.Label();
-            this.courseCheckBox = new System.Windows.Forms.CheckBox();
             this.calendarGroup = new System.Windows.Forms.GroupBox();
             this.r230 = new System.Windows.Forms.RichTextBox();
             this.r1 = new System.Windows.Forms.RichTextBox();
@@ -80,6 +75,11 @@
             this.w2 = new System.Windows.Forms.RichTextBox();
             this.m2 = new System.Windows.Forms.RichTextBox();
             this.searchButton = new System.Windows.Forms.Button();
+            this.cCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cSeats = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.searchGroup.SuspendLayout();
             this.resultsGroup.SuspendLayout();
             this.calendarGroup.SuspendLayout();
@@ -126,72 +126,28 @@
             // resultsGroup
             // 
             this.resultsGroup.Controls.Add(this.courseResults);
-            this.resultsGroup.Controls.Add(this.courseSeatsAvail);
-            this.resultsGroup.Controls.Add(this.courseDateTime);
-            this.resultsGroup.Controls.Add(this.courseLocation);
-            this.resultsGroup.Controls.Add(this.courseName);
-            this.resultsGroup.Controls.Add(this.courseCheckBox);
             this.resultsGroup.Location = new System.Drawing.Point(573, 12);
             this.resultsGroup.Name = "resultsGroup";
-            this.resultsGroup.Size = new System.Drawing.Size(391, 536);
+            this.resultsGroup.Size = new System.Drawing.Size(407, 536);
             this.resultsGroup.TabIndex = 3;
             this.resultsGroup.TabStop = false;
             this.resultsGroup.Text = "Results";
             // 
             // courseResults
             // 
-            this.courseResults.Location = new System.Drawing.Point(6, 95);
+            this.courseResults.CheckBoxes = true;
+            this.courseResults.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.cCode,
+            this.cName,
+            this.cTime,
+            this.cLocation,
+            this.cSeats});
+            this.courseResults.Location = new System.Drawing.Point(6, 31);
             this.courseResults.Name = "courseResults";
-            this.courseResults.Size = new System.Drawing.Size(379, 431);
+            this.courseResults.Size = new System.Drawing.Size(395, 495);
             this.courseResults.TabIndex = 5;
             this.courseResults.UseCompatibleStateImageBehavior = false;
             this.courseResults.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.courseResults_ItemCheck);
-            // 
-            // courseSeatsAvail
-            // 
-            this.courseSeatsAvail.AutoSize = true;
-            this.courseSeatsAvail.Location = new System.Drawing.Point(264, 57);
-            this.courseSeatsAvail.Name = "courseSeatsAvail";
-            this.courseSeatsAvail.Size = new System.Drawing.Size(93, 13);
-            this.courseSeatsAvail.TabIndex = 4;
-            this.courseSeatsAvail.Text = "Seats Available: #";
-            // 
-            // courseDateTime
-            // 
-            this.courseDateTime.AutoSize = true;
-            this.courseDateTime.Location = new System.Drawing.Point(264, 33);
-            this.courseDateTime.Name = "courseDateTime";
-            this.courseDateTime.Size = new System.Drawing.Size(73, 13);
-            this.courseDateTime.TabIndex = 3;
-            this.courseDateTime.Text = "Day and Time";
-            // 
-            // courseLocation
-            // 
-            this.courseLocation.AutoSize = true;
-            this.courseLocation.Location = new System.Drawing.Point(148, 57);
-            this.courseLocation.Name = "courseLocation";
-            this.courseLocation.Size = new System.Drawing.Size(48, 13);
-            this.courseLocation.TabIndex = 2;
-            this.courseLocation.Text = "Location";
-            // 
-            // courseName
-            // 
-            this.courseName.AutoSize = true;
-            this.courseName.Location = new System.Drawing.Point(148, 33);
-            this.courseName.Name = "courseName";
-            this.courseName.Size = new System.Drawing.Size(71, 13);
-            this.courseName.TabIndex = 1;
-            this.courseName.Text = "Course Name";
-            // 
-            // courseCheckBox
-            // 
-            this.courseCheckBox.AutoSize = true;
-            this.courseCheckBox.Location = new System.Drawing.Point(24, 32);
-            this.courseCheckBox.Name = "courseCheckBox";
-            this.courseCheckBox.Size = new System.Drawing.Size(87, 17);
-            this.courseCheckBox.TabIndex = 0;
-            this.courseCheckBox.Text = "Course Code";
-            this.courseCheckBox.UseVisualStyleBackColor = true;
             // 
             // calendarGroup
             // 
@@ -568,11 +524,36 @@
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
             // 
+            // cCode
+            // 
+            this.cCode.Text = "Course Code";
+            this.cCode.Width = 100;
+            // 
+            // cName
+            // 
+            this.cName.Text = "Course Name";
+            this.cName.Width = 90;
+            // 
+            // cTime
+            // 
+            this.cTime.Text = "Time";
+            this.cTime.Width = 65;
+            // 
+            // cLocation
+            // 
+            this.cLocation.Text = "Location";
+            this.cLocation.Width = 70;
+            // 
+            // cSeats
+            // 
+            this.cSeats.Text = "Open Seats";
+            this.cSeats.Width = 100;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(977, 557);
+            this.ClientSize = new System.Drawing.Size(992, 557);
             this.Controls.Add(this.calendarGroup);
             this.Controls.Add(this.resultsGroup);
             this.Controls.Add(this.searchGroup);
@@ -581,7 +562,6 @@
             this.searchGroup.ResumeLayout(false);
             this.searchGroup.PerformLayout();
             this.resultsGroup.ResumeLayout(false);
-            this.resultsGroup.PerformLayout();
             this.calendarGroup.ResumeLayout(false);
             this.calendarGroup.PerformLayout();
             this.ResumeLayout(false);
@@ -595,11 +575,6 @@
         private System.Windows.Forms.GroupBox searchGroup;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.GroupBox resultsGroup;
-        private System.Windows.Forms.Label courseSeatsAvail;
-        private System.Windows.Forms.Label courseDateTime;
-        private System.Windows.Forms.Label courseLocation;
-        private System.Windows.Forms.Label courseName;
-        private System.Windows.Forms.CheckBox courseCheckBox;
         private System.Windows.Forms.GroupBox calendarGroup;
         private System.Windows.Forms.RichTextBox f3;
         private System.Windows.Forms.RichTextBox w3;
@@ -642,6 +617,11 @@
         private System.Windows.Forms.RichTextBox t1130;
         private System.Windows.Forms.ListView courseResults;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.ColumnHeader cCode;
+        private System.Windows.Forms.ColumnHeader cName;
+        private System.Windows.Forms.ColumnHeader cTime;
+        private System.Windows.Forms.ColumnHeader cLocation;
+        private System.Windows.Forms.ColumnHeader cSeats;
     }
 }
 

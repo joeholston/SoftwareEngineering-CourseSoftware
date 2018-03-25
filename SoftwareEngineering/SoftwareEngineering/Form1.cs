@@ -20,13 +20,43 @@ namespace SoftwareEngineering
             InitializeComponent();
 
             createLV();
-            addToLV();
+            addToLV("COMP 141 A", "Programming 1", "MWF 1PM", "STEM 326", "6");
 
-            mwfAll(true);
-            trAll(true);
+            showAllCourses(true);
         }
     
-        //m, t, w, r, f, mw, wf, mf, mtwf, mwrf, search button
+
+        private void showCourses(int code, int time, bool show)
+        {
+            switch (code)
+            {
+                case 135: //mwf
+                    break;
+                case 24: //tr
+                    break;
+                case 1: //m
+                    break;
+                case 2: //t
+                    break;
+                case 3: //w
+                    break;
+                case 4: //r
+                    break;
+                case 5: //f
+                    break;
+                case 13: //mw
+                    break;
+                case 35: //wf
+                    break;
+                case 15: //mf
+                    break;
+                case 1235: //mtwf
+                    break;
+                case 1345: //mwrf
+                    break;
+
+            }
+        }
 
         private void mwf(int time, bool show)
         {
@@ -143,7 +173,7 @@ namespace SoftwareEngineering
             }
         }
 
-        private void mwfAll(bool show)
+        private void showAllCourses(bool show)
         {
             if (show)
             {
@@ -155,6 +185,11 @@ namespace SoftwareEngineering
                 mwf(1, true);
                 mwf(2, true);
                 mwf(3, true);
+                tr(8, true);
+                tr(10, true);
+                tr(1130, true);
+                tr(1, true);
+                tr(215, true);
             }
             else
             {
@@ -166,21 +201,6 @@ namespace SoftwareEngineering
                 mwf(1, false);
                 mwf(2, false);
                 mwf(3, false);
-            }
-        }
-
-        private void trAll(bool show)
-        {
-            if (show)
-            {
-                tr(8, true);
-                tr(10, true);
-                tr(1130, true);
-                tr(1, true);
-                tr(215, true);
-            }
-            else
-            {
                 tr(8, false);
                 tr(10, false);
                 tr(1130, false);
@@ -196,18 +216,17 @@ namespace SoftwareEngineering
             courseResults.FullRowSelect = true;
 
             courseResults.CheckBoxes = true;
-            courseResults.Columns.Add("Course Code", 100);
-            courseResults.Columns.Add("Course Name", 100);
-            courseResults.Columns.Add("Course Time", 100);
         }
 
-        private void addToLV()
+        private void addToLV(string code, string name, string time, string location, string seats)
         {
             ListViewItem itm;
-            string[] arr = new string[4];
-            arr[0] = "COMP 141  A";
-            arr[1] = "Programming 1";
-            arr[2] = "MWF 2PM";
+            string[] arr = new string[5];
+            arr[0] = code;
+            arr[1] = name;
+            arr[2] = time;
+            arr[3] = location;
+            arr[4] = seats;
             itm = new ListViewItem(arr);
             courseResults.Items.Add(itm);
         }
