@@ -22,7 +22,8 @@ namespace SoftwareEngineering
             createLV();
             addToLV("COMP 141 A", "Programming 1", "MWF 1PM", "STEM 326", "6");
 
-            showAllCourses(true);
+            showAllCourses(false);
+            showCourses(1235, 10, true);
         }
     
 
@@ -31,34 +32,50 @@ namespace SoftwareEngineering
             switch (code)
             {
                 case 135: //mwf
+                    mwf(135, time, show);
                     break;
                 case 24: //tr
+                    tr(24, time, show);
                     break;
                 case 1: //m
+                    mwf(1, time, show);
                     break;
                 case 2: //t
+                    tr(2, time, show);
                     break;
                 case 3: //w
+                    mwf(3, time, show);
                     break;
                 case 4: //r
+                    tr(4, time, show);
                     break;
                 case 5: //f
+                    mwf(5, time, show);
                     break;
                 case 13: //mw
+                    mwf(13, time, show);
                     break;
                 case 35: //wf
+                    mwf(35, time, show);
                     break;
                 case 15: //mf
+                    mwf(15, time, show);
                     break;
                 case 1235: //mtwf
+                    mwf(135, time, show);
+                    tr(2, time, show);
                     break;
                 case 1345: //mwrf
+                    mwf(135, time, show);
+                    tr(4, time, show);
+                    break;
+                default:
                     break;
 
             }
         }
 
-        private void mwf(int time, bool show)
+        private void mwf(int code, int time, bool show)
         {
             RichTextBox m;
             RichTextBox w;
@@ -115,19 +132,75 @@ namespace SoftwareEngineering
 
             if (show)
             {
-                m.Show();
-                w.Show();
-                f.Show();
+                switch (code)
+                {
+                    case 135:
+                        m.Show();
+                        w.Show();
+                        f.Show();
+                        break;
+                    case 1:
+                        m.Show();
+                        break;
+                    case 3:
+                        w.Show();
+                        break;
+                    case 5:
+                        f.Show();
+                        break;
+                    case 13:
+                        m.Show();
+                        w.Show();
+                        break;
+                    case 15:
+                        m.Show();
+                        f.Show();
+                        break;
+                    case 35:
+                        w.Show();
+                        f.Show();
+                        break;
+                    default:
+                        break;
+                }
             }
             else
             {
-                m.Hide();
-                w.Hide();
-                f.Hide();
+                switch (code)
+                {
+                    case 135:
+                        m.Hide();
+                        w.Hide();
+                        f.Hide();
+                        break;
+                    case 1:
+                        m.Hide();
+                        break;
+                    case 3:
+                        w.Hide();
+                        break;
+                    case 5:
+                        f.Hide();
+                        break;
+                    case 13:
+                        m.Hide();
+                        w.Hide();
+                        break;
+                    case 15:
+                        m.Hide();
+                        f.Hide();
+                        break;
+                    case 35:
+                        w.Hide();
+                        f.Hide();
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
-        private void tr(int time, bool show)
+        private void tr(int code, int time, bool show)
         {
             RichTextBox t;
             RichTextBox r;
@@ -163,13 +236,39 @@ namespace SoftwareEngineering
 
             if (show)
             {
-                t.Show();
-                r.Show();
+                switch (code)
+                {
+                    case 24:
+                        t.Show();
+                        r.Show();
+                        break;
+                    case 2:
+                        t.Show();
+                        break;
+                    case 4:
+                        r.Show();
+                        break;
+                    default:
+                        break;
+                }   
             }
             else
             {
-                t.Hide();
-                r.Hide();
+                switch (code)
+                {
+                    case 24:
+                        t.Hide();
+                        r.Hide();
+                        break;
+                    case 2:
+                        t.Hide();
+                        break;
+                    case 4:
+                        r.Hide();
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
@@ -177,35 +276,35 @@ namespace SoftwareEngineering
         {
             if (show)
             {
-                mwf(8, true);
-                mwf(9, true);
-                mwf(10, true);
-                mwf(11, true);
-                mwf(12, true);
-                mwf(1, true);
-                mwf(2, true);
-                mwf(3, true);
-                tr(8, true);
-                tr(10, true);
-                tr(1130, true);
-                tr(1, true);
-                tr(215, true);
+                mwf(135, 8, true);
+                mwf(135, 9, true);
+                mwf(135, 10, true);
+                mwf(135, 11, true);
+                mwf(135, 12, true);
+                mwf(135, 1, true);
+                mwf(135, 2, true);
+                mwf(135, 3, true);
+                tr(24, 8, true);
+                tr(24, 10, true);
+                tr(24, 1130, true);
+                tr(24, 1, true);
+                tr(24, 215, true);
             }
             else
             {
-                mwf(8, false);
-                mwf(9, false);
-                mwf(10, false);
-                mwf(11, false);
-                mwf(12, false);
-                mwf(1, false);
-                mwf(2, false);
-                mwf(3, false);
-                tr(8, false);
-                tr(10, false);
-                tr(1130, false);
-                tr(1, false);
-                tr(230, false);
+                mwf(135, 8, false);
+                mwf(135, 9, false);
+                mwf(135, 10, false);
+                mwf(135, 11, false);
+                mwf(135, 12, false);
+                mwf(135, 1, false);
+                mwf(135, 2, false);
+                mwf(135, 3, false);
+                tr(24, 8, false);
+                tr(24, 10, false);
+                tr(24, 1130, false);
+                tr(24, 1, false);
+                tr(24, 230, false);
             }
         }
 
