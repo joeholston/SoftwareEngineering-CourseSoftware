@@ -8,14 +8,28 @@ namespace SoftwareEngineering
 {
     class Student
     {
-        private List<Course> studentCourses { get; set; }
+        public List<Course> studentCourses { get; set; }
         public void addCourse(Course selectedCourse)
         {
-            studentCourses.Add(selectedCourse); //Add the selected Course to the end of the list
+            if (selectedCourse != null)
+            {
+                if (studentCourses==null)
+                {
+                    studentCourses = new List<Course>();
+                }
+                studentCourses.Add(selectedCourse); //Add the selected Course to the end of the list
+            }
         }
         public void deleteCourse(Course deselectedCourse)
         {
-            studentCourses.Remove(deselectedCourse); //There should not be multiple of the same Course objects, so deleting all instances of the deselected course is fine.
+            if (deselectedCourse != null)
+            {
+                if (studentCourses == null)
+                {
+                    studentCourses = new List<Course>();
+                }
+                studentCourses.Remove(deselectedCourse); //There should not be multiple of the same Course objects, so deleting all instances of the deselected course is fine.
+            }
         }
         static public Course findCourse(string courseCode)
         {

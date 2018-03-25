@@ -207,7 +207,7 @@ namespace SoftwareEngineering
         {
             ListViewItem itm;
             string[] arr = new string[4];
-            arr[0] = "COMP141";
+            arr[0] = "COMP 141  A";
             arr[1] = "Programming 1";
             arr[2] = "MWF 2PM";
             itm = new ListViewItem(arr);
