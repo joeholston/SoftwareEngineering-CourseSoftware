@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Grove City College- Spring 2018
+ * Software Engineering- Team 3
+ * Members- Joe Holston, Samuel Beiler, Sarah Trinkle, Wyatt Hough
+ */ 
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,106 +26,51 @@ namespace SoftwareEngineering
             InitializeComponent();
 
             createLV();
-           
-            showAllCourses(false);
         }
     
-
-        private void showCourses(int code, int time, bool show)
+        //showCourses was designed to use a code to determine which UI calendar blocks should be shown
+        //it will call specialized MWF or TR functions to actually display and edit the calendar blocks
+        private void showCourses(int code, int time, bool show, Course c)
         {
             switch (code)
             {
                 case 135: //mwf
-                    mwf(135, time, show);
+                    mwf(135, time, show, c);
                     break;
                 case 24: //tr
-                    tr(24, time, show);
+                    tr(24, time, show, c);
                     break;
                 case 1: //m
-                    mwf(1, time, show);
+                    mwf(1, time, show, c);
                     break;
                 case 2: //t
-                    tr(2, time, show);
+                    tr(2, time, show, c);
                     break;
                 case 3: //w
-                    mwf(3, time, show);
+                    mwf(3, time, show, c);
                     break;
                 case 4: //r
-                    tr(4, time, show);
+                    tr(4, time, show, c);
                     break;
                 case 5: //f
-                    mwf(5, time, show);
+                    mwf(5, time, show, c);
                     break;
                 case 13: //mw
-                    mwf(13, time, show);
+                    mwf(13, time, show, c);
                     break;
                 case 35: //wf
-                    mwf(35, time, show);
+                    mwf(35, time, show, c);
                     break;
                 case 15: //mf
-                    mwf(15, time, show);
+                    mwf(15, time, show, c);
                     break;
                 case 1235: //mtwf
-                    mwf(135, time, show);
-                    tr(2, time, show);
-                    /*
-                    switch (time)
-                    {
-                        case 8:
-                            tr(2, time, show);
-                            break;
-                        case 10:
-                            tr(2, time, show);
-                            break;
-                        case 11:
-                            tr(2, time, show);
-                            break;
-                        case 1:
-                            tr(2, time, show);
-                            break;
-                        case 13:
-                            tr(2, time, show);
-                            break;
-                        case 2:
-                            tr(2, 23, show);
-                            break;
-                        case 14:
-                            tr(2, 23, show);
-                            break;
-                        default:
-                            break;
-                    }*/
+                    mwf(135, time, show, c);
+                    tr(2, time, show, c);
                     break;
                 case 1345: //mwrf
-                    mwf(135, time, show);
-                    tr(4, time, show);
-                    /*
-                    switch (time)
-                    {
-                        case 8:
-                            tr(4, time, show);
-                            break;
-                        case 10:
-                            tr(4, time, show);
-                            break;
-                        case 11:
-                            tr(4, 113, show);
-                            break;
-                        case 1:
-                            tr(4, time, show);
-                            break;
-                        case 13:
-                            tr(4, time, show);
-                            break;
-                        case 2:
-                            tr(4, 23, show);
-                            break;
-                        case 143:
-                            tr(4, 23, show);
-                            break;
-                        default:
-                            break;
-                    }*/
+                    mwf(135, time, show, c);
+                    tr(4, time, show, c);
                     break;
                 default:
                     break;
@@ -127,12 +78,14 @@ namespace SoftwareEngineering
             }
         }
 
-        private void mwf(int code, int time, bool show)
+        //mwf was designed to show the specific mwf calendar UI blocks
+        private void mwf(int code, int time, bool show, Course c)
         {
             RichTextBox m;
             RichTextBox w;
             RichTextBox f;
 
+            //this switch statement determines which mwf time slot should be edited
             switch (time)
             {
                 case 8:
@@ -197,8 +150,19 @@ namespace SoftwareEngineering
                     break;
             }
 
+            //this checks to see if the blocks should be hidden or shown
             if (show)
             {
+                //here, the UI blocks are cleared and then filled with the desired content
+                m.Clear();
+                w.Clear();
+                f.Clear();
+                string newTime = appendTime(c.beginTime);
+                m.AppendText(newTime + "\n" + c.shortTitle);
+                w.AppendText(newTime + "\n" + c.shortTitle);
+                f.AppendText(newTime + "\n" + c.shortTitle);
+
+                //this switch statement uses the code system to determine which blocks to show or hide
                 switch (code)
                 {
                     case 135:
@@ -267,11 +231,13 @@ namespace SoftwareEngineering
             }
         }
 
-        private void tr(int code, int time, bool show)
+        //tr was designed to show the specific tr calendar UI blocks
+        private void tr(int code, int time, bool show, Course c)
         {
             RichTextBox t;
             RichTextBox r;
 
+            //this switch statement determines which tr time slot should be edited
             switch (time)
             {
                 case 8:
@@ -309,8 +275,17 @@ namespace SoftwareEngineering
                     break;
             }
 
+            //this checks to see if the blocks should be hidden or shown
             if (show)
             {
+                //here the blocks are cleared and filled with the desired content
+                t.Clear();
+                r.Clear();
+                string newTime = appendTime(c.beginTime);
+                t.AppendText(newTime + "\n" + c.shortTitle);
+                r.AppendText(newTime + "\n" + c.shortTitle);
+
+                //this switch statement uses the code system to display the desired UI blocks
                 switch (code)
                 {
                     case 24:
@@ -347,42 +322,7 @@ namespace SoftwareEngineering
             }
         }
 
-        private void showAllCourses(bool show)
-        {
-            if (show)
-            {
-                mwf(135, 8, true);
-                mwf(135, 9, true);
-                mwf(135, 10, true);
-                mwf(135, 11, true);
-                mwf(135, 12, true);
-                mwf(135, 1, true);
-                mwf(135, 2, true);
-                mwf(135, 3, true);
-                tr(24, 8, true);
-                tr(24, 10, true);
-                tr(24, 11, true);
-                tr(24, 1, true);
-                tr(24, 2, true);
-            }
-            else
-            {
-                mwf(135, 8, false);
-                mwf(135, 9, false);
-                mwf(135, 10, false);
-                mwf(135, 11, false);
-                mwf(135, 12, false);
-                mwf(135, 1, false);
-                mwf(135, 2, false);
-                mwf(135, 3, false);
-                tr(24, 8, false);
-                tr(24, 10, false);
-                tr(24, 11, false);
-                tr(24, 1, false);
-                tr(24, 2, false);
-            }
-        }
-
+        //createLV creates the List View with the desired preset settings
         private void createLV()
         {
             courseResults.View = View.Details;
@@ -392,8 +332,10 @@ namespace SoftwareEngineering
             courseResults.CheckBoxes = true;
         }
 
+        //addToLv takes the desired arguements and adds them as List View Items
         private void addToLV(string code, string name, string days, string time, string location, string seats)
         {
+            //creates a List View Item
             ListViewItem itm;
             string[] arr = new string[6];
             arr[0] = code;
@@ -406,6 +348,8 @@ namespace SoftwareEngineering
             courseResults.Items.Add(itm);
         }
 
+        //courseResults_ItemCheck adds/deletes the desired List View course by calling respective functions
+        //this function acts as a handler 
         private void courseResults_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             //Add/delete the newly checked/unchecked course to studentCourses
@@ -426,7 +370,13 @@ namespace SoftwareEngineering
                 addToCalender(selectedCourse); //Show the new course to the calender
             }
         }
+<<<<<<< HEAD
         private int getDayCode(string meetingDays)  //Get the code of which days are meeting
+=======
+
+        //getDayCode is an algorithm to determine what code should be used from the meetingDays string. This creates a unified system.
+        private int getDayCode(string meetingDays)
+>>>>>>> master
         {
             int daycode = 0;
             foreach (char c in meetingDays)
@@ -454,7 +404,14 @@ namespace SoftwareEngineering
             }
             return daycode;
         }
+<<<<<<< HEAD
         private int getTime(DateTime fullTime) 
+=======
+
+        //getTime takes a DateTime item and returns the simple integer version of the time.
+        //This is used for the time code and for printing to the List View and Calendar UI.
+        private int getTime(DateTime fullTime)
+>>>>>>> master
         {
             string stringTime = fullTime.ToString(); //Set DateTime to a string
             string charTime="";
@@ -493,6 +450,7 @@ namespace SoftwareEngineering
 >>>>>>> master
             return time;
         }
+<<<<<<< HEAD
         private void addToCalender(Course addedCourse) //Called when a course is added to the schedule
         {
             int daycode = getDayCode(addedCourse.meetingDays); //Gets the code for the meeting days to use in showing courses
@@ -504,8 +462,27 @@ namespace SoftwareEngineering
             int daycode = getDayCode(deletedCourse.meetingDays); //Gets the code for the meeting days to use in the showing courses
             int time = getTime(deletedCourse.beginTime); //Gets the int simple time to use in showing courses
             showCourses(daycode, time, false, deletedCourse); //, deletedCourse  Hides the deleted course from the calender
+=======
+
+        //addToCalendar calls showCourses on a desired course
+        private void addToCalender(Course addedCourse)
+        {
+            int daycode = getDayCode(addedCourse.meetingDays);
+            int time = getTime(addedCourse.beginTime);
+            showCourses(daycode,time,true, addedCourse);
         }
 
+        //deleteFromCalendar does the opposite to addToCalendar
+        private void deleteFromCalender(Course deletedCourse)
+        {
+            int daycode = getDayCode(deletedCourse.meetingDays);
+            int time = getTime(deletedCourse.beginTime);
+            showCourses(daycode, time, false, deletedCourse);
+>>>>>>> master
+        }
+
+        //searchButton_Click sets the functionality for the search button being clicked.
+        //This specifically takes the searchBox string and uses the search algorithm. Then is displays the results on the List View.
         private void searchButton_Click(object sender, EventArgs e)
         {
             courseResults.Items.Clear();
@@ -516,20 +493,26 @@ namespace SoftwareEngineering
             for (int i = 0; i < s.searchCourses.Count; i++)
             {
                 Course c = s.searchCourses[i];
-                int shortTime = getTime(c.beginTime);
-                string newTime = shortTime.ToString();
-                if (shortTime > 7 && shortTime < 12)
-                {
-                    newTime = shortTime + " AM";
-                }
-                else
-                {
-                    newTime = shortTime + " PM";
-                }
+                string newTime = appendTime(c.beginTime);
                 addToLV(c.courseCode, c.shortTitle, c.meetingDays, newTime, c.room, c.enrollment.ToString());
             }
         }
 
-
+        //appendTime is a helper function that adds AM/PM to the simple integer time.
+        //This is used when printing time to the calendar and List View.
+        private string appendTime(DateTime originalTime)
+        {
+            int shortTime = getTime(originalTime);
+            string newTime = shortTime.ToString();
+            if (shortTime > 7 && shortTime < 12)
+            {
+                newTime = shortTime + " AM";
+            }
+            else
+            {
+                newTime = shortTime + " PM";
+            }
+            return newTime;
+        }
     }
 }
