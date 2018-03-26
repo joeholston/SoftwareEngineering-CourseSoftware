@@ -37,7 +37,7 @@
             this.courseResults = new System.Windows.Forms.ListView();
             this.cCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cSeats = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.calendarGroup = new System.Windows.Forms.GroupBox();
@@ -80,6 +80,7 @@
             this.f2 = new System.Windows.Forms.RichTextBox();
             this.w2 = new System.Windows.Forms.RichTextBox();
             this.m2 = new System.Windows.Forms.RichTextBox();
+            this.cTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.searchGroup.SuspendLayout();
             this.resultsGroup.SuspendLayout();
             this.calendarGroup.SuspendLayout();
@@ -87,9 +88,9 @@
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(165, 31);
+            this.searchBox.Location = new System.Drawing.Point(147, 31);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(356, 20);
+            this.searchBox.Size = new System.Drawing.Size(427, 20);
             this.searchBox.TabIndex = 0;
             // 
             // searchDropDown
@@ -118,7 +119,7 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(446, 67);
+            this.searchButton.Location = new System.Drawing.Point(499, 67);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 3;
@@ -150,10 +151,13 @@
             this.courseResults.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cCode,
             this.cName,
+            this.cDay,
             this.cTime,
             this.cLocation,
             this.cSeats});
+            this.courseResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.courseResults.Location = new System.Drawing.Point(6, 31);
+            this.courseResults.Margin = new System.Windows.Forms.Padding(5);
             this.courseResults.Name = "courseResults";
             this.courseResults.Size = new System.Drawing.Size(454, 563);
             this.courseResults.TabIndex = 5;
@@ -163,27 +167,26 @@
             // cCode
             // 
             this.cCode.Text = "Course Code";
-            this.cCode.Width = 100;
+            this.cCode.Width = 110;
             // 
             // cName
             // 
             this.cName.Text = "Course Name";
-            this.cName.Width = 90;
+            this.cName.Width = 140;
             // 
-            // cTime
+            // cDay
             // 
-            this.cTime.Text = "Time";
-            this.cTime.Width = 65;
+            this.cDay.Text = "Days";
+            this.cDay.Width = 50;
             // 
             // cLocation
             // 
-            this.cLocation.Text = "Location";
-            this.cLocation.Width = 70;
+            this.cLocation.Text = "Room";
+            this.cLocation.Width = 50;
             // 
             // cSeats
             // 
-            this.cSeats.Text = "Open Seats";
-            this.cSeats.Width = 100;
+            this.cSeats.Text = "Seats";
             // 
             // calendarGroup
             // 
@@ -551,6 +554,11 @@
             this.m2.TabIndex = 8;
             this.m2.Text = "2 PM";
             // 
+            // cTime
+            // 
+            this.cTime.Text = "Time";
+            this.cTime.Width = 50;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,9 +629,10 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.ColumnHeader cCode;
         private System.Windows.Forms.ColumnHeader cName;
-        private System.Windows.Forms.ColumnHeader cTime;
+        private System.Windows.Forms.ColumnHeader cDay;
         private System.Windows.Forms.ColumnHeader cLocation;
         private System.Windows.Forms.ColumnHeader cSeats;
+        private System.Windows.Forms.ColumnHeader cTime;
     }
 }
 

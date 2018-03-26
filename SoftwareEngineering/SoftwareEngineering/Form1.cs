@@ -392,15 +392,16 @@ namespace SoftwareEngineering
             courseResults.CheckBoxes = true;
         }
 
-        private void addToLV(string code, string name, string time, string location, string seats)
+        private void addToLV(string code, string name, string days, string time, string location, string seats)
         {
             ListViewItem itm;
-            string[] arr = new string[5];
+            string[] arr = new string[6];
             arr[0] = code;
             arr[1] = name;
-            arr[2] = time;
-            arr[3] = location;
-            arr[4] = seats;
+            arr[2] = days;
+            arr[3] = time;
+            arr[4] = location;
+            arr[5] = seats;
             itm = new ListViewItem(arr);
             courseResults.Items.Add(itm);
         }
@@ -484,8 +485,12 @@ namespace SoftwareEngineering
                     getTime = true;  
                 }
             }
+<<<<<<< HEAD
             time = Int32.Parse(charTime); //Parse the char 
 
+=======
+            time = Int32.Parse(charTime);
+>>>>>>> master
             return time;
         }
         private void addToCalender(Course addedCourse) //Called when a course is added to the schedule
@@ -511,7 +516,17 @@ namespace SoftwareEngineering
             for (int i = 0; i < s.searchCourses.Count; i++)
             {
                 Course c = s.searchCourses[i];
-                addToLV(c.courseCode, c.shortTitle, c.meetingDays, c.room, c.enrollment.ToString());
+                int shortTime = getTime(c.beginTime);
+                string newTime = shortTime.ToString();
+                if (shortTime > 7 && shortTime < 12)
+                {
+                    newTime = shortTime + " AM";
+                }
+                else
+                {
+                    newTime = shortTime + " PM";
+                }
+                addToLV(c.courseCode, c.shortTitle, c.meetingDays, newTime, c.room, c.enrollment.ToString());
             }
         }
 
