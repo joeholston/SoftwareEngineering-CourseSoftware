@@ -15,13 +15,12 @@ namespace SoftwareEngineering
         private List<Course> courseDB = BuildDB.Instance.database;
 
         //search the course database list for matches to the input string
-        //      searches for a direct match of course code, short title, and long title
         public void search(string input)
         {
             searchCourses.Clear();
             for (int i = 0; i < courseDB.Count; i++)
             {
-                if (courseDB[i].courseCode.Contains(input))
+                if (courseDB[i].courseCode.StartsWith(input))
                 {
                     searchCourses.Add(courseDB[i]);
                 }
