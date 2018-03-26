@@ -20,7 +20,7 @@ namespace SoftwareEngineering
             InitializeComponent();
 
             createLV();
-            addToLV("COMP 141  A", "Programming 1", "MWF 1PM", "STEM 326", "6");
+            /*addToLV("COMP 141  A", "Programming 1", "MWF 1PM", "STEM 326", "6");
             addToLV("COMP 141  B", "Programming 1", "MWF 2PM", "STEM 326", "6");
             addToLV("COMP 450  A", "--", "MWF 12PM", "--", "6");
             addToLV("ACCT 202  A", "--", "MWF 8am", "--", "6");
@@ -32,7 +32,7 @@ namespace SoftwareEngineering
             addToLV("PHYE 102  A", "--", "TR 1130", "--", "6");
             addToLV("POLS 308  A", "--", "TR 230", "--", "6");
             addToLV("POLS 204  A", "--", "MWF 3pm", "--", "6");
-            addToLV("PHIL 312  A", "--", "TR 1pm", "--", "6");
+            addToLV("PHIL 312  A", "--", "TR 1pm", "--", "6");*/
             showAllCourses(false);
             //showCourses(1345, 2, true);
         }
@@ -512,6 +512,18 @@ namespace SoftwareEngineering
             int daycode = getDayCode(deletedCourse.meetingDays); //Gets the code for the meeting days to use in the showing courses
             int time = getTime(deletedCourse.beginTime); //Gets the int simple time to use in showing courses
             showCourses(daycode, time, false, deletedCourse); //, deletedCourse  Hides the deleted course from the calender
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            string searchString = searchBox.Text;
+            Search s = new Search();
+            s.search(searchString);
+            for (int i = 0; i < s.searchCourses.Count; i++)
+            {
+                Course c = s.searchCourses[i];
+                addToLV(c.courseCode, c.shortTitle, c.meetingDays, c.room, c.enrollment.ToString());
+            }
         }
     }
 }
