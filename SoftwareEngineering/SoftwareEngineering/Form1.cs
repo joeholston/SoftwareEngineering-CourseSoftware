@@ -21,105 +21,50 @@ namespace SoftwareEngineering
 
             createLV();
            
-            showAllCourses(false);
         }
     
 
-        private void showCourses(int code, int time, bool show)
+        private void showCourses(int code, int time, bool show, Course c)
         {
             switch (code)
             {
                 case 135: //mwf
-                    mwf(135, time, show);
+                    mwf(135, time, show, c);
                     break;
                 case 24: //tr
-                    tr(24, time, show);
+                    tr(24, time, show, c);
                     break;
                 case 1: //m
-                    mwf(1, time, show);
+                    mwf(1, time, show, c);
                     break;
                 case 2: //t
-                    tr(2, time, show);
+                    tr(2, time, show, c);
                     break;
                 case 3: //w
-                    mwf(3, time, show);
+                    mwf(3, time, show, c);
                     break;
                 case 4: //r
-                    tr(4, time, show);
+                    tr(4, time, show, c);
                     break;
                 case 5: //f
-                    mwf(5, time, show);
+                    mwf(5, time, show, c);
                     break;
                 case 13: //mw
-                    mwf(13, time, show);
+                    mwf(13, time, show, c);
                     break;
                 case 35: //wf
-                    mwf(35, time, show);
+                    mwf(35, time, show, c);
                     break;
                 case 15: //mf
-                    mwf(15, time, show);
+                    mwf(15, time, show, c);
                     break;
                 case 1235: //mtwf
-                    mwf(135, time, show);
-                    tr(2, time, show);
-                    /*
-                    switch (time)
-                    {
-                        case 8:
-                            tr(2, time, show);
-                            break;
-                        case 10:
-                            tr(2, time, show);
-                            break;
-                        case 11:
-                            tr(2, time, show);
-                            break;
-                        case 1:
-                            tr(2, time, show);
-                            break;
-                        case 13:
-                            tr(2, time, show);
-                            break;
-                        case 2:
-                            tr(2, 23, show);
-                            break;
-                        case 14:
-                            tr(2, 23, show);
-                            break;
-                        default:
-                            break;
-                    }*/
+                    mwf(135, time, show, c);
+                    tr(2, time, show, c);
                     break;
                 case 1345: //mwrf
-                    mwf(135, time, show);
-                    tr(4, time, show);
-                    /*
-                    switch (time)
-                    {
-                        case 8:
-                            tr(4, time, show);
-                            break;
-                        case 10:
-                            tr(4, time, show);
-                            break;
-                        case 11:
-                            tr(4, 113, show);
-                            break;
-                        case 1:
-                            tr(4, time, show);
-                            break;
-                        case 13:
-                            tr(4, time, show);
-                            break;
-                        case 2:
-                            tr(4, 23, show);
-                            break;
-                        case 143:
-                            tr(4, 23, show);
-                            break;
-                        default:
-                            break;
-                    }*/
+                    mwf(135, time, show, c);
+                    tr(4, time, show, c);
                     break;
                 default:
                     break;
@@ -127,7 +72,7 @@ namespace SoftwareEngineering
             }
         }
 
-        private void mwf(int code, int time, bool show)
+        private void mwf(int code, int time, bool show, Course c)
         {
             RichTextBox m;
             RichTextBox w;
@@ -199,6 +144,13 @@ namespace SoftwareEngineering
 
             if (show)
             {
+                m.Clear();
+                w.Clear();
+                f.Clear();
+                string newTime = appendTime(c.beginTime);
+                m.AppendText(newTime + "\n" + c.shortTitle);
+                w.AppendText(newTime + "\n" + c.shortTitle);
+                f.AppendText(newTime + "\n" + c.shortTitle);
                 switch (code)
                 {
                     case 135:
@@ -267,7 +219,7 @@ namespace SoftwareEngineering
             }
         }
 
-        private void tr(int code, int time, bool show)
+        private void tr(int code, int time, bool show, Course c)
         {
             RichTextBox t;
             RichTextBox r;
@@ -311,6 +263,11 @@ namespace SoftwareEngineering
 
             if (show)
             {
+                t.Clear();
+                r.Clear();
+                string newTime = appendTime(c.beginTime);
+                t.AppendText(newTime + "\n" + c.shortTitle);
+                r.AppendText(newTime + "\n" + c.shortTitle);
                 switch (code)
                 {
                     case 24:
@@ -344,42 +301,6 @@ namespace SoftwareEngineering
                     default:
                         break;
                 }
-            }
-        }
-
-        private void showAllCourses(bool show)
-        {
-            if (show)
-            {
-                mwf(135, 8, true);
-                mwf(135, 9, true);
-                mwf(135, 10, true);
-                mwf(135, 11, true);
-                mwf(135, 12, true);
-                mwf(135, 1, true);
-                mwf(135, 2, true);
-                mwf(135, 3, true);
-                tr(24, 8, true);
-                tr(24, 10, true);
-                tr(24, 11, true);
-                tr(24, 1, true);
-                tr(24, 2, true);
-            }
-            else
-            {
-                mwf(135, 8, false);
-                mwf(135, 9, false);
-                mwf(135, 10, false);
-                mwf(135, 11, false);
-                mwf(135, 12, false);
-                mwf(135, 1, false);
-                mwf(135, 2, false);
-                mwf(135, 3, false);
-                tr(24, 8, false);
-                tr(24, 10, false);
-                tr(24, 11, false);
-                tr(24, 1, false);
-                tr(24, 2, false);
             }
         }
 
@@ -498,13 +419,13 @@ namespace SoftwareEngineering
         {
             int daycode = getDayCode(addedCourse.meetingDays);
             int time = getTime(addedCourse.beginTime);
-            showCourses(daycode,time,true);
+            showCourses(daycode,time,true, addedCourse);
         }
         private void deleteFromCalender(Course deletedCourse)
         {
             int daycode = getDayCode(deletedCourse.meetingDays);
             int time = getTime(deletedCourse.beginTime);
-            showCourses(daycode, time, false);
+            showCourses(daycode, time, false, deletedCourse);
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -517,20 +438,24 @@ namespace SoftwareEngineering
             for (int i = 0; i < s.searchCourses.Count; i++)
             {
                 Course c = s.searchCourses[i];
-                int shortTime = getTime(c.beginTime);
-                string newTime = shortTime.ToString();
-                if (shortTime > 7 && shortTime < 12)
-                {
-                    newTime = shortTime + " AM";
-                }
-                else
-                {
-                    newTime = shortTime + " PM";
-                }
+                string newTime = appendTime(c.beginTime);
                 addToLV(c.courseCode, c.shortTitle, c.meetingDays, newTime, c.room, c.enrollment.ToString());
             }
         }
 
-
+        private string appendTime(DateTime originalTime)
+        {
+            int shortTime = getTime(originalTime);
+            string newTime = shortTime.ToString();
+            if (shortTime > 7 && shortTime < 12)
+            {
+                newTime = shortTime + " AM";
+            }
+            else
+            {
+                newTime = shortTime + " PM";
+            }
+            return newTime;
+        }
     }
 }

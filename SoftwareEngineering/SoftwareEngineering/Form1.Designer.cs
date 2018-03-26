@@ -243,6 +243,7 @@
             this.r230.Size = new System.Drawing.Size(107, 67);
             this.r230.TabIndex = 65;
             this.r230.Text = "2:30 - 3:45 PM";
+            this.r230.Visible = false;
             // 
             // r1
             // 
@@ -251,6 +252,7 @@
             this.r1.Size = new System.Drawing.Size(107, 67);
             this.r1.TabIndex = 64;
             this.r1.Text = "1 - 2:15 PM";
+            this.r1.Visible = false;
             // 
             // t230
             // 
@@ -259,6 +261,7 @@
             this.t230.Size = new System.Drawing.Size(107, 67);
             this.t230.TabIndex = 63;
             this.t230.Text = "2:30 - 3:45 PM";
+            this.t230.Visible = false;
             // 
             // t1
             // 
@@ -267,6 +270,7 @@
             this.t1.Size = new System.Drawing.Size(107, 67);
             this.t1.TabIndex = 62;
             this.t1.Text = "1 - 2:15 PM";
+            this.t1.Visible = false;
             // 
             // r1130
             // 
@@ -275,6 +279,7 @@
             this.r1130.Size = new System.Drawing.Size(107, 67);
             this.r1130.TabIndex = 61;
             this.r1130.Text = "11:30 - 12:45 PM";
+            this.r1130.Visible = false;
             // 
             // r10
             // 
@@ -283,6 +288,7 @@
             this.r10.Size = new System.Drawing.Size(107, 67);
             this.r10.TabIndex = 60;
             this.r10.Text = "10:05 - 11:20 AM";
+            this.r10.Visible = false;
             // 
             // t1130
             // 
@@ -291,6 +297,7 @@
             this.t1130.Size = new System.Drawing.Size(107, 67);
             this.t1130.TabIndex = 59;
             this.t1130.Text = "11:30 - 12:45 PM";
+            this.t1130.Visible = false;
             // 
             // r8
             // 
@@ -299,6 +306,7 @@
             this.r8.Size = new System.Drawing.Size(107, 67);
             this.r8.TabIndex = 58;
             this.r8.Text = "8 - 9:15AM";
+            this.r8.Visible = false;
             // 
             // fHeader
             // 
@@ -353,6 +361,7 @@
             this.f3.Size = new System.Drawing.Size(107, 48);
             this.f3.TabIndex = 52;
             this.f3.Text = "3 PM";
+            this.f3.Visible = false;
             // 
             // w3
             // 
@@ -361,6 +370,7 @@
             this.w3.Size = new System.Drawing.Size(107, 48);
             this.w3.TabIndex = 50;
             this.w3.Text = "3 PM";
+            this.w3.Visible = false;
             // 
             // m3
             // 
@@ -369,6 +379,7 @@
             this.m3.Size = new System.Drawing.Size(107, 48);
             this.m3.TabIndex = 48;
             this.m3.Text = "3 PM";
+            this.m3.Visible = false;
             // 
             // f8
             // 
@@ -377,6 +388,7 @@
             this.f8.Size = new System.Drawing.Size(107, 48);
             this.f8.TabIndex = 42;
             this.f8.Text = "8 AM";
+            this.f8.Visible = false;
             // 
             // w8
             // 
@@ -385,6 +397,7 @@
             this.w8.Size = new System.Drawing.Size(107, 48);
             this.w8.TabIndex = 40;
             this.w8.Text = "8 AM";
+            this.w8.Visible = false;
             // 
             // t8
             // 
@@ -393,6 +406,7 @@
             this.t8.Size = new System.Drawing.Size(107, 67);
             this.t8.TabIndex = 39;
             this.t8.Text = "8 - 9:15 AM";
+            this.t8.Visible = false;
             // 
             // m8
             // 
@@ -401,6 +415,7 @@
             this.m8.Size = new System.Drawing.Size(107, 48);
             this.m8.TabIndex = 38;
             this.m8.Text = "8 AM";
+            this.m8.Visible = false;
             // 
             // f9
             // 
@@ -409,6 +424,7 @@
             this.f9.Size = new System.Drawing.Size(107, 48);
             this.f9.TabIndex = 37;
             this.f9.Text = "9 AM";
+            this.f9.Visible = false;
             // 
             // w9
             // 
@@ -417,6 +433,7 @@
             this.w9.Size = new System.Drawing.Size(107, 48);
             this.w9.TabIndex = 35;
             this.w9.Text = "9 AM";
+            this.w9.Visible = false;
             // 
             // m9
             // 
@@ -425,6 +442,7 @@
             this.m9.Size = new System.Drawing.Size(107, 48);
             this.m9.TabIndex = 33;
             this.m9.Text = "9 AM";
+            this.m9.Visible = false;
             // 
             // f10
             // 
@@ -433,6 +451,7 @@
             this.f10.Size = new System.Drawing.Size(107, 48);
             this.f10.TabIndex = 32;
             this.f10.Text = "10 AM";
+            this.f10.Visible = false;
             // 
             // w10
             // 
@@ -441,6 +460,7 @@
             this.w10.Size = new System.Drawing.Size(107, 48);
             this.w10.TabIndex = 30;
             this.w10.Text = "10 AM";
+            this.w10.Visible = false;
             // 
             // t10
             // 
@@ -449,6 +469,7 @@
             this.t10.Size = new System.Drawing.Size(107, 67);
             this.t10.TabIndex = 29;
             this.t10.Text = "10:05 - 11:20 AM";
+            this.t10.Visible = false;
             // 
             // m10
             // 
@@ -457,6 +478,7 @@
             this.m10.Size = new System.Drawing.Size(107, 48);
             this.m10.TabIndex = 28;
             this.m10.Text = "10 AM";
+            this.m10.Visible = false;
             // 
             // f11
             // 
@@ -465,6 +487,7 @@
             this.f11.Size = new System.Drawing.Size(107, 48);
             this.f11.TabIndex = 27;
             this.f11.Text = "11 AM";
+            this.f11.Visible = false;
             // 
             // w11
             // 
@@ -473,6 +496,7 @@
             this.w11.Size = new System.Drawing.Size(107, 48);
             this.w11.TabIndex = 25;
             this.w11.Text = "11 AM";
+            this.w11.Visible = false;
             // 
             // m11
             // 
@@ -481,6 +505,7 @@
             this.m11.Size = new System.Drawing.Size(107, 48);
             this.m11.TabIndex = 23;
             this.m11.Text = "11 AM";
+            this.m11.Visible = false;
             // 
             // f12
             // 
@@ -489,6 +514,7 @@
             this.f12.Size = new System.Drawing.Size(107, 48);
             this.f12.TabIndex = 22;
             this.f12.Text = "12 PM";
+            this.f12.Visible = false;
             // 
             // w12
             // 
@@ -497,6 +523,7 @@
             this.w12.Size = new System.Drawing.Size(107, 48);
             this.w12.TabIndex = 20;
             this.w12.Text = "12 PM";
+            this.w12.Visible = false;
             // 
             // m12
             // 
@@ -505,6 +532,7 @@
             this.m12.Size = new System.Drawing.Size(107, 48);
             this.m12.TabIndex = 18;
             this.m12.Text = "12 PM";
+            this.m12.Visible = false;
             // 
             // f1
             // 
@@ -513,6 +541,7 @@
             this.f1.Size = new System.Drawing.Size(107, 48);
             this.f1.TabIndex = 17;
             this.f1.Text = "1 PM";
+            this.f1.Visible = false;
             // 
             // w1
             // 
@@ -521,6 +550,7 @@
             this.w1.Size = new System.Drawing.Size(107, 48);
             this.w1.TabIndex = 15;
             this.w1.Text = "1 PM";
+            this.w1.Visible = false;
             // 
             // m1
             // 
@@ -529,6 +559,7 @@
             this.m1.Size = new System.Drawing.Size(107, 48);
             this.m1.TabIndex = 13;
             this.m1.Text = "1 PM";
+            this.m1.Visible = false;
             // 
             // f2
             // 
@@ -537,6 +568,7 @@
             this.f2.Size = new System.Drawing.Size(107, 48);
             this.f2.TabIndex = 12;
             this.f2.Text = "2 PM";
+            this.f2.Visible = false;
             // 
             // w2
             // 
@@ -545,6 +577,7 @@
             this.w2.Size = new System.Drawing.Size(107, 48);
             this.w2.TabIndex = 10;
             this.w2.Text = "2 PM";
+            this.w2.Visible = false;
             // 
             // m2
             // 
@@ -553,6 +586,7 @@
             this.m2.Size = new System.Drawing.Size(107, 48);
             this.m2.TabIndex = 8;
             this.m2.Text = "2 PM";
+            this.m2.Visible = false;
             // 
             // cTime
             // 
