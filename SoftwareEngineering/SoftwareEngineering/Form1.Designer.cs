@@ -111,7 +111,7 @@
             this.searchGroup.Controls.Add(this.searchDropDown);
             this.searchGroup.Location = new System.Drawing.Point(12, 12);
             this.searchGroup.Name = "searchGroup";
-            this.searchGroup.Size = new System.Drawing.Size(543, 111);
+            this.searchGroup.Size = new System.Drawing.Size(595, 111);
             this.searchGroup.TabIndex = 2;
             this.searchGroup.TabStop = false;
             this.searchGroup.Text = "Search";
@@ -132,13 +132,14 @@
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(197, 20);
             this.dateTimePicker.TabIndex = 2;
+            this.dateTimePicker.Visible = false;
             // 
             // resultsGroup
             // 
             this.resultsGroup.Controls.Add(this.courseResults);
-            this.resultsGroup.Location = new System.Drawing.Point(573, 12);
+            this.resultsGroup.Location = new System.Drawing.Point(613, 12);
             this.resultsGroup.Name = "resultsGroup";
-            this.resultsGroup.Size = new System.Drawing.Size(407, 536);
+            this.resultsGroup.Size = new System.Drawing.Size(466, 600);
             this.resultsGroup.TabIndex = 3;
             this.resultsGroup.TabStop = false;
             this.resultsGroup.Text = "Results";
@@ -154,7 +155,7 @@
             this.cSeats});
             this.courseResults.Location = new System.Drawing.Point(6, 31);
             this.courseResults.Name = "courseResults";
-            this.courseResults.Size = new System.Drawing.Size(395, 495);
+            this.courseResults.Size = new System.Drawing.Size(454, 563);
             this.courseResults.TabIndex = 5;
             this.courseResults.UseCompatibleStateImageBehavior = false;
             this.courseResults.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.courseResults_ItemCheck);
@@ -225,81 +226,81 @@
             this.calendarGroup.Controls.Add(this.f2);
             this.calendarGroup.Controls.Add(this.w2);
             this.calendarGroup.Controls.Add(this.m2);
-            this.calendarGroup.Location = new System.Drawing.Point(12, 138);
+            this.calendarGroup.Location = new System.Drawing.Point(12, 129);
             this.calendarGroup.Name = "calendarGroup";
-            this.calendarGroup.Size = new System.Drawing.Size(543, 410);
+            this.calendarGroup.Size = new System.Drawing.Size(595, 483);
             this.calendarGroup.TabIndex = 4;
             this.calendarGroup.TabStop = false;
             this.calendarGroup.Text = "Calendar";
             // 
             // r230
             // 
-            this.r230.Location = new System.Drawing.Point(327, 337);
+            this.r230.Location = new System.Drawing.Point(360, 405);
             this.r230.Name = "r230";
-            this.r230.Size = new System.Drawing.Size(101, 54);
+            this.r230.Size = new System.Drawing.Size(107, 67);
             this.r230.TabIndex = 65;
             this.r230.Text = "2:30 - 3:45 PM";
             // 
             // r1
             // 
-            this.r1.Location = new System.Drawing.Point(327, 277);
+            this.r1.Location = new System.Drawing.Point(360, 326);
             this.r1.Name = "r1";
-            this.r1.Size = new System.Drawing.Size(101, 54);
+            this.r1.Size = new System.Drawing.Size(107, 67);
             this.r1.TabIndex = 64;
             this.r1.Text = "1 - 2:15 PM";
             // 
             // t230
             // 
-            this.t230.Location = new System.Drawing.Point(113, 337);
+            this.t230.Location = new System.Drawing.Point(124, 405);
             this.t230.Name = "t230";
-            this.t230.Size = new System.Drawing.Size(101, 54);
+            this.t230.Size = new System.Drawing.Size(107, 67);
             this.t230.TabIndex = 63;
             this.t230.Text = "2:30 - 3:45 PM";
             // 
             // t1
             // 
-            this.t1.Location = new System.Drawing.Point(113, 277);
+            this.t1.Location = new System.Drawing.Point(124, 326);
             this.t1.Name = "t1";
-            this.t1.Size = new System.Drawing.Size(101, 54);
+            this.t1.Size = new System.Drawing.Size(107, 67);
             this.t1.TabIndex = 62;
             this.t1.Text = "1 - 2:15 PM";
             // 
             // r1130
             // 
-            this.r1130.Location = new System.Drawing.Point(327, 208);
+            this.r1130.Location = new System.Drawing.Point(360, 238);
             this.r1130.Name = "r1130";
-            this.r1130.Size = new System.Drawing.Size(101, 54);
+            this.r1130.Size = new System.Drawing.Size(107, 67);
             this.r1130.TabIndex = 61;
             this.r1130.Text = "11:30 - 12:45 PM";
             // 
             // r10
             // 
-            this.r10.Location = new System.Drawing.Point(327, 148);
+            this.r10.Location = new System.Drawing.Point(360, 165);
             this.r10.Name = "r10";
-            this.r10.Size = new System.Drawing.Size(101, 54);
+            this.r10.Size = new System.Drawing.Size(107, 67);
             this.r10.TabIndex = 60;
             this.r10.Text = "10:05 - 11:20 AM";
             // 
             // t1130
             // 
-            this.t1130.Location = new System.Drawing.Point(113, 208);
+            this.t1130.Location = new System.Drawing.Point(124, 238);
             this.t1130.Name = "t1130";
-            this.t1130.Size = new System.Drawing.Size(101, 54);
+            this.t1130.Size = new System.Drawing.Size(107, 67);
             this.t1130.TabIndex = 59;
             this.t1130.Text = "11:30 - 12:45 PM";
             // 
             // r8
             // 
-            this.r8.Location = new System.Drawing.Point(327, 62);
+            this.r8.Location = new System.Drawing.Point(362, 51);
             this.r8.Name = "r8";
-            this.r8.Size = new System.Drawing.Size(101, 61);
+            this.r8.Size = new System.Drawing.Size(107, 67);
             this.r8.TabIndex = 58;
             this.r8.Text = "8 - 9:15AM";
             // 
             // fHeader
             // 
             this.fHeader.AutoSize = true;
-            this.fHeader.Location = new System.Drawing.Point(466, 29);
+            this.fHeader.Location = new System.Drawing.Point(516, 24);
             this.fHeader.Name = "fHeader";
             this.fHeader.Size = new System.Drawing.Size(35, 13);
             this.fHeader.TabIndex = 57;
@@ -309,7 +310,7 @@
             // rHeader
             // 
             this.rHeader.AutoSize = true;
-            this.rHeader.Location = new System.Drawing.Point(351, 29);
+            this.rHeader.Location = new System.Drawing.Point(390, 24);
             this.rHeader.Name = "rHeader";
             this.rHeader.Size = new System.Drawing.Size(51, 13);
             this.rHeader.TabIndex = 56;
@@ -318,7 +319,7 @@
             // wHeader
             // 
             this.wHeader.AutoSize = true;
-            this.wHeader.Location = new System.Drawing.Point(239, 29);
+            this.wHeader.Location = new System.Drawing.Point(265, 24);
             this.wHeader.Name = "wHeader";
             this.wHeader.Size = new System.Drawing.Size(64, 13);
             this.wHeader.TabIndex = 55;
@@ -327,7 +328,7 @@
             // tHeader
             // 
             this.tHeader.AutoSize = true;
-            this.tHeader.Location = new System.Drawing.Point(138, 29);
+            this.tHeader.Location = new System.Drawing.Point(155, 24);
             this.tHeader.Name = "tHeader";
             this.tHeader.Size = new System.Drawing.Size(48, 13);
             this.tHeader.TabIndex = 54;
@@ -336,7 +337,7 @@
             // mHeader
             // 
             this.mHeader.AutoSize = true;
-            this.mHeader.Location = new System.Drawing.Point(34, 29);
+            this.mHeader.Location = new System.Drawing.Point(39, 24);
             this.mHeader.Name = "mHeader";
             this.mHeader.Size = new System.Drawing.Size(45, 13);
             this.mHeader.TabIndex = 53;
@@ -344,209 +345,209 @@
             // 
             // f3
             // 
-            this.f3.Location = new System.Drawing.Point(436, 363);
+            this.f3.Location = new System.Drawing.Point(480, 429);
             this.f3.Name = "f3";
-            this.f3.Size = new System.Drawing.Size(101, 37);
+            this.f3.Size = new System.Drawing.Size(107, 48);
             this.f3.TabIndex = 52;
             this.f3.Text = "3 PM";
             // 
             // w3
             // 
-            this.w3.Location = new System.Drawing.Point(222, 363);
+            this.w3.Location = new System.Drawing.Point(243, 436);
             this.w3.Name = "w3";
-            this.w3.Size = new System.Drawing.Size(101, 37);
+            this.w3.Size = new System.Drawing.Size(107, 48);
             this.w3.TabIndex = 50;
             this.w3.Text = "3 PM";
             // 
             // m3
             // 
-            this.m3.Location = new System.Drawing.Point(8, 363);
+            this.m3.Location = new System.Drawing.Point(6, 436);
             this.m3.Name = "m3";
-            this.m3.Size = new System.Drawing.Size(101, 37);
+            this.m3.Size = new System.Drawing.Size(107, 48);
             this.m3.TabIndex = 48;
             this.m3.Text = "3 PM";
             // 
             // f8
             // 
-            this.f8.Location = new System.Drawing.Point(434, 62);
+            this.f8.Location = new System.Drawing.Point(480, 51);
             this.f8.Name = "f8";
-            this.f8.Size = new System.Drawing.Size(101, 37);
+            this.f8.Size = new System.Drawing.Size(107, 48);
             this.f8.TabIndex = 42;
             this.f8.Text = "8 AM";
             // 
             // w8
             // 
-            this.w8.Location = new System.Drawing.Point(220, 62);
+            this.w8.Location = new System.Drawing.Point(244, 51);
             this.w8.Name = "w8";
-            this.w8.Size = new System.Drawing.Size(101, 37);
+            this.w8.Size = new System.Drawing.Size(107, 48);
             this.w8.TabIndex = 40;
             this.w8.Text = "8 AM";
             // 
             // t8
             // 
-            this.t8.Location = new System.Drawing.Point(113, 62);
+            this.t8.Location = new System.Drawing.Point(126, 51);
             this.t8.Name = "t8";
-            this.t8.Size = new System.Drawing.Size(101, 61);
+            this.t8.Size = new System.Drawing.Size(107, 67);
             this.t8.TabIndex = 39;
             this.t8.Text = "8 - 9:15 AM";
             // 
             // m8
             // 
-            this.m8.Location = new System.Drawing.Point(6, 62);
+            this.m8.Location = new System.Drawing.Point(8, 51);
             this.m8.Name = "m8";
-            this.m8.Size = new System.Drawing.Size(101, 37);
+            this.m8.Size = new System.Drawing.Size(107, 48);
             this.m8.TabIndex = 38;
             this.m8.Text = "8 AM";
             // 
             // f9
             // 
-            this.f9.Location = new System.Drawing.Point(434, 105);
+            this.f9.Location = new System.Drawing.Point(480, 105);
             this.f9.Name = "f9";
-            this.f9.Size = new System.Drawing.Size(101, 37);
+            this.f9.Size = new System.Drawing.Size(107, 48);
             this.f9.TabIndex = 37;
             this.f9.Text = "9 AM";
             // 
             // w9
             // 
-            this.w9.Location = new System.Drawing.Point(220, 105);
+            this.w9.Location = new System.Drawing.Point(243, 106);
             this.w9.Name = "w9";
-            this.w9.Size = new System.Drawing.Size(101, 37);
+            this.w9.Size = new System.Drawing.Size(107, 48);
             this.w9.TabIndex = 35;
             this.w9.Text = "9 AM";
             // 
             // m9
             // 
-            this.m9.Location = new System.Drawing.Point(6, 105);
+            this.m9.Location = new System.Drawing.Point(6, 106);
             this.m9.Name = "m9";
-            this.m9.Size = new System.Drawing.Size(101, 37);
+            this.m9.Size = new System.Drawing.Size(107, 48);
             this.m9.TabIndex = 33;
             this.m9.Text = "9 AM";
             // 
             // f10
             // 
-            this.f10.Location = new System.Drawing.Point(434, 148);
+            this.f10.Location = new System.Drawing.Point(478, 159);
             this.f10.Name = "f10";
-            this.f10.Size = new System.Drawing.Size(101, 37);
+            this.f10.Size = new System.Drawing.Size(107, 48);
             this.f10.TabIndex = 32;
             this.f10.Text = "10 AM";
             // 
             // w10
             // 
-            this.w10.Location = new System.Drawing.Point(220, 148);
+            this.w10.Location = new System.Drawing.Point(242, 161);
             this.w10.Name = "w10";
-            this.w10.Size = new System.Drawing.Size(101, 37);
+            this.w10.Size = new System.Drawing.Size(107, 48);
             this.w10.TabIndex = 30;
             this.w10.Text = "10 AM";
             // 
             // t10
             // 
-            this.t10.Location = new System.Drawing.Point(113, 148);
+            this.t10.Location = new System.Drawing.Point(124, 165);
             this.t10.Name = "t10";
-            this.t10.Size = new System.Drawing.Size(101, 54);
+            this.t10.Size = new System.Drawing.Size(107, 67);
             this.t10.TabIndex = 29;
             this.t10.Text = "10:05 - 11:20 AM";
             // 
             // m10
             // 
-            this.m10.Location = new System.Drawing.Point(6, 148);
+            this.m10.Location = new System.Drawing.Point(6, 161);
             this.m10.Name = "m10";
-            this.m10.Size = new System.Drawing.Size(101, 37);
+            this.m10.Size = new System.Drawing.Size(107, 48);
             this.m10.TabIndex = 28;
             this.m10.Text = "10 AM";
             // 
             // f11
             // 
-            this.f11.Location = new System.Drawing.Point(434, 191);
+            this.f11.Location = new System.Drawing.Point(478, 213);
             this.f11.Name = "f11";
-            this.f11.Size = new System.Drawing.Size(101, 37);
+            this.f11.Size = new System.Drawing.Size(107, 48);
             this.f11.TabIndex = 27;
             this.f11.Text = "11 AM";
             // 
             // w11
             // 
-            this.w11.Location = new System.Drawing.Point(220, 191);
+            this.w11.Location = new System.Drawing.Point(242, 216);
             this.w11.Name = "w11";
-            this.w11.Size = new System.Drawing.Size(101, 37);
+            this.w11.Size = new System.Drawing.Size(107, 48);
             this.w11.TabIndex = 25;
             this.w11.Text = "11 AM";
             // 
             // m11
             // 
-            this.m11.Location = new System.Drawing.Point(6, 191);
+            this.m11.Location = new System.Drawing.Point(6, 216);
             this.m11.Name = "m11";
-            this.m11.Size = new System.Drawing.Size(101, 37);
+            this.m11.Size = new System.Drawing.Size(107, 48);
             this.m11.TabIndex = 23;
             this.m11.Text = "11 AM";
             // 
             // f12
             // 
-            this.f12.Location = new System.Drawing.Point(434, 234);
+            this.f12.Location = new System.Drawing.Point(480, 267);
             this.f12.Name = "f12";
-            this.f12.Size = new System.Drawing.Size(101, 37);
+            this.f12.Size = new System.Drawing.Size(107, 48);
             this.f12.TabIndex = 22;
             this.f12.Text = "12 PM";
             // 
             // w12
             // 
-            this.w12.Location = new System.Drawing.Point(220, 234);
+            this.w12.Location = new System.Drawing.Point(243, 271);
             this.w12.Name = "w12";
-            this.w12.Size = new System.Drawing.Size(101, 37);
+            this.w12.Size = new System.Drawing.Size(107, 48);
             this.w12.TabIndex = 20;
             this.w12.Text = "12 PM";
             // 
             // m12
             // 
-            this.m12.Location = new System.Drawing.Point(6, 234);
+            this.m12.Location = new System.Drawing.Point(6, 271);
             this.m12.Name = "m12";
-            this.m12.Size = new System.Drawing.Size(101, 37);
+            this.m12.Size = new System.Drawing.Size(107, 48);
             this.m12.TabIndex = 18;
             this.m12.Text = "12 PM";
             // 
             // f1
             // 
-            this.f1.Location = new System.Drawing.Point(434, 277);
+            this.f1.Location = new System.Drawing.Point(478, 321);
             this.f1.Name = "f1";
-            this.f1.Size = new System.Drawing.Size(101, 37);
+            this.f1.Size = new System.Drawing.Size(107, 48);
             this.f1.TabIndex = 17;
             this.f1.Text = "1 PM";
             // 
             // w1
             // 
-            this.w1.Location = new System.Drawing.Point(220, 277);
+            this.w1.Location = new System.Drawing.Point(242, 326);
             this.w1.Name = "w1";
-            this.w1.Size = new System.Drawing.Size(101, 37);
+            this.w1.Size = new System.Drawing.Size(107, 48);
             this.w1.TabIndex = 15;
             this.w1.Text = "1 PM";
             // 
             // m1
             // 
-            this.m1.Location = new System.Drawing.Point(6, 277);
+            this.m1.Location = new System.Drawing.Point(6, 326);
             this.m1.Name = "m1";
-            this.m1.Size = new System.Drawing.Size(101, 37);
+            this.m1.Size = new System.Drawing.Size(107, 48);
             this.m1.TabIndex = 13;
             this.m1.Text = "1 PM";
             // 
             // f2
             // 
-            this.f2.Location = new System.Drawing.Point(434, 320);
+            this.f2.Location = new System.Drawing.Point(478, 375);
             this.f2.Name = "f2";
-            this.f2.Size = new System.Drawing.Size(101, 37);
+            this.f2.Size = new System.Drawing.Size(107, 48);
             this.f2.TabIndex = 12;
             this.f2.Text = "2 PM";
             // 
             // w2
             // 
-            this.w2.Location = new System.Drawing.Point(220, 320);
+            this.w2.Location = new System.Drawing.Point(242, 381);
             this.w2.Name = "w2";
-            this.w2.Size = new System.Drawing.Size(101, 37);
+            this.w2.Size = new System.Drawing.Size(107, 48);
             this.w2.TabIndex = 10;
             this.w2.Text = "2 PM";
             // 
             // m2
             // 
-            this.m2.Location = new System.Drawing.Point(6, 320);
+            this.m2.Location = new System.Drawing.Point(6, 381);
             this.m2.Name = "m2";
-            this.m2.Size = new System.Drawing.Size(101, 37);
+            this.m2.Size = new System.Drawing.Size(107, 48);
             this.m2.TabIndex = 8;
             this.m2.Text = "2 PM";
             // 
@@ -554,7 +555,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 557);
+            this.ClientSize = new System.Drawing.Size(1085, 624);
             this.Controls.Add(this.calendarGroup);
             this.Controls.Add(this.resultsGroup);
             this.Controls.Add(this.searchGroup);
