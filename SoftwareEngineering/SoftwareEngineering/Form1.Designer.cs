@@ -238,6 +238,7 @@
             // 
             // r230
             // 
+            this.r230.Enabled = false;
             this.r230.Location = new System.Drawing.Point(360, 405);
             this.r230.Name = "r230";
             this.r230.Size = new System.Drawing.Size(107, 67);
@@ -247,6 +248,7 @@
             // 
             // r1
             // 
+            this.r1.Enabled = false;
             this.r1.Location = new System.Drawing.Point(360, 326);
             this.r1.Name = "r1";
             this.r1.Size = new System.Drawing.Size(107, 67);
@@ -256,6 +258,7 @@
             // 
             // t230
             // 
+            this.t230.Enabled = false;
             this.t230.Location = new System.Drawing.Point(124, 405);
             this.t230.Name = "t230";
             this.t230.Size = new System.Drawing.Size(107, 67);
@@ -265,6 +268,7 @@
             // 
             // t1
             // 
+            this.t1.Enabled = false;
             this.t1.Location = new System.Drawing.Point(124, 326);
             this.t1.Name = "t1";
             this.t1.Size = new System.Drawing.Size(107, 67);
@@ -274,6 +278,7 @@
             // 
             // r1130
             // 
+            this.r1130.Enabled = false;
             this.r1130.Location = new System.Drawing.Point(360, 238);
             this.r1130.Name = "r1130";
             this.r1130.Size = new System.Drawing.Size(107, 67);
@@ -283,6 +288,7 @@
             // 
             // r10
             // 
+            this.r10.Enabled = false;
             this.r10.Location = new System.Drawing.Point(360, 165);
             this.r10.Name = "r10";
             this.r10.Size = new System.Drawing.Size(107, 67);
@@ -292,6 +298,7 @@
             // 
             // t1130
             // 
+            this.t1130.Enabled = false;
             this.t1130.Location = new System.Drawing.Point(124, 238);
             this.t1130.Name = "t1130";
             this.t1130.Size = new System.Drawing.Size(107, 67);
@@ -301,6 +308,7 @@
             // 
             // r8
             // 
+            this.r8.Enabled = false;
             this.r8.Location = new System.Drawing.Point(362, 51);
             this.r8.Name = "r8";
             this.r8.Size = new System.Drawing.Size(107, 67);
@@ -356,6 +364,7 @@
             // 
             // f3
             // 
+            this.f3.Enabled = false;
             this.f3.Location = new System.Drawing.Point(480, 429);
             this.f3.Name = "f3";
             this.f3.Size = new System.Drawing.Size(107, 48);
@@ -365,6 +374,7 @@
             // 
             // w3
             // 
+            this.w3.Enabled = false;
             this.w3.Location = new System.Drawing.Point(243, 436);
             this.w3.Name = "w3";
             this.w3.Size = new System.Drawing.Size(107, 48);
@@ -374,6 +384,7 @@
             // 
             // m3
             // 
+            this.m3.Enabled = false;
             this.m3.Location = new System.Drawing.Point(6, 436);
             this.m3.Name = "m3";
             this.m3.Size = new System.Drawing.Size(107, 48);
@@ -383,6 +394,7 @@
             // 
             // f8
             // 
+            this.f8.Enabled = false;
             this.f8.Location = new System.Drawing.Point(480, 51);
             this.f8.Name = "f8";
             this.f8.Size = new System.Drawing.Size(107, 48);
@@ -392,6 +404,7 @@
             // 
             // w8
             // 
+            this.w8.Enabled = false;
             this.w8.Location = new System.Drawing.Point(244, 51);
             this.w8.Name = "w8";
             this.w8.Size = new System.Drawing.Size(107, 48);
@@ -401,6 +414,7 @@
             // 
             // t8
             // 
+            this.t8.Enabled = false;
             this.t8.Location = new System.Drawing.Point(126, 51);
             this.t8.Name = "t8";
             this.t8.Size = new System.Drawing.Size(107, 67);
@@ -410,6 +424,7 @@
             // 
             // m8
             // 
+            this.m8.Enabled = false;
             this.m8.Location = new System.Drawing.Point(8, 51);
             this.m8.Name = "m8";
             this.m8.Size = new System.Drawing.Size(107, 48);
@@ -419,6 +434,7 @@
             // 
             // f9
             // 
+            this.f9.Enabled = false;
             this.f9.Location = new System.Drawing.Point(480, 105);
             this.f9.Name = "f9";
             this.f9.Size = new System.Drawing.Size(107, 48);
@@ -428,6 +444,7 @@
             // 
             // w9
             // 
+            this.w9.Enabled = false;
             this.w9.Location = new System.Drawing.Point(243, 106);
             this.w9.Name = "w9";
             this.w9.Size = new System.Drawing.Size(107, 48);
@@ -437,6 +454,7 @@
             // 
             // m9
             // 
+            this.m9.Enabled = false;
             this.m9.Location = new System.Drawing.Point(6, 106);
             this.m9.Name = "m9";
             this.m9.Size = new System.Drawing.Size(107, 48);
@@ -446,6 +464,7 @@
             // 
             // f10
             // 
+            this.f10.Enabled = false;
             this.f10.Location = new System.Drawing.Point(478, 159);
             this.f10.Name = "f10";
             this.f10.Size = new System.Drawing.Size(107, 48);
@@ -455,6 +474,7 @@
             // 
             // w10
             // 
+            this.w10.Enabled = false;
             this.w10.Location = new System.Drawing.Point(242, 161);
             this.w10.Name = "w10";
             this.w10.Size = new System.Drawing.Size(107, 48);
@@ -464,6 +484,7 @@
             // 
             // t10
             // 
+            this.t10.Enabled = false;
             this.t10.Location = new System.Drawing.Point(124, 165);
             this.t10.Name = "t10";
             this.t10.Size = new System.Drawing.Size(107, 67);
@@ -473,6 +494,7 @@
             // 
             // m10
             // 
+            this.m10.Enabled = false;
             this.m10.Location = new System.Drawing.Point(6, 161);
             this.m10.Name = "m10";
             this.m10.Size = new System.Drawing.Size(107, 48);
@@ -482,6 +504,7 @@
             // 
             // f11
             // 
+            this.f11.Enabled = false;
             this.f11.Location = new System.Drawing.Point(478, 213);
             this.f11.Name = "f11";
             this.f11.Size = new System.Drawing.Size(107, 48);
@@ -491,6 +514,7 @@
             // 
             // w11
             // 
+            this.w11.Enabled = false;
             this.w11.Location = new System.Drawing.Point(242, 216);
             this.w11.Name = "w11";
             this.w11.Size = new System.Drawing.Size(107, 48);
@@ -500,6 +524,7 @@
             // 
             // m11
             // 
+            this.m11.Enabled = false;
             this.m11.Location = new System.Drawing.Point(6, 216);
             this.m11.Name = "m11";
             this.m11.Size = new System.Drawing.Size(107, 48);
@@ -509,6 +534,7 @@
             // 
             // f12
             // 
+            this.f12.Enabled = false;
             this.f12.Location = new System.Drawing.Point(480, 267);
             this.f12.Name = "f12";
             this.f12.Size = new System.Drawing.Size(107, 48);
@@ -518,6 +544,7 @@
             // 
             // w12
             // 
+            this.w12.Enabled = false;
             this.w12.Location = new System.Drawing.Point(243, 271);
             this.w12.Name = "w12";
             this.w12.Size = new System.Drawing.Size(107, 48);
@@ -527,6 +554,7 @@
             // 
             // m12
             // 
+            this.m12.Enabled = false;
             this.m12.Location = new System.Drawing.Point(6, 271);
             this.m12.Name = "m12";
             this.m12.Size = new System.Drawing.Size(107, 48);
@@ -536,6 +564,7 @@
             // 
             // f1
             // 
+            this.f1.Enabled = false;
             this.f1.Location = new System.Drawing.Point(478, 321);
             this.f1.Name = "f1";
             this.f1.Size = new System.Drawing.Size(107, 48);
@@ -545,6 +574,7 @@
             // 
             // w1
             // 
+            this.w1.Enabled = false;
             this.w1.Location = new System.Drawing.Point(242, 326);
             this.w1.Name = "w1";
             this.w1.Size = new System.Drawing.Size(107, 48);
@@ -554,6 +584,7 @@
             // 
             // m1
             // 
+            this.m1.Enabled = false;
             this.m1.Location = new System.Drawing.Point(6, 326);
             this.m1.Name = "m1";
             this.m1.Size = new System.Drawing.Size(107, 48);
@@ -563,6 +594,7 @@
             // 
             // f2
             // 
+            this.f2.Enabled = false;
             this.f2.Location = new System.Drawing.Point(478, 375);
             this.f2.Name = "f2";
             this.f2.Size = new System.Drawing.Size(107, 48);
@@ -572,6 +604,7 @@
             // 
             // w2
             // 
+            this.w2.Enabled = false;
             this.w2.Location = new System.Drawing.Point(242, 381);
             this.w2.Name = "w2";
             this.w2.Size = new System.Drawing.Size(107, 48);
@@ -581,6 +614,7 @@
             // 
             // m2
             // 
+            this.m2.Enabled = false;
             this.m2.Location = new System.Drawing.Point(6, 381);
             this.m2.Name = "m2";
             this.m2.Size = new System.Drawing.Size(107, 48);

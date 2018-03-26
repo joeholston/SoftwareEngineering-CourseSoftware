@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Grove City College- Spring 2018
+ * Software Engineering- Team 3
+ * Members- Joe Holston, Samuel Beiler, Sarah Trinkle, Wyatt Hough
+ */ 
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,10 +26,10 @@ namespace SoftwareEngineering
             InitializeComponent();
 
             createLV();
-           
         }
     
-
+        //showCourses was designed to use a code to determine which UI calendar blocks should be shown
+        //it will call specialized MWF or TR functions to actually display and edit the calendar blocks
         private void showCourses(int code, int time, bool show, Course c)
         {
             switch (code)
@@ -72,12 +78,14 @@ namespace SoftwareEngineering
             }
         }
 
+        //mwf was designed to show the specific mwf calendar UI blocks
         private void mwf(int code, int time, bool show, Course c)
         {
             RichTextBox m;
             RichTextBox w;
             RichTextBox f;
 
+            //this switch statement determines which mwf time slot should be edited
             switch (time)
             {
                 case 8:
@@ -142,8 +150,10 @@ namespace SoftwareEngineering
                     break;
             }
 
+            //this checks to see if the blocks should be hidden or shown
             if (show)
             {
+                //here, the UI blocks are cleared and then filled with the desired content
                 m.Clear();
                 w.Clear();
                 f.Clear();
@@ -151,6 +161,8 @@ namespace SoftwareEngineering
                 m.AppendText(newTime + "\n" + c.shortTitle);
                 w.AppendText(newTime + "\n" + c.shortTitle);
                 f.AppendText(newTime + "\n" + c.shortTitle);
+
+                //this switch statement uses the code system to determine which blocks to show or hide
                 switch (code)
                 {
                     case 135:
@@ -219,11 +231,13 @@ namespace SoftwareEngineering
             }
         }
 
+        //tr was designed to show the specific tr calendar UI blocks
         private void tr(int code, int time, bool show, Course c)
         {
             RichTextBox t;
             RichTextBox r;
 
+            //this switch statement determines which tr time slot should be edited
             switch (time)
             {
                 case 8:
@@ -261,13 +275,17 @@ namespace SoftwareEngineering
                     break;
             }
 
+            //this checks to see if the blocks should be hidden or shown
             if (show)
             {
+                //here the blocks are cleared and filled with the desired content
                 t.Clear();
                 r.Clear();
                 string newTime = appendTime(c.beginTime);
                 t.AppendText(newTime + "\n" + c.shortTitle);
                 r.AppendText(newTime + "\n" + c.shortTitle);
+
+                //this switch statement uses the code system to display the desired UI blocks
                 switch (code)
                 {
                     case 24:
@@ -304,6 +322,7 @@ namespace SoftwareEngineering
             }
         }
 
+        //createLV creates the List View with the desired preset settings
         private void createLV()
         {
             courseResults.View = View.Details;
@@ -313,8 +332,10 @@ namespace SoftwareEngineering
             courseResults.CheckBoxes = true;
         }
 
+        //addToLv takes the desired arguements and adds them as List View Items
         private void addToLV(string code, string name, string days, string time, string location, string seats)
         {
+            //creates a List View Item
             ListViewItem itm;
             string[] arr = new string[6];
             arr[0] = code;
@@ -327,6 +348,8 @@ namespace SoftwareEngineering
             courseResults.Items.Add(itm);
         }
 
+        //courseResults_ItemCheck adds/deletes the desired List View course by calling respective functions
+        //this function acts as a handler 
         private void courseResults_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             //Add/delete the newly checked/unchecked course to studentCourses
@@ -347,6 +370,8 @@ namespace SoftwareEngineering
                 addToCalender(selectedCourse);
             }
         }
+
+        //getDayCode is an algorithm to determine what code should be used from the meetingDays string. This creates a unified system.
         private int getDayCode(string meetingDays)
         {
             int daycode = 0;
@@ -375,6 +400,9 @@ namespace SoftwareEngineering
             }
             return daycode;
         }
+
+        //getTime takes a DateTime item and returns the simple integer version of the time.
+        //This is used for the time code and for printing to the List View and Calendar UI.
         private int getTime(DateTime fullTime)
         {
             string stringTime = fullTime.ToString();
@@ -415,12 +443,16 @@ namespace SoftwareEngineering
             time = Int32.Parse(charTime);
             return time;
         }
+
+        //addToCalendar calls showCourses on a desired course
         private void addToCalender(Course addedCourse)
         {
             int daycode = getDayCode(addedCourse.meetingDays);
             int time = getTime(addedCourse.beginTime);
             showCourses(daycode,time,true, addedCourse);
         }
+
+        //deleteFromCalendar does the opposite to addToCalendar
         private void deleteFromCalender(Course deletedCourse)
         {
             int daycode = getDayCode(deletedCourse.meetingDays);
@@ -428,6 +460,8 @@ namespace SoftwareEngineering
             showCourses(daycode, time, false, deletedCourse);
         }
 
+        //searchButton_Click sets the functionality for the search button being clicked.
+        //This specifically takes the searchBox string and uses the search algorithm. Then is displays the results on the List View.
         private void searchButton_Click(object sender, EventArgs e)
         {
             courseResults.Items.Clear();
@@ -443,6 +477,8 @@ namespace SoftwareEngineering
             }
         }
 
+        //appendTime is a helper function that adds AM/PM to the simple integer time.
+        //This is used when printing time to the calendar and List View.
         private string appendTime(DateTime originalTime)
         {
             int shortTime = getTime(originalTime);

@@ -1,0 +1,11 @@
+INSTRUCTIONS TO INSTALL SPRINT 1 RELEASE
+----------------------------------------------------------------------
+
+1. Navigate to \SE_Team3_Sprint1\SoftwareEngineering\SoftwareEngineering\bin\Debug
+2. Run SoftwareEngineering.exe
+
+OR
+
+1. Navigate to \SE_Team3_Sprint1\SoftwareEngineering
+2. Open SoftwareEngineering.sln
+3. Once opened, Run with CRTL + F5
