@@ -424,73 +424,67 @@ namespace SoftwareEngineering
             if (e.CurrentValue == CheckState.Checked) //This is when it gets unchecked
             {
                 //delete course
-                string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text;
-                Course selectedCourse = Student.findCourse(courseCode);
-                user.deleteCourse(selectedCourse);
-                deleteFromCalender(selectedCourse);
+                string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text; //Gets the courseCode from the ListView
+                Course selectedCourse = Student.findCourse(courseCode); //Gets the Course object from the database array
+                user.deleteCourse(selectedCourse); //Deletes the course from the student array
+                deleteFromCalender(selectedCourse); //Hides the course from the calender
             }
             else
             {
                 //add course
-                string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text;
-                Course selectedCourse = Student.findCourse(courseCode);
-                user.addCourse(selectedCourse);
-                addToCalender(selectedCourse);
+                string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text; //Gets the courseCode from the ListView
+                Course selectedCourse = Student.findCourse(courseCode); //Gets the Course object from the database array
+                user.addCourse(selectedCourse); //Adds the course from the student array
+                addToCalender(selectedCourse); //Show the new course to the calender
             }
         }
-        private int getDayCode(string meetingDays)
+        private int getDayCode(string meetingDays)  //Get the code of which days are meeting
         {
             int daycode = 0;
             foreach (char c in meetingDays)
             {
                 if (c == 'M')
                 {
-                    daycode = daycode * 10 + 1;
+                    daycode = daycode * 10 + 1; //Monday is day 1
                 }
                 else if (c == 'T')
                 {
-                    daycode = daycode * 10 + 2;
+                    daycode = daycode * 10 + 2; //Tuesday is day 2
                 }
                 else if (c == 'W')
                 {
-                    daycode = daycode * 10 + 3;
+                    daycode = daycode * 10 + 3; //Wednesday is day 3
                 }
                 else if (c == 'R')
                 {
-                    daycode = daycode * 10 + 4;
+                    daycode = daycode * 10 + 4; //Thursday is day 4
                 }
                 else if (c == 'F')
                 {
-                    daycode = daycode * 10 + 5;
+                    daycode = daycode * 10 + 5; //Friday is day 5
                 }
             }
             return daycode;
         }
-        private int getTime(DateTime fullTime)
+        private int getTime(DateTime fullTime) 
         {
-            string stringTime = fullTime.ToString();
+            string stringTime = fullTime.ToString(); //Set DateTime to a string
             string charTime="";
-            bool reachedColon= false;
-            bool getFirstTime = false;
-            bool getTime = false;
+            bool getFirstTime = false; //Not at the point where the actual start time is.
+            bool getTime = false; 
             int time = 0;
             foreach (char c in stringTime)
             {
-                if (reachedColon && c == ':')
+                if (c==':')
                 {
-                    reachedColon = true;
-                    //Do nothing
-                }
-                else if (c==':')
-                {
-                    break; //Should not go to seconds.
+                    break; //Does not need to go to minutes.
                 }
                 else if(getFirstTime)
                 {
                     if (c != 0)
                     {
-                        charTime +=c;
-                        getFirstTime = false;
+                        charTime +=c;   //Get the time is int format ex: 01:00:00  is 1
+                        getFirstTime = false; //No longer the first number needed.
                     }
                 }
                 else if(getTime)
@@ -499,25 +493,25 @@ namespace SoftwareEngineering
                 }
                 else if (c==' ')
                 {
-                    getFirstTime = true;
-                    getTime = true;
+                    getFirstTime = true; //Start getting the time now after the space.
+                    getTime = true;  
                 }
             }
-            time = Int32.Parse(charTime);
+            time = Int32.Parse(charTime); //Parse the char 
 
             return time;
         }
-        private void addToCalender(Course addedCourse)
+        private void addToCalender(Course addedCourse) //Called when a course is added to the schedule
         {
-            int daycode = getDayCode(addedCourse.meetingDays);
-            int time = getTime(addedCourse.beginTime);
-            showCourses(daycode,time,true);
+            int daycode = getDayCode(addedCourse.meetingDays); //Gets the code for the meeting days to use in showing courses
+            int time = getTime(addedCourse.beginTime); //Gets the int simple time to use in showing courses
+            showCourses(daycode, time, true, addedCourse); // Shows the newly added course on the calender
         }
-        private void deleteFromCalender(Course deletedCourse)
+        private void deleteFromCalender(Course deletedCourse) // Called when a course is deleted from the schedule
         {
-            int daycode = getDayCode(deletedCourse.meetingDays);
-            int time = getTime(deletedCourse.beginTime);
-            showCourses(daycode, time, false);
+            int daycode = getDayCode(deletedCourse.meetingDays); //Gets the code for the meeting days to use in the showing courses
+            int time = getTime(deletedCourse.beginTime); //Gets the int simple time to use in showing courses
+            showCourses(daycode, time, false, deletedCourse); //, deletedCourse  Hides the deleted course from the calender
         }
     }
 }
