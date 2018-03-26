@@ -31,9 +31,15 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.searchDropDown = new System.Windows.Forms.ComboBox();
             this.searchGroup = new System.Windows.Forms.GroupBox();
+            this.searchButton = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.resultsGroup = new System.Windows.Forms.GroupBox();
             this.courseResults = new System.Windows.Forms.ListView();
+            this.cCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cSeats = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.calendarGroup = new System.Windows.Forms.GroupBox();
             this.r230 = new System.Windows.Forms.RichTextBox();
             this.r1 = new System.Windows.Forms.RichTextBox();
@@ -74,12 +80,6 @@
             this.f2 = new System.Windows.Forms.RichTextBox();
             this.w2 = new System.Windows.Forms.RichTextBox();
             this.m2 = new System.Windows.Forms.RichTextBox();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.cCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cSeats = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.searchGroup.SuspendLayout();
             this.resultsGroup.SuspendLayout();
             this.calendarGroup.SuspendLayout();
@@ -116,6 +116,16 @@
             this.searchGroup.TabStop = false;
             this.searchGroup.Text = "Search";
             // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(446, 67);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 3;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
             // dateTimePicker
             // 
             this.dateTimePicker.Location = new System.Drawing.Point(22, 70);
@@ -148,6 +158,31 @@
             this.courseResults.TabIndex = 5;
             this.courseResults.UseCompatibleStateImageBehavior = false;
             this.courseResults.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.courseResults_ItemCheck);
+            // 
+            // cCode
+            // 
+            this.cCode.Text = "Course Code";
+            this.cCode.Width = 100;
+            // 
+            // cName
+            // 
+            this.cName.Text = "Course Name";
+            this.cName.Width = 90;
+            // 
+            // cTime
+            // 
+            this.cTime.Text = "Time";
+            this.cTime.Width = 65;
+            // 
+            // cLocation
+            // 
+            this.cLocation.Text = "Location";
+            this.cLocation.Width = 70;
+            // 
+            // cSeats
+            // 
+            this.cSeats.Text = "Open Seats";
+            this.cSeats.Width = 100;
             // 
             // calendarGroup
             // 
@@ -514,40 +549,6 @@
             this.m2.Size = new System.Drawing.Size(101, 37);
             this.m2.TabIndex = 8;
             this.m2.Text = "2 PM";
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(446, 67);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
-            this.searchButton.TabIndex = 3;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
-            // 
-            // cCode
-            // 
-            this.cCode.Text = "Course Code";
-            this.cCode.Width = 100;
-            // 
-            // cName
-            // 
-            this.cName.Text = "Course Name";
-            this.cName.Width = 90;
-            // 
-            // cTime
-            // 
-            this.cTime.Text = "Time";
-            this.cTime.Width = 65;
-            // 
-            // cLocation
-            // 
-            this.cLocation.Text = "Location";
-            this.cLocation.Width = 70;
-            // 
-            // cSeats
-            // 
-            this.cSeats.Text = "Open Seats";
-            this.cSeats.Width = 100;
             // 
             // Form1
             // 
