@@ -20,7 +20,7 @@ namespace SoftwareEngineering
             searchCourses.Clear();
             for (int i = 0; i < courseDB.Count; i++)
             {
-                if (courseDB[i].courseCode.StartsWith(input))
+                if (courseDB[i].courseCode.StartsWith(input) | courseDB[i].courseCode.ToLower().StartsWith(input))
                 {
                     searchCourses.Add(courseDB[i]);
                 }
