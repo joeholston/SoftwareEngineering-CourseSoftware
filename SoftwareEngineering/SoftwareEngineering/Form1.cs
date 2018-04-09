@@ -370,13 +370,8 @@ namespace SoftwareEngineering
                 addToCalender(selectedCourse); //Show the new course to the calender
             }
         }
-<<<<<<< HEAD
-        private int getDayCode(string meetingDays)  //Get the code of which days are meeting
-=======
-
         //getDayCode is an algorithm to determine what code should be used from the meetingDays string. This creates a unified system.
         private int getDayCode(string meetingDays)
->>>>>>> master
         {
             int daycode = 0;
             foreach (char c in meetingDays)
@@ -404,14 +399,10 @@ namespace SoftwareEngineering
             }
             return daycode;
         }
-<<<<<<< HEAD
-        private int getTime(DateTime fullTime) 
-=======
 
         //getTime takes a DateTime item and returns the simple integer version of the time.
         //This is used for the time code and for printing to the List View and Calendar UI.
         private int getTime(DateTime fullTime)
->>>>>>> master
         {
             string stringTime = fullTime.ToString(); //Set DateTime to a string
             string charTime="";
@@ -442,15 +433,11 @@ namespace SoftwareEngineering
                     getTime = true;  
                 }
             }
-<<<<<<< HEAD
             time = Int32.Parse(charTime); //Parse the char 
 
-=======
-            time = Int32.Parse(charTime);
->>>>>>> master
             return time;
         }
-<<<<<<< HEAD
+
         private void addToCalender(Course addedCourse) //Called when a course is added to the schedule
         {
             int daycode = getDayCode(addedCourse.meetingDays); //Gets the code for the meeting days to use in showing courses
@@ -462,26 +449,9 @@ namespace SoftwareEngineering
             int daycode = getDayCode(deletedCourse.meetingDays); //Gets the code for the meeting days to use in the showing courses
             int time = getTime(deletedCourse.beginTime); //Gets the int simple time to use in showing courses
             showCourses(daycode, time, false, deletedCourse); //, deletedCourse  Hides the deleted course from the calender
-=======
-
-        //addToCalendar calls showCourses on a desired course
-        private void addToCalender(Course addedCourse)
-        {
-            int daycode = getDayCode(addedCourse.meetingDays);
-            int time = getTime(addedCourse.beginTime);
-            showCourses(daycode,time,true, addedCourse);
         }
 
-        //deleteFromCalendar does the opposite to addToCalendar
-        private void deleteFromCalender(Course deletedCourse)
-        {
-            int daycode = getDayCode(deletedCourse.meetingDays);
-            int time = getTime(deletedCourse.beginTime);
-            showCourses(daycode, time, false, deletedCourse);
->>>>>>> master
-        }
-
-        //searchButton_Click sets the functionality for the search button being clicked.
+    //searchButton_Click sets the functionality for the search button being clicked.
         //This specifically takes the searchBox string and uses the search algorithm. Then is displays the results on the List View.
         private void searchButton_Click(object sender, EventArgs e)
         {
@@ -502,16 +472,7 @@ namespace SoftwareEngineering
         //This is used when printing time to the calendar and List View.
         private string appendTime(DateTime originalTime)
         {
-            int shortTime = getTime(originalTime);
-            string newTime = shortTime.ToString();
-            if (shortTime > 7 && shortTime < 12)
-            {
-                newTime = shortTime + " AM";
-            }
-            else
-            {
-                newTime = shortTime + " PM";
-            }
+            string newTime = originalTime.ToString("hh:mm tt");
             return newTime;
         }
     }
