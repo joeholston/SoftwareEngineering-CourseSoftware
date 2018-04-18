@@ -12,7 +12,7 @@ namespace SoftwareEngineering
         public List<Course> searchCourses = new List<Course>();
 
         //create a list of the course database
-        private List<Course> courseDB = BuildDB.Instance.database;
+        private List<Course> courseDB = BuildDB.Instance.courseDatabase;
 
         //search the course database list for matches to the input string
         public void search(string input)

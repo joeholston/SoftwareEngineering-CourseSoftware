@@ -8,6 +8,7 @@ namespace SoftwareEngineering
 {
     class Student
     {
+        public List<Course> studentCompletedCourses { get; set; }
         public List<Course> studentCourses { get; set; }
         public void addCourse(Course selectedCourse)
         {
@@ -33,7 +34,7 @@ namespace SoftwareEngineering
         }
         static public Course findCourse(string courseCode)
         {
-            List<Course> courseList = BuildDB.Instance.database;
+            List<Course> courseList = BuildDB.Instance.courseDatabase;
             foreach (Course classSection in courseList)
             {
                 if (courseCode==classSection.courseCode)

@@ -8,7 +8,13 @@ namespace SoftwareEngineering
 {
     public class Course
     {
-        public Course(string cc, string sT, string lT, DateTime bT, DateTime eT, string mD, string b, string r, int e, int c)
+        public Course(string cc, string sT, string lT)
+        {
+            courseCode = cc;
+            shortTitle = sT;
+            LongTitle = lT;
+        }
+        public Course(string cc, string sT, string lT, DateTime bT, DateTime eT, string mD, string b, string r, int e, int c, List<String> prereqs)
         {
             courseCode = cc;
             shortTitle = sT;
@@ -20,6 +26,7 @@ namespace SoftwareEngineering
             room = r;
             enrollment = e;
             capacity = c;
+            prerequisiteCourses = prereqs;
         }
         public string courseCode {get;set;}
         public string shortTitle { get; set; }
@@ -31,5 +38,6 @@ namespace SoftwareEngineering
         public string room { get; set; }
         public int enrollment { get; set; }
         public int capacity { get; set; }
+        public List<String> prerequisiteCourses { get; set; }
     }
 }
