@@ -16,14 +16,24 @@ namespace SoftwareEngineering
         {
             List<Course> courseDB = new List<Course>();
             List<Course> prereqDB = new List<Course>();
-            using (StreamReader reader = new StreamReader("CourseDB_WithFictionalCapacities.csv"))
+            using (StreamReader courseReader = new StreamReader("CourseDB_WithFictionalCapacities.csv"), prereqReader = new StreamReader("Prereq.csv"))
             {
-                var line = reader.ReadLine();
+                var line = courseReader.ReadLine();
+                var prereq = prereqReader.ReadLine();
                 //int j = -1;
-                while (!reader.EndOfStream)
+                List<String> CC = new List<String>();
+                List<String> prereqCC = new List<String>();
+                while (!prereqReader.EndOfStream)
+                {
+                    line = prereqReader.ReadLine();
+                    string[] inputs = line.Split(',');
+                    CC.Add(inputs[0].Substring(0, 8));
+                    prereqCC.Add(inputs[1].Substring(0, 8));
+                }
+                while (!courseReader.EndOfStream)
                 {
                     //j++;
-                    line = reader.ReadLine();
+                    line = courseReader.ReadLine();
                     string[] inputs = line.Split(';');
                     int numInputs = inputs.Length;
                     for (int i = 0; i < numInputs; i++)
@@ -49,22 +59,27 @@ namespace SoftwareEngineering
                     }
 
                     List<String> prereqs = new List<String>();
-                    if(numInputs > 10)
+
+                    for (int i = 0; i < CC.Count(); i++)
                     {
-                        int incrementor = numInputs;
-                        while (incrementor != 10)
+                        bool match = false;
+                        while ((CC[i] == inputs[0].Substring(0, 8)))
                         {
-                            incrementor--;
-                            prereqs.Add(inputs[incrementor]);                            
+                            prereqs.Add(prereqCC[i]);
+                            //Console.Write(inputs[0].Substring(0, 8) + " " + prereqCC[i] + "\r\n");
+                            match = true;
+                            i++;
+                            if (i == CC.Count()) { break; }
                         }
+                        if (match) { break; }
                     }
                     courseDB.Add(new Course(inputs[0], inputs[1], inputs[2], value3, value4, inputs[5], inputs[6], inputs[7], int.Parse(inputs[8]), int.Parse(inputs[9]), prereqs));
-                    prereqDB.Add(new Course(inputs[0].Substring(0,8), inputs[1], inputs[2]));
+                    prereqDB.Add(new Course(inputs[0].Substring(0, 8), inputs[1], inputs[2]));
                     //Console.Write(courseDB[j].courseCode + "\r\n" + courseDB[j].beginTime + "\r\n" + courseDB[j].capacity + "\r\n");
                 }
                 courseDatabase = courseDB;
                 prereqDatabase = prereqDB;
-                reader.Close();
+                courseReader.Close();
             }
         }
         public static BuildDB Instance
