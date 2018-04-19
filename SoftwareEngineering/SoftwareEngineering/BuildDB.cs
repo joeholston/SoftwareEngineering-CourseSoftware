@@ -79,7 +79,6 @@ namespace SoftwareEngineering
                 }
                 courseDatabase = courseDB;
                 prereqDatabase = prereqDB;
-                courseReader.Close();
             }
         }
         public static BuildDB Instance
