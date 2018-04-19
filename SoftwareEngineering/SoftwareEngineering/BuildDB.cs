@@ -19,14 +19,14 @@ namespace SoftwareEngineering
             using (StreamReader courseReader = new StreamReader("CourseDB_WithFictionalCapacities.csv"), prereqReader = new StreamReader("Prereq.csv"))
             {
                 var line = courseReader.ReadLine();
-                var prereq = prereqReader.ReadLine();
+                var prereqline = prereqReader.ReadLine();
                 //int j = -1;
                 List<String> CC = new List<String>();
                 List<String> prereqCC = new List<String>();
                 while (!prereqReader.EndOfStream)
                 {
-                    line = prereqReader.ReadLine();
-                    string[] inputs = line.Split(',');
+                    prereqline = prereqReader.ReadLine();
+                    string[] inputs = prereqline.Split(',');
                     CC.Add(inputs[0].Substring(0, 8));
                     prereqCC.Add(inputs[1].Substring(0, 8));
                 }
