@@ -358,7 +358,7 @@ namespace SoftwareEngineering
                 //delete course
                 string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text; //Gets the courseCode from the ListView
                 Course selectedCourse = Student.findCourse(courseCode); //Gets the Course object from the database array
-                user.deleteCourse(selectedCourse); //Deletes the course from the student array
+                user.deleteCourse(selectedCourse, false); //Deletes the course from the student array
                 deleteFromCalender(selectedCourse); //Hides the course from the calender
             }
             else
@@ -366,7 +366,7 @@ namespace SoftwareEngineering
                 //add course
                 string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text; //Gets the courseCode from the ListView
                 Course selectedCourse = Student.findCourse(courseCode); //Gets the Course object from the database array
-                user.addCourse(selectedCourse); //Adds the course from the student array
+                user.addCourse(selectedCourse, false); //Adds the course from the student array
                 addToCalender(selectedCourse); //Show the new course to the calender
             }
         }
