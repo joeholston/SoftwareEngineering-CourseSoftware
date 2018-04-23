@@ -14,7 +14,7 @@ namespace SoftwareEngineering
         //create a list of the course database
         private List<Course> courseDB = BuildDB.Instance.courseDatabase;
 
-        //variable decide whether user is searching by Course Code or Course Name or Professor
+        //variable decide whether user is searching by Course Code or Course Name
         // 0 = Course Code
         // 1 = Course Name
         public int searchSelection = 0;
