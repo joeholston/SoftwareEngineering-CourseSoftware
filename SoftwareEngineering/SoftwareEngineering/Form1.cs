@@ -97,7 +97,7 @@ namespace SoftwareEngineering
                     }
                     else
                     {
-                        calendar[1, time].ResetText();
+                        calendar[1, time].Text = calendar[1, time].Tag.ToString();
                     }
                 }
                 else if (c == 'T')
@@ -109,7 +109,7 @@ namespace SoftwareEngineering
                     }
                     else
                     {
-                        calendar[2, time].ResetText();
+                        calendar[2, time].Text = calendar[2, time].Tag.ToString();
                     }
                 }
                 else if (c == 'W')
@@ -121,7 +121,7 @@ namespace SoftwareEngineering
                     }
                     else
                     {
-                        calendar[3, time].ResetText();
+                        calendar[3, time].Text = calendar[3, time].Tag.ToString();
                     }
                 }
                 else if (c == 'R')
@@ -133,7 +133,7 @@ namespace SoftwareEngineering
                     }
                     else
                     {
-                        calendar[4, time].ResetText();
+                        calendar[4, time].Text = calendar[4, time].Tag.ToString();
                     }
                 }
                 else if (c == 'F')
@@ -145,7 +145,7 @@ namespace SoftwareEngineering
                     }
                     else
                     {
-                        calendar[5, time].ResetText();
+                        calendar[5, time].Text = calendar[5, time].Tag.ToString();
                     }
                 }
             }
@@ -301,5 +301,7 @@ namespace SoftwareEngineering
                 search();
             }
         }
+
+        
     }
 }
