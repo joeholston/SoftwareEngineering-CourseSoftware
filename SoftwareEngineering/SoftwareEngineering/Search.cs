@@ -17,10 +17,9 @@ namespace SoftwareEngineering
         //variable decide whether user is searching by Course Code or Course Name
         // 0 = Course Code
         // 1 = Course Name
-        public int searchSelection = 0;
 
         //search the course database list for matches to the input string
-        public void search(string input)
+        public void search(string input, int searchSelection)
         {
             searchCourses.Clear();
 

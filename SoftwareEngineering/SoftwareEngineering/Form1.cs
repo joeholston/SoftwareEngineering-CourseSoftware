@@ -276,7 +276,7 @@ namespace SoftwareEngineering
             courseResults.Items.Clear();
             string searchString = searchBox.Text;
             Search s = new Search();
-            s.search(searchString);
+            s.search(searchString, searchDropDown.SelectedIndex);
 
             for (int i = 0; i < s.searchCourses.Count; i++)
             {
