@@ -17,17 +17,20 @@ namespace SoftwareEngineering
                 if (studentCourses==null)
                 {
                     studentCourses = new List<Course>();
+                }
+                if (studentCompletedCourses == null)
+                {
                     studentCompletedCourses = new List<Course>();
                 }
                 if (completed) { studentCompletedCourses.Add(selectedCourse); }
                 else{studentCourses.Add(selectedCourse);} //Add the selected Course to the end of the list
             }
         }
-        public void deleteCourse(Course deselectedCourse, bool completed)
+        public void deleteCourse(Course deselectedCourse, bool completed)//completed is true if adding to prereqs, is false if adding to stude
         {
             if (deselectedCourse != null)
             {
-                if (completed) { studentCompletedCourses.Remove(deselectedCourse); }
+                if (completed) { studentCompletedCourses.Remove(deselectedCourse); }//There should not be multiple of the same Course objects, so deleting all instances of the deselected course is fine
                 else { studentCourses.Remove(deselectedCourse); } //There should not be multiple of the same Course objects, so deleting all instances of the deselected course is fine
             }
         }
