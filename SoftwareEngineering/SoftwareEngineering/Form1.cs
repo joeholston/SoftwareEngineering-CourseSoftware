@@ -333,7 +333,7 @@ namespace SoftwareEngineering
         }
 
         //addToLv takes the desired arguements and adds them as List View Items
-        private void addToLV(string code, string name, string days, string time, string location, string seats)
+        private void addToLV(string code, string name, string days, string time, string location, string seats, bool selected)
         {
             //creates a List View Item
             ListViewItem itm;
@@ -345,6 +345,7 @@ namespace SoftwareEngineering
             arr[4] = location;
             arr[5] = seats;
             itm = new ListViewItem(arr);
+            itm.Checked = selected;
             courseResults.Items.Add(itm);
         }
 
@@ -464,7 +465,8 @@ namespace SoftwareEngineering
             {
                 Course c = s.searchCourses[i];
                 string newTime = appendTime(c.beginTime);
-                addToLV(c.courseCode, c.shortTitle, c.meetingDays, newTime, c.room, c.enrollment.ToString());
+                bool selected = user.inSchedule(c.courseCode);
+                addToLV(c.courseCode, c.shortTitle, c.meetingDays, newTime, c.room, c.enrollment.ToString(),selected);
             }
         }
 

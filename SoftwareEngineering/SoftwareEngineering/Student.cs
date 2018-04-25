@@ -43,5 +43,20 @@ namespace SoftwareEngineering
             }
             return null;
         }
+        public bool inSchedule(string courseCode)
+        {
+            if (studentCourses==null)
+            {
+                return false;
+            }
+            foreach (Course courses in studentCourses)
+            {
+                if (courses.courseCode == courseCode)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
