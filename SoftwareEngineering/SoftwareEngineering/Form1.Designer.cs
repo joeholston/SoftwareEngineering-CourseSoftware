@@ -32,6 +32,8 @@
             this.searchDropDown = new System.Windows.Forms.ComboBox();
             this.searchGroup = new System.Windows.Forms.GroupBox();
             this.advancedSearch_Group = new System.Windows.Forms.GroupBox();
+            this.endLabel = new System.Windows.Forms.Label();
+            this.startLabel = new System.Windows.Forms.Label();
             this.endTime = new System.Windows.Forms.ComboBox();
             this.startTime = new System.Windows.Forms.ComboBox();
             this.searchDay_Friday = new System.Windows.Forms.CheckBox();
@@ -50,6 +52,9 @@
             this.cLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cSeats = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.calendarGroup = new System.Windows.Forms.GroupBox();
+            this.wNight = new System.Windows.Forms.RichTextBox();
+            this.tNight = new System.Windows.Forms.RichTextBox();
+            this.mNight = new System.Windows.Forms.RichTextBox();
             this.r230 = new System.Windows.Forms.RichTextBox();
             this.r1 = new System.Windows.Forms.RichTextBox();
             this.t230 = new System.Windows.Forms.RichTextBox();
@@ -89,11 +94,6 @@
             this.f2 = new System.Windows.Forms.RichTextBox();
             this.w2 = new System.Windows.Forms.RichTextBox();
             this.m2 = new System.Windows.Forms.RichTextBox();
-            this.startLabel = new System.Windows.Forms.Label();
-            this.endLabel = new System.Windows.Forms.Label();
-            this.mNight = new System.Windows.Forms.RichTextBox();
-            this.tNight = new System.Windows.Forms.RichTextBox();
-            this.wNight = new System.Windows.Forms.RichTextBox();
             this.searchGroup.SuspendLayout();
             this.advancedSearch_Group.SuspendLayout();
             this.resultsGroup.SuspendLayout();
@@ -152,6 +152,24 @@
             this.advancedSearch_Group.TabStop = false;
             this.advancedSearch_Group.Text = "Advanced Search";
             this.advancedSearch_Group.Visible = false;
+            // 
+            // endLabel
+            // 
+            this.endLabel.AutoSize = true;
+            this.endLabel.Location = new System.Drawing.Point(549, 21);
+            this.endLabel.Name = "endLabel";
+            this.endLabel.Size = new System.Drawing.Size(29, 13);
+            this.endLabel.TabIndex = 70;
+            this.endLabel.Text = "End:";
+            // 
+            // startLabel
+            // 
+            this.startLabel.AutoSize = true;
+            this.startLabel.Location = new System.Drawing.Point(417, 21);
+            this.startLabel.Name = "startLabel";
+            this.startLabel.Size = new System.Drawing.Size(32, 13);
+            this.startLabel.TabIndex = 69;
+            this.startLabel.Text = "Start:";
             // 
             // endTime
             // 
@@ -392,6 +410,33 @@
             this.calendarGroup.TabStop = false;
             this.calendarGroup.Text = "Calendar";
             // 
+            // wNight
+            // 
+            this.wNight.Location = new System.Drawing.Point(296, 490);
+            this.wNight.Name = "wNight";
+            this.wNight.ReadOnly = true;
+            this.wNight.Size = new System.Drawing.Size(135, 48);
+            this.wNight.TabIndex = 68;
+            this.wNight.Text = "6:30 - 9:00 PM";
+            // 
+            // tNight
+            // 
+            this.tNight.Location = new System.Drawing.Point(153, 490);
+            this.tNight.Name = "tNight";
+            this.tNight.ReadOnly = true;
+            this.tNight.Size = new System.Drawing.Size(135, 48);
+            this.tNight.TabIndex = 67;
+            this.tNight.Text = "6:30 - 9:00 PM";
+            // 
+            // mNight
+            // 
+            this.mNight.Location = new System.Drawing.Point(10, 490);
+            this.mNight.Name = "mNight";
+            this.mNight.ReadOnly = true;
+            this.mNight.Size = new System.Drawing.Size(135, 48);
+            this.mNight.TabIndex = 66;
+            this.mNight.Text = "6:30 - 9:00 PM";
+            // 
             // r230
             // 
             this.r230.Location = new System.Drawing.Point(439, 406);
@@ -576,6 +621,7 @@
             this.m8.ReadOnly = true;
             this.m8.Size = new System.Drawing.Size(135, 48);
             this.m8.TabIndex = 38;
+            this.m8.Tag = "";
             this.m8.Text = "8 AM";
             // 
             // f9
@@ -748,51 +794,6 @@
             this.m2.Size = new System.Drawing.Size(135, 48);
             this.m2.TabIndex = 8;
             this.m2.Text = "2 PM";
-            // 
-            // startLabel
-            // 
-            this.startLabel.AutoSize = true;
-            this.startLabel.Location = new System.Drawing.Point(417, 21);
-            this.startLabel.Name = "startLabel";
-            this.startLabel.Size = new System.Drawing.Size(32, 13);
-            this.startLabel.TabIndex = 69;
-            this.startLabel.Text = "Start:";
-            // 
-            // endLabel
-            // 
-            this.endLabel.AutoSize = true;
-            this.endLabel.Location = new System.Drawing.Point(549, 21);
-            this.endLabel.Name = "endLabel";
-            this.endLabel.Size = new System.Drawing.Size(29, 13);
-            this.endLabel.TabIndex = 70;
-            this.endLabel.Text = "End:";
-            // 
-            // mNight
-            // 
-            this.mNight.Location = new System.Drawing.Point(10, 490);
-            this.mNight.Name = "mNight";
-            this.mNight.ReadOnly = true;
-            this.mNight.Size = new System.Drawing.Size(135, 48);
-            this.mNight.TabIndex = 66;
-            this.mNight.Text = "6:30 - 9:00 PM";
-            // 
-            // tNight
-            // 
-            this.tNight.Location = new System.Drawing.Point(153, 490);
-            this.tNight.Name = "tNight";
-            this.tNight.ReadOnly = true;
-            this.tNight.Size = new System.Drawing.Size(135, 48);
-            this.tNight.TabIndex = 67;
-            this.tNight.Text = "6:30 - 9:00 PM";
-            // 
-            // wNight
-            // 
-            this.wNight.Location = new System.Drawing.Point(296, 490);
-            this.wNight.Name = "wNight";
-            this.wNight.ReadOnly = true;
-            this.wNight.Size = new System.Drawing.Size(135, 48);
-            this.wNight.TabIndex = 68;
-            this.wNight.Text = "6:30 - 9:00 PM";
             // 
             // Form1
             // 
