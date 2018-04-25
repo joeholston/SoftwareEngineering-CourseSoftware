@@ -457,24 +457,6 @@ namespace SoftwareEngineering
             showCourses(daycode, time, false, deletedCourse); //, deletedCourse  Hides the deleted course from the calender
         }
 
-    //searchButton_Click sets the functionality for the search button being clicked.
-        //This specifically takes the searchBox string and uses the search algorithm. Then is displays the results on the List View.
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            courseResults.Items.Clear();
-            string searchString = searchBox.Text;
-            Search s = new Search();
-            s.search(searchString);
-            
-            for (int i = 0; i < s.searchCourses.Count; i++)
-            {
-                Course c = s.searchCourses[i];
-                string newTime = appendTime(c.beginTime);
-                bool selected = user.inSchedule(c.courseCode);
-                addToLV(c.courseCode, c.shortTitle, c.meetingDays, newTime, c.room, c.enrollment.ToString(),selected);
-            }
-        }
-
         //appendTime is a helper function that adds AM/PM to the simple integer time.
         //This is used when printing time to the calendar and List View.
         private string appendTime(DateTime originalTime)
@@ -492,6 +474,37 @@ namespace SoftwareEngineering
             else
             {
                 advancedSearch_Group.Hide();
+            }
+        }
+
+        private void search()
+        {
+            courseResults.Items.Clear();
+            string searchString = searchBox.Text;
+            Search s = new Search();
+            s.search(searchString);
+
+            for (int i = 0; i < s.searchCourses.Count; i++)
+            {
+                Course c = s.searchCourses[i];
+                string newTime = appendTime(c.beginTime);
+                bool selected = user.inSchedule(c.courseCode);
+                addToLV(c.courseCode, c.LongTitle, c.meetingDays, newTime, c.building, c.enrollment.ToString(), selected);
+            }
+        }
+
+        //searchButton_Click sets the functionality for the search button being clicked.
+        //This specifically takes the searchBox string and uses the search algorithm. Then is displays the results on the List View.
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            search();
+        }
+
+        private void searchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                search();
             }
         }
     }

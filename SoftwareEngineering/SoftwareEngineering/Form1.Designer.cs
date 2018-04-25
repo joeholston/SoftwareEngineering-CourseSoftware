@@ -103,6 +103,7 @@
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(427, 20);
             this.searchBox.TabIndex = 0;
+            this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
             // 
             // searchDropDown
             // 
@@ -316,22 +317,22 @@
             // cName
             // 
             this.cName.Text = "Course Name";
-            this.cName.Width = 140;
+            this.cName.Width = 200;
             // 
             // cDay
             // 
             this.cDay.Text = "Days";
-            this.cDay.Width = 50;
+            this.cDay.Width = 55;
             // 
             // cTime
             // 
             this.cTime.Text = "Time";
-            this.cTime.Width = 50;
+            this.cTime.Width = 70;
             // 
             // cLocation
             // 
             this.cLocation.Text = "Room";
-            this.cLocation.Width = 50;
+            this.cLocation.Width = 55;
             // 
             // cSeats
             // 
