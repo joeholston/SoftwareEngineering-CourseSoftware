@@ -25,6 +25,11 @@ namespace SoftwareEngineering
         {
             InitializeComponent();
 
+            WindowState = FormWindowState.Maximized;
+
+            searchDropDown.SelectedIndex = 0;
+            startTime.SelectedIndex = 0;
+            endTime.SelectedIndex = endTime.Items.Count - 1;
             createLV();
         }
     
@@ -476,6 +481,18 @@ namespace SoftwareEngineering
         {
             string newTime = originalTime.ToString("hh:mm tt");
             return newTime;
+        }
+
+        private void advancedSearch_Click(object sender, EventArgs e)
+        {
+            if(advancedSearch.Checked)
+            {
+                advancedSearch_Group.Show();
+            }
+            else
+            {
+                advancedSearch_Group.Hide();
+            }
         }
     }
 }

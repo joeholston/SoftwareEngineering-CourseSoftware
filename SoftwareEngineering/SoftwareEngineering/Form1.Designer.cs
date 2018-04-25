@@ -31,13 +31,22 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.searchDropDown = new System.Windows.Forms.ComboBox();
             this.searchGroup = new System.Windows.Forms.GroupBox();
+            this.advancedSearch_Group = new System.Windows.Forms.GroupBox();
+            this.endTime = new System.Windows.Forms.ComboBox();
+            this.startTime = new System.Windows.Forms.ComboBox();
+            this.searchDay_Friday = new System.Windows.Forms.CheckBox();
+            this.searchDay_Monday = new System.Windows.Forms.CheckBox();
+            this.searchDay_Thursday = new System.Windows.Forms.CheckBox();
+            this.searchDay_Tuesday = new System.Windows.Forms.CheckBox();
+            this.searchDay_Wednesday = new System.Windows.Forms.CheckBox();
+            this.advancedSearch = new System.Windows.Forms.CheckBox();
             this.searchButton = new System.Windows.Forms.Button();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.resultsGroup = new System.Windows.Forms.GroupBox();
             this.courseResults = new System.Windows.Forms.ListView();
             this.cCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cSeats = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.calendarGroup = new System.Windows.Forms.GroupBox();
@@ -80,46 +89,189 @@
             this.f2 = new System.Windows.Forms.RichTextBox();
             this.w2 = new System.Windows.Forms.RichTextBox();
             this.m2 = new System.Windows.Forms.RichTextBox();
-            this.cTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.startLabel = new System.Windows.Forms.Label();
+            this.endLabel = new System.Windows.Forms.Label();
             this.searchGroup.SuspendLayout();
+            this.advancedSearch_Group.SuspendLayout();
             this.resultsGroup.SuspendLayout();
             this.calendarGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(147, 31);
+            this.searchBox.Location = new System.Drawing.Point(144, 25);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(427, 20);
             this.searchBox.TabIndex = 0;
             // 
             // searchDropDown
             // 
+            this.searchDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchDropDown.FormattingEnabled = true;
             this.searchDropDown.Items.AddRange(new object[] {
-            "Course Code"});
-            this.searchDropDown.Location = new System.Drawing.Point(22, 30);
+            "Course Code",
+            "Course Name"});
+            this.searchDropDown.Location = new System.Drawing.Point(22, 25);
             this.searchDropDown.Name = "searchDropDown";
             this.searchDropDown.Size = new System.Drawing.Size(102, 21);
             this.searchDropDown.TabIndex = 1;
-            this.searchDropDown.Text = "Course Code";
             // 
             // searchGroup
             // 
+            this.searchGroup.Controls.Add(this.advancedSearch_Group);
+            this.searchGroup.Controls.Add(this.advancedSearch);
             this.searchGroup.Controls.Add(this.searchButton);
-            this.searchGroup.Controls.Add(this.dateTimePicker);
             this.searchGroup.Controls.Add(this.searchBox);
             this.searchGroup.Controls.Add(this.searchDropDown);
-            this.searchGroup.Location = new System.Drawing.Point(12, 12);
+            this.searchGroup.Location = new System.Drawing.Point(22, 25);
             this.searchGroup.Name = "searchGroup";
-            this.searchGroup.Size = new System.Drawing.Size(595, 111);
+            this.searchGroup.Size = new System.Drawing.Size(727, 117);
             this.searchGroup.TabIndex = 2;
             this.searchGroup.TabStop = false;
             this.searchGroup.Text = "Search";
             // 
+            // advancedSearch_Group
+            // 
+            this.advancedSearch_Group.Controls.Add(this.endLabel);
+            this.advancedSearch_Group.Controls.Add(this.startLabel);
+            this.advancedSearch_Group.Controls.Add(this.endTime);
+            this.advancedSearch_Group.Controls.Add(this.startTime);
+            this.advancedSearch_Group.Controls.Add(this.searchDay_Friday);
+            this.advancedSearch_Group.Controls.Add(this.searchDay_Monday);
+            this.advancedSearch_Group.Controls.Add(this.searchDay_Thursday);
+            this.advancedSearch_Group.Controls.Add(this.searchDay_Tuesday);
+            this.advancedSearch_Group.Controls.Add(this.searchDay_Wednesday);
+            this.advancedSearch_Group.Location = new System.Drawing.Point(42, 65);
+            this.advancedSearch_Group.Name = "advancedSearch_Group";
+            this.advancedSearch_Group.Size = new System.Drawing.Size(668, 46);
+            this.advancedSearch_Group.TabIndex = 66;
+            this.advancedSearch_Group.TabStop = false;
+            this.advancedSearch_Group.Text = "Advanced Search";
+            this.advancedSearch_Group.Visible = false;
+            // 
+            // endTime
+            // 
+            this.endTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.endTime.FormattingEnabled = true;
+            this.endTime.Items.AddRange(new object[] {
+            "  8 AM",
+            "  9 AM",
+            "10 AM",
+            "11 AM",
+            "12 PM",
+            "  1 PM",
+            "  2 PM",
+            "  3 PM",
+            "  4 PM",
+            "  5 PM",
+            "  6 PM",
+            "  7 PM",
+            "  8 PM",
+            "  9 PM"});
+            this.endTime.Location = new System.Drawing.Point(584, 16);
+            this.endTime.Name = "endTime";
+            this.endTime.Size = new System.Drawing.Size(65, 21);
+            this.endTime.TabIndex = 68;
+            // 
+            // startTime
+            // 
+            this.startTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.startTime.FormattingEnabled = true;
+            this.startTime.Items.AddRange(new object[] {
+            "  8 AM",
+            "  9 AM",
+            "10 AM",
+            "11 AM",
+            "12 PM",
+            "  1 PM",
+            "  2 PM",
+            "  3 PM",
+            "  4 PM",
+            "  5 PM",
+            "  6 PM",
+            "  7 PM",
+            "  8 PM",
+            "  9 PM"});
+            this.startTime.Location = new System.Drawing.Point(455, 16);
+            this.startTime.Name = "startTime";
+            this.startTime.Size = new System.Drawing.Size(65, 21);
+            this.startTime.TabIndex = 67;
+            // 
+            // searchDay_Friday
+            // 
+            this.searchDay_Friday.AutoSize = true;
+            this.searchDay_Friday.Checked = true;
+            this.searchDay_Friday.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.searchDay_Friday.Location = new System.Drawing.Point(339, 20);
+            this.searchDay_Friday.Name = "searchDay_Friday";
+            this.searchDay_Friday.Size = new System.Drawing.Size(54, 17);
+            this.searchDay_Friday.TabIndex = 9;
+            this.searchDay_Friday.Text = "Friday";
+            this.searchDay_Friday.UseVisualStyleBackColor = true;
+            // 
+            // searchDay_Monday
+            // 
+            this.searchDay_Monday.AutoSize = true;
+            this.searchDay_Monday.Checked = true;
+            this.searchDay_Monday.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.searchDay_Monday.Location = new System.Drawing.Point(31, 20);
+            this.searchDay_Monday.Name = "searchDay_Monday";
+            this.searchDay_Monday.Size = new System.Drawing.Size(64, 17);
+            this.searchDay_Monday.TabIndex = 5;
+            this.searchDay_Monday.Text = "Monday";
+            this.searchDay_Monday.UseVisualStyleBackColor = true;
+            // 
+            // searchDay_Thursday
+            // 
+            this.searchDay_Thursday.AutoSize = true;
+            this.searchDay_Thursday.Checked = true;
+            this.searchDay_Thursday.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.searchDay_Thursday.Location = new System.Drawing.Point(263, 20);
+            this.searchDay_Thursday.Name = "searchDay_Thursday";
+            this.searchDay_Thursday.Size = new System.Drawing.Size(70, 17);
+            this.searchDay_Thursday.TabIndex = 8;
+            this.searchDay_Thursday.Text = "Thursday";
+            this.searchDay_Thursday.UseVisualStyleBackColor = true;
+            // 
+            // searchDay_Tuesday
+            // 
+            this.searchDay_Tuesday.AutoSize = true;
+            this.searchDay_Tuesday.Checked = true;
+            this.searchDay_Tuesday.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.searchDay_Tuesday.Location = new System.Drawing.Point(101, 20);
+            this.searchDay_Tuesday.Name = "searchDay_Tuesday";
+            this.searchDay_Tuesday.Size = new System.Drawing.Size(67, 17);
+            this.searchDay_Tuesday.TabIndex = 6;
+            this.searchDay_Tuesday.Text = "Tuesday";
+            this.searchDay_Tuesday.UseVisualStyleBackColor = true;
+            // 
+            // searchDay_Wednesday
+            // 
+            this.searchDay_Wednesday.AutoSize = true;
+            this.searchDay_Wednesday.Checked = true;
+            this.searchDay_Wednesday.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.searchDay_Wednesday.Location = new System.Drawing.Point(174, 20);
+            this.searchDay_Wednesday.Name = "searchDay_Wednesday";
+            this.searchDay_Wednesday.Size = new System.Drawing.Size(83, 17);
+            this.searchDay_Wednesday.TabIndex = 7;
+            this.searchDay_Wednesday.Text = "Wednesday";
+            this.searchDay_Wednesday.UseVisualStyleBackColor = true;
+            // 
+            // advancedSearch
+            // 
+            this.advancedSearch.AutoSize = true;
+            this.advancedSearch.Location = new System.Drawing.Point(22, 64);
+            this.advancedSearch.Name = "advancedSearch";
+            this.advancedSearch.Size = new System.Drawing.Size(121, 17);
+            this.advancedSearch.TabIndex = 4;
+            this.advancedSearch.Text = "   Advanced Search";
+            this.advancedSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.advancedSearch.UseVisualStyleBackColor = true;
+            this.advancedSearch.Click += new System.EventHandler(this.advancedSearch_Click);
+            // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(499, 67);
+            this.searchButton.Location = new System.Drawing.Point(616, 22);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 3;
@@ -127,20 +279,12 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // dateTimePicker
-            // 
-            this.dateTimePicker.Location = new System.Drawing.Point(22, 70);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(197, 20);
-            this.dateTimePicker.TabIndex = 2;
-            this.dateTimePicker.Visible = false;
-            // 
             // resultsGroup
             // 
             this.resultsGroup.Controls.Add(this.courseResults);
-            this.resultsGroup.Location = new System.Drawing.Point(613, 12);
+            this.resultsGroup.Location = new System.Drawing.Point(769, 25);
             this.resultsGroup.Name = "resultsGroup";
-            this.resultsGroup.Size = new System.Drawing.Size(466, 600);
+            this.resultsGroup.Size = new System.Drawing.Size(573, 659);
             this.resultsGroup.TabIndex = 3;
             this.resultsGroup.TabStop = false;
             this.resultsGroup.Text = "Results";
@@ -156,10 +300,10 @@
             this.cLocation,
             this.cSeats});
             this.courseResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseResults.Location = new System.Drawing.Point(6, 31);
+            this.courseResults.Location = new System.Drawing.Point(8, 25);
             this.courseResults.Margin = new System.Windows.Forms.Padding(5);
             this.courseResults.Name = "courseResults";
-            this.courseResults.Size = new System.Drawing.Size(454, 563);
+            this.courseResults.Size = new System.Drawing.Size(557, 626);
             this.courseResults.TabIndex = 5;
             this.courseResults.UseCompatibleStateImageBehavior = false;
             this.courseResults.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.courseResults_ItemCheck);
@@ -178,6 +322,11 @@
             // 
             this.cDay.Text = "Days";
             this.cDay.Width = 50;
+            // 
+            // cTime
+            // 
+            this.cTime.Text = "Time";
+            this.cTime.Width = 50;
             // 
             // cLocation
             // 
@@ -229,9 +378,9 @@
             this.calendarGroup.Controls.Add(this.f2);
             this.calendarGroup.Controls.Add(this.w2);
             this.calendarGroup.Controls.Add(this.m2);
-            this.calendarGroup.Location = new System.Drawing.Point(12, 129);
+            this.calendarGroup.Location = new System.Drawing.Point(22, 148);
             this.calendarGroup.Name = "calendarGroup";
-            this.calendarGroup.Size = new System.Drawing.Size(595, 483);
+            this.calendarGroup.Size = new System.Drawing.Size(727, 536);
             this.calendarGroup.TabIndex = 4;
             this.calendarGroup.TabStop = false;
             this.calendarGroup.Text = "Calendar";
@@ -622,16 +771,29 @@
             this.m2.Text = "2 PM";
             this.m2.Visible = false;
             // 
-            // cTime
+            // startLabel
             // 
-            this.cTime.Text = "Time";
-            this.cTime.Width = 50;
+            this.startLabel.AutoSize = true;
+            this.startLabel.Location = new System.Drawing.Point(417, 21);
+            this.startLabel.Name = "startLabel";
+            this.startLabel.Size = new System.Drawing.Size(32, 13);
+            this.startLabel.TabIndex = 69;
+            this.startLabel.Text = "Start:";
+            // 
+            // endLabel
+            // 
+            this.endLabel.AutoSize = true;
+            this.endLabel.Location = new System.Drawing.Point(549, 21);
+            this.endLabel.Name = "endLabel";
+            this.endLabel.Size = new System.Drawing.Size(29, 13);
+            this.endLabel.TabIndex = 70;
+            this.endLabel.Text = "End:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 624);
+            this.ClientSize = new System.Drawing.Size(1363, 704);
             this.Controls.Add(this.calendarGroup);
             this.Controls.Add(this.resultsGroup);
             this.Controls.Add(this.searchGroup);
@@ -639,6 +801,8 @@
             this.Text = "Form1";
             this.searchGroup.ResumeLayout(false);
             this.searchGroup.PerformLayout();
+            this.advancedSearch_Group.ResumeLayout(false);
+            this.advancedSearch_Group.PerformLayout();
             this.resultsGroup.ResumeLayout(false);
             this.calendarGroup.ResumeLayout(false);
             this.calendarGroup.PerformLayout();
@@ -651,7 +815,6 @@
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.ComboBox searchDropDown;
         private System.Windows.Forms.GroupBox searchGroup;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.GroupBox resultsGroup;
         private System.Windows.Forms.GroupBox calendarGroup;
         private System.Windows.Forms.RichTextBox f3;
@@ -701,6 +864,17 @@
         private System.Windows.Forms.ColumnHeader cLocation;
         private System.Windows.Forms.ColumnHeader cSeats;
         private System.Windows.Forms.ColumnHeader cTime;
+        private System.Windows.Forms.CheckBox advancedSearch;
+        private System.Windows.Forms.CheckBox searchDay_Monday;
+        private System.Windows.Forms.CheckBox searchDay_Tuesday;
+        private System.Windows.Forms.CheckBox searchDay_Wednesday;
+        private System.Windows.Forms.CheckBox searchDay_Thursday;
+        private System.Windows.Forms.CheckBox searchDay_Friday;
+        private System.Windows.Forms.GroupBox advancedSearch_Group;
+        private System.Windows.Forms.ComboBox endTime;
+        private System.Windows.Forms.ComboBox startTime;
+        private System.Windows.Forms.Label endLabel;
+        private System.Windows.Forms.Label startLabel;
     }
 }
 
