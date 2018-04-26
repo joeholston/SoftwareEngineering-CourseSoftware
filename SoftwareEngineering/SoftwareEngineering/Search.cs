@@ -11,12 +11,23 @@ namespace SoftwareEngineering
         //create a list to hold searched for courses
         public List<Course> searchCourses = new List<Course>();
 
+        //create a list to hold prereq searched for courses
+        public List<Course> prereqCourses = new List<Course>();
+
+        //add a search that will search for prereq courses
+        //the prereq database only holds course code, shortTitle, LongTitle
+
         //create a list of the course database
         private List<Course> courseDB = BuildDB.Instance.courseDatabase;
+        //create a list of the prereq database
+        private List<Course> prereqDB = BuildDB.Instance.prereqDatabase;
 
         //variable decide whether user is searching by Course Code or Course Name
         // 0 = Course Code
         // 1 = Course Name
+
+        //search for checked boxes look at form one for name
+
 
         //search the course database list for matches to the input string
         public void search(string input, int searchSelection)

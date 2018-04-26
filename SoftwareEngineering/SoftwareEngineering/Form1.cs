@@ -236,7 +236,7 @@ namespace SoftwareEngineering
                 }
             }
             time = Int32.Parse(charTime); //Parse the char 
-
+            
             return time;
         }
 
