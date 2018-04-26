@@ -840,7 +840,7 @@
             this.Controls.Add(this.resultsGroup);
             this.Controls.Add(this.searchGroup);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "GCC++";
             this.searchGroup.ResumeLayout(false);
             this.searchGroup.PerformLayout();
             this.advancedSearch_Group.ResumeLayout(false);
