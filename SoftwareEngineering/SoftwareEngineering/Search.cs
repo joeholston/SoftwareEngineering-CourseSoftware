@@ -19,9 +19,13 @@ namespace SoftwareEngineering
 
         //create a list of the course database
         private List<Course> courseDB = BuildDB.Instance.courseDatabase;
+<<<<<<< HEAD
         //create a list of the prereq database
         private List<Course> prereqDB = BuildDB.Instance.prereqDatabase;
 
+=======
+       
+>>>>>>> 1ce5d19f9004b5254eaf60cc6fcb7d349142e819
         //variable decide whether user is searching by Course Code or Course Name
         // 0 = Course Code
         // 1 = Course Name

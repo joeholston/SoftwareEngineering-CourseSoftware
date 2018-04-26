@@ -74,7 +74,14 @@ namespace SoftwareEngineering
                         if (match) { break; }
                     }
                     courseDB.Add(new Course(inputs[0], inputs[1], inputs[2], value3, value4, inputs[5], inputs[6], inputs[7], int.Parse(inputs[8]), int.Parse(inputs[9]), prereqs));
-                    prereqDB.Add(new Course(inputs[0].Substring(0, 8), inputs[1], inputs[2]));
+                    if (!prereqDB.Any())
+                    {
+                        prereqDB.Add(new Course(inputs[0].Substring(0, 8), inputs[1], inputs[2]));
+                    }
+                    if (prereqDB.Last().courseCode != inputs[0])
+                    {
+                        prereqDB.Add(new Course(inputs[0].Substring(0, 8), inputs[1], inputs[2]));
+                    }
                     //Console.Write(courseDB[j].courseCode + "\r\n" + courseDB[j].beginTime + "\r\n" + courseDB[j].capacity + "\r\n");
                 }
                 courseDatabase = courseDB;
