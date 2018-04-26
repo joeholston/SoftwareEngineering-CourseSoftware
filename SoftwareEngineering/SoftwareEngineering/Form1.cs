@@ -335,9 +335,16 @@ namespace SoftwareEngineering
                 }
                 else
                 {
-                    e.Item.Checked = false;
+                    DialogResult conflictBox = System.Windows.Forms.MessageBox.Show("Conflicting Course!\nDo you want to replace the current " + selectedCourse.meetingDays + "- " + appendTime(selectedCourse.beginTime) + " class?" , "", MessageBoxButtons.YesNo);
+                    if (conflictBox == DialogResult.Yes)
+                    {
+                        
+                    }
+                    else if (conflictBox == DialogResult.No)
+                    {
+                        e.Item.Checked = false;
+                    }
                 }
-                ////TODO UI FOR CONFLICTS
             }
         }
     }
