@@ -83,73 +83,80 @@ namespace SoftwareEngineering
         //showCourses was designed to use a code to determine which UI calendar blocks should be shown
         //it will call specialized MWF or TR functions to actually display and edit the calendar blocks
         private void showCourses(Course course, int time, bool show)
-        {
-            string newTime = appendTime(course.beginTime);
-            
+        {   
             foreach (char c in course.meetingDays)
             {
                 if (c == 'M')
                 {
                     if (show)
                     {
-                        calendar[1, time].Clear();
-                        calendar[1, time].AppendText(newTime + "\n" + course.shortTitle);
+                        updateCalendarBox(course, 1, time);
                     }
                     else
                     {
-                        calendar[1, time].Text = calendar[1, time].Tag.ToString();
+                        resetCalendarBox(1, time);
                     }
                 }
                 else if (c == 'T')
                 {
                     if (show)
                     {
-                        calendar[2, time].Clear();
-                        calendar[2, time].AppendText(newTime + "\n" + course.shortTitle);
+                        updateCalendarBox(course, 2, time);
                     }
                     else
                     {
-                        calendar[2, time].Text = calendar[2, time].Tag.ToString();
+                        resetCalendarBox(2, time);
                     }
                 }
                 else if (c == 'W')
                 {
                     if (show)
                     {
-                        calendar[3, time].Clear();
-                        calendar[3, time].AppendText(newTime + "\n" + course.shortTitle);
+                        updateCalendarBox(course, 3, time);
                     }
                     else
                     {
-                        calendar[3, time].Text = calendar[3, time].Tag.ToString();
+                        resetCalendarBox(3, time);
                     }
                 }
                 else if (c == 'R')
                 {
                     if (show)
                     {
-                        calendar[4, time].Clear();
-                        calendar[4, time].AppendText(newTime + "\n" + course.shortTitle);
+                        updateCalendarBox(course, 4, time);
                     }
                     else
                     {
-                        calendar[4, time].Text = calendar[4, time].Tag.ToString();
+                        resetCalendarBox(4, time);
                     }
                 }
                 else if (c == 'F')
                 {
                     if (show)
                     {
-                        calendar[5, time].Clear();
-                        calendar[5, time].AppendText(newTime + "\n" + course.shortTitle);
+                        updateCalendarBox(course, 5, time);
                     }
                     else
                     {
-                        calendar[5, time].Text = calendar[5, time].Tag.ToString();
+                        resetCalendarBox(5, time);
                     }
                 }
             }
             
+        }
+
+        private void updateCalendarBox(Course course, int day, int time)
+        {
+            string newTime = appendTime(course.beginTime);
+            calendar[day, time].Clear();
+            calendar[day, time].AppendText(newTime + "\n" + course.shortTitle);
+            calendar[day, time].Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+        }
+
+        private void resetCalendarBox(int day, int time)
+        {
+            calendar[day, time].Text = calendar[day, time].Tag.ToString();
+            calendar[day, time].Font = SystemFonts.DefaultFont;
         }
 
         //createLV creates the List View with the desired preset settings
@@ -277,13 +284,22 @@ namespace SoftwareEngineering
             string searchString = searchBox.Text;
             Search s = new Search();
             s.search(searchString, searchDropDown.SelectedIndex);
-
-            for (int i = 0; i < s.searchCourses.Count; i++)
+            if (s.searchCourses.Count != 0)
             {
-                Course c = s.searchCourses[i];
-                string newTime = appendTime(c.beginTime);
-                bool selected = user.inSchedule(c.courseCode);
-                addToLV(c.courseCode, c.LongTitle, c.meetingDays, newTime, c.building, c.enrollment.ToString(), selected);
+                for (int i = 0; i < s.searchCourses.Count; i++)
+                {
+                    Course c = s.searchCourses[i];
+                    string newTime = appendTime(c.beginTime);
+                    bool selected = user.inSchedule(c.courseCode);
+                    addToLV(c.courseCode, c.LongTitle, c.meetingDays, newTime, c.building, c.enrollment.ToString(), selected);
+                }
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("No Results: Please Search Again.", "",MessageBoxButtons.OK);
+                searchBox.Focus();
+                searchBox.SelectionStart = 0;
+                searchBox.SelectionLength = searchBox.Text.Length;
             }
         }
 
