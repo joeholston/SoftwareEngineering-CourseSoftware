@@ -23,7 +23,12 @@ namespace SoftwareEngineering
                     studentCompletedCourses = new List<Course>();
                 }
                 if (completed) { studentCompletedCourses.Add(selectedCourse); }
-                else{studentCourses.Add(selectedCourse);} //Add the selected Course to the end of the list
+                else{
+                    if (!inSchedule(selectedCourse.courseCode))
+                    {
+                        studentCourses.Add(selectedCourse);
+                    }
+                } //Add the selected Course to the end of the list
             }
         }
         public void deleteCourse(Course deselectedCourse, bool completed)//completed is true if adding to prereqs, is false if adding to stude
@@ -61,5 +66,6 @@ namespace SoftwareEngineering
             }
             return false;
         }
+
     }
 }
