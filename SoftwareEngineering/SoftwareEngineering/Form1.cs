@@ -301,7 +301,16 @@ namespace SoftwareEngineering
                 search();
             }
         }
+        public void addALL()
+        {
+            if (user.studentCourses != null)
+            {
+                foreach (Course courses in user.studentCourses)
+                {
+                    addToCalender(courses);
+                }
+            }
+        }
 
-        
     }
 }
