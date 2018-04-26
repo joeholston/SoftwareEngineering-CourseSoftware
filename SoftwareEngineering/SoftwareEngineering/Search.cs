@@ -32,7 +32,7 @@ namespace SoftwareEngineering
             {
                 if (searchSelection == 0)
                 {
-                    if (courseDB[i].courseCode.StartsWith(input.ToUpper()))
+                    if (courseDB[i].courseCode.Contains(input.ToUpper()))
                     {
                         searchCourses.Add(courseDB[i]);
                     }
@@ -40,7 +40,7 @@ namespace SoftwareEngineering
                 else if (searchSelection == 1)
                 {
                     //allows for searching both the short or long title of the courses
-                    if (courseDB[i].shortTitle.StartsWith(input.ToUpper()) | courseDB[i].LongTitle.StartsWith(input.ToUpper()))
+                    if (courseDB[i].shortTitle.Contains(input.ToUpper()) | courseDB[i].LongTitle.Contains(input.ToUpper()))
                     {
                         searchCourses.Add(courseDB[i]);
                     }
@@ -56,14 +56,14 @@ namespace SoftwareEngineering
             {
                 if (searchSelection == 0)
                 {
-                    if (prereqDB[i].courseCode.StartsWith(input.ToUpper()))
+                    if (prereqDB[i].courseCode.Contains(input.ToUpper()))
                     {
                         prereqCourses.Add(prereqDB[i]);
                     }
                 }
                 else if (searchSelection == 1)
                 {
-                    if (prereqDB[i].shortTitle.StartsWith(input.ToUpper()) | prereqDB[i].LongTitle.StartsWith(input.ToUpper()))
+                    if (prereqDB[i].shortTitle.Contains(input.ToUpper()) | prereqDB[i].LongTitle.Contains(input.ToUpper()))
                     {
                         prereqCourses.Add(prereqDB[i]);
                     }
