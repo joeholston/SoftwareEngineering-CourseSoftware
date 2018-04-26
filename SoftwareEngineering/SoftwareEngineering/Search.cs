@@ -8,39 +8,28 @@ namespace SoftwareEngineering
 {
     class Search
     {
-        //create a list to hold searched for courses
-        public List<Course> searchCourses = new List<Course>();
-
-        //create a list to hold prereq searched for courses
-        public List<Course> prereqCourses = new List<Course>();
-
-        //add a search that will search for prereq courses
-        //the prereq database only holds course code, shortTitle, LongTitle
-
-        //create a list of the course database
+        //create two databases, one for the courses and another for the prereqs
+        //the prereq database only holds the course code, shortTitle, and LongTitle
         private List<Course> courseDB = BuildDB.Instance.courseDatabase;
-<<<<<<< HEAD
-        //create a list of the prereq database
         private List<Course> prereqDB = BuildDB.Instance.prereqDatabase;
 
-=======
-       
->>>>>>> 1ce5d19f9004b5254eaf60cc6fcb7d349142e819
-        //variable decide whether user is searching by Course Code or Course Name
-        // 0 = Course Code
-        // 1 = Course Name
+        //create one list to hold searched courses and another to hold prereq courses
+        public List<Course> searchCourses = new List<Course>();
+        public List<Course> prereqCourses = new List<Course>();
 
         //search for checked boxes look at form one for name
 
-
-        //search the course database list for matches to the input string
+        /*search the course database list for matches to the input string and add them to the searchCourses list
+          searchSelection tells us whether to search by course code or course name
+            0 = Course Code
+            1 = Course Name
+        */
         public void search(string input, int searchSelection)
         {
             searchCourses.Clear();
 
             for (int i = 0; i < courseDB.Count; i++)
             {
-                //decides whether to search for courseCode or courseName based on searchSelection variable
                 if (searchSelection == 0)
                 {
                     if (courseDB[i].courseCode.StartsWith(input.ToUpper()))
@@ -50,7 +39,7 @@ namespace SoftwareEngineering
                 }
                 else if (searchSelection == 1)
                 {
-                    //It will search both the short or long title of the courses
+                    //allows for searching both the short or long title of the courses
                     if (courseDB[i].shortTitle.StartsWith(input.ToUpper()) | courseDB[i].LongTitle.StartsWith(input.ToUpper()))
                     {
                         searchCourses.Add(courseDB[i]);
@@ -58,5 +47,29 @@ namespace SoftwareEngineering
                 }
             }
         }
+
+        public void searchPrereq(string input, int searchSelection)
+        {
+            prereqCourses.Clear();
+
+            for (int i = 0; i < prereqDB.Count; i++)
+            {
+                if (searchSelection == 0)
+                {
+                    if (prereqDB[i].courseCode.StartsWith(input.ToUpper()))
+                    {
+                        prereqCourses.Add(prereqDB[i]);
+                    }
+                }
+                else if (searchSelection == 1)
+                {
+                    if (prereqDB[i].shortTitle.StartsWith(input.ToUpper()) | prereqDB[i].LongTitle.StartsWith(input.ToUpper()))
+                    {
+                        prereqCourses.Add(prereqDB[i]);
+                    }
+                }
+            }
+        }
+
     }
 }
