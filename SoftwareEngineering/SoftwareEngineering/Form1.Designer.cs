@@ -328,7 +328,7 @@
             this.courseResults.Size = new System.Drawing.Size(557, 639);
             this.courseResults.TabIndex = 5;
             this.courseResults.UseCompatibleStateImageBehavior = false;
-            this.courseResults.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.courseResults_ItemCheck);
+            this.courseResults.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.courseResults_ItemChecked);
             // 
             // cCode
             // 
@@ -835,7 +835,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1363, 704);
+            this.ClientSize = new System.Drawing.Size(1362, 704);
             this.Controls.Add(this.calendarGroup);
             this.Controls.Add(this.resultsGroup);
             this.Controls.Add(this.searchGroup);

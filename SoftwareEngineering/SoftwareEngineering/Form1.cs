@@ -186,28 +186,6 @@ namespace SoftwareEngineering
             courseResults.Items.Add(itm);
         }
 
-        //courseResults_ItemCheck adds/deletes the desired List View course by calling respective functions
-        //this function acts as a handler 
-        private void courseResults_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            //Add/delete the newly checked/unchecked course to studentCourses
-            if (e.CurrentValue == CheckState.Checked) //This is when it gets unchecked
-            {
-                //delete course
-                string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text; //Gets the courseCode from the ListView
-                Course selectedCourse = Student.findCourse(courseCode); //Gets the Course object from the database array
-                user.deleteCourse(selectedCourse, false); //Deletes the course from the student array
-                deleteFromCalender(selectedCourse); //Hides the course from the calender
-            }
-            else
-            {
-                //add course
-                string courseCode = this.courseResults.Items[e.Index].SubItems[0].Text; //Gets the courseCode from the ListView
-                Course selectedCourse = Student.findCourse(courseCode); //Gets the Course object from the database array
-                user.addCourse(selectedCourse, false); //Adds the course from the student array
-                addToCalender(selectedCourse); //Show the new course to the calender
-            }
-        }
 
         //getTime takes a DateTime item and returns the simple integer version of the time.
         //This is used for the time code and for printing to the List View and Calendar UI.
@@ -328,5 +306,39 @@ namespace SoftwareEngineering
             }
         }
 
+        //courseResults_ItemChecked adds/deletes the desired List View course by calling respective functions
+        //this function acts as a handler for after an item is checked/unchecked.
+        private void courseResults_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+
+            //Add/delete the newly checked/unchecked course to studentCourses
+            if (e.Item.Checked == false) //This is when it gets unchecked
+            {
+                //delete course
+                string courseCode = e.Item.SubItems[0].Text; //Gets the courseCode from the ListView
+                Course selectedCourse = Student.findCourse(courseCode); //Gets the Course object from the database array
+                if (user.inSchedule(courseCode))
+                {
+                    user.deleteCourse(selectedCourse, false); //Deletes the course from the student array
+                    deleteFromCalender(selectedCourse); //Hides the course from the calender
+                }
+            }
+            else
+            {
+                //add course
+                string courseCode = e.Item.SubItems[0].Text; //Gets the courseCode from the ListView
+                Course selectedCourse = Student.findCourse(courseCode); //Gets the Course object from the database array
+                if (!user.isConflict(selectedCourse))
+                {
+                    user.addCourse(selectedCourse, false); //Adds the course from the student array
+                    addToCalender(selectedCourse); //Show the new course to the calender
+                }
+                else
+                {
+                    e.Item.Checked = false;
+                }
+                ////TODO UI FOR CONFLICTS
+            }
+        }
     }
 }
