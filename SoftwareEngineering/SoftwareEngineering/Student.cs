@@ -35,8 +35,14 @@ namespace SoftwareEngineering
         {
             if (deselectedCourse != null)
             {
-                if (completed) { studentCompletedCourses.Remove(deselectedCourse); }//There should not be multiple of the same Course objects, so deleting all instances of the deselected course is fine
-                else { studentCourses.Remove(deselectedCourse); } //There should not be multiple of the same Course objects, so deleting all instances of the deselected course is fine
+                if (completed && studentCompletedCourses != null) { studentCompletedCourses.Remove(deselectedCourse); }//There should not be multiple of the same Course objects, so deleting all instances of the deselected course is fine
+                else
+                {
+                    if (studentCourses != null)
+                    {
+                        studentCourses.Remove(deselectedCourse);
+                    } //There should not be multiple of the same Course objects, so deleting all instances of the deselected course is fine
+                }
             }
         }
         static public Course findCourse(string courseCode)
@@ -66,6 +72,26 @@ namespace SoftwareEngineering
             }
             return false;
         }
-
+        public bool isConflict(Course selectedCourse)
+        {
+            if (studentCourses==null)
+            {
+                return false;
+            }
+            foreach (Course course in studentCourses)
+            {
+                foreach(char c in course.meetingDays)
+                {
+                    foreach(char c2 in selectedCourse.meetingDays)
+                    {
+                        if ((c==c2) && (selectedCourse.beginTime==course.beginTime))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            return false;
+        }
     }
 }
