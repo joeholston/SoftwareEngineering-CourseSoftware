@@ -347,5 +347,11 @@ namespace SoftwareEngineering
                 }
             }
         }
+
+        private void completedCoursesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 prereqForm = new Form2();
+            prereqForm.Show();
+        }
     }
 }

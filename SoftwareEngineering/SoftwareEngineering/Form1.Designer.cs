@@ -94,10 +94,16 @@
             this.f2 = new System.Windows.Forms.RichTextBox();
             this.w2 = new System.Windows.Forms.RichTextBox();
             this.m2 = new System.Windows.Forms.RichTextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.completedCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchGroup.SuspendLayout();
             this.advancedSearch_Group.SuspendLayout();
             this.resultsGroup.SuspendLayout();
             this.calendarGroup.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchBox
@@ -127,7 +133,7 @@
             this.searchGroup.Controls.Add(this.searchButton);
             this.searchGroup.Controls.Add(this.searchBox);
             this.searchGroup.Controls.Add(this.searchDropDown);
-            this.searchGroup.Location = new System.Drawing.Point(22, 12);
+            this.searchGroup.Location = new System.Drawing.Point(22, 30);
             this.searchGroup.Name = "searchGroup";
             this.searchGroup.Size = new System.Drawing.Size(727, 117);
             this.searchGroup.TabIndex = 2;
@@ -304,9 +310,9 @@
             // resultsGroup
             // 
             this.resultsGroup.Controls.Add(this.courseResults);
-            this.resultsGroup.Location = new System.Drawing.Point(769, 12);
+            this.resultsGroup.Location = new System.Drawing.Point(777, 30);
             this.resultsGroup.Name = "resultsGroup";
-            this.resultsGroup.Size = new System.Drawing.Size(573, 680);
+            this.resultsGroup.Size = new System.Drawing.Size(573, 655);
             this.resultsGroup.TabIndex = 3;
             this.resultsGroup.TabStop = false;
             this.resultsGroup.Text = "Results";
@@ -322,10 +328,10 @@
             this.cLocation,
             this.cSeats});
             this.courseResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseResults.Location = new System.Drawing.Point(8, 33);
+            this.courseResults.Location = new System.Drawing.Point(8, 21);
             this.courseResults.Margin = new System.Windows.Forms.Padding(5);
             this.courseResults.Name = "courseResults";
-            this.courseResults.Size = new System.Drawing.Size(557, 639);
+            this.courseResults.Size = new System.Drawing.Size(557, 626);
             this.courseResults.TabIndex = 5;
             this.courseResults.UseCompatibleStateImageBehavior = false;
             this.courseResults.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.courseResults_ItemChecked);
@@ -403,16 +409,16 @@
             this.calendarGroup.Controls.Add(this.f2);
             this.calendarGroup.Controls.Add(this.w2);
             this.calendarGroup.Controls.Add(this.m2);
-            this.calendarGroup.Location = new System.Drawing.Point(22, 146);
+            this.calendarGroup.Location = new System.Drawing.Point(22, 160);
             this.calendarGroup.Name = "calendarGroup";
-            this.calendarGroup.Size = new System.Drawing.Size(727, 546);
+            this.calendarGroup.Size = new System.Drawing.Size(727, 532);
             this.calendarGroup.TabIndex = 4;
             this.calendarGroup.TabStop = false;
             this.calendarGroup.Text = "Calendar";
             // 
             // wNight
             // 
-            this.wNight.Location = new System.Drawing.Point(296, 490);
+            this.wNight.Location = new System.Drawing.Point(296, 476);
             this.wNight.Name = "wNight";
             this.wNight.ReadOnly = true;
             this.wNight.Size = new System.Drawing.Size(135, 48);
@@ -422,7 +428,7 @@
             // 
             // tNight
             // 
-            this.tNight.Location = new System.Drawing.Point(153, 490);
+            this.tNight.Location = new System.Drawing.Point(153, 476);
             this.tNight.Name = "tNight";
             this.tNight.ReadOnly = true;
             this.tNight.Size = new System.Drawing.Size(135, 48);
@@ -432,7 +438,7 @@
             // 
             // mNight
             // 
-            this.mNight.Location = new System.Drawing.Point(10, 490);
+            this.mNight.Location = new System.Drawing.Point(10, 476);
             this.mNight.Name = "mNight";
             this.mNight.ReadOnly = true;
             this.mNight.Size = new System.Drawing.Size(135, 48);
@@ -442,7 +448,7 @@
             // 
             // r230
             // 
-            this.r230.Location = new System.Drawing.Point(439, 406);
+            this.r230.Location = new System.Drawing.Point(439, 392);
             this.r230.Name = "r230";
             this.r230.ReadOnly = true;
             this.r230.Size = new System.Drawing.Size(135, 67);
@@ -452,7 +458,7 @@
             // 
             // r1
             // 
-            this.r1.Location = new System.Drawing.Point(439, 327);
+            this.r1.Location = new System.Drawing.Point(439, 313);
             this.r1.Name = "r1";
             this.r1.ReadOnly = true;
             this.r1.Size = new System.Drawing.Size(135, 67);
@@ -462,7 +468,7 @@
             // 
             // t230
             // 
-            this.t230.Location = new System.Drawing.Point(153, 406);
+            this.t230.Location = new System.Drawing.Point(153, 392);
             this.t230.Name = "t230";
             this.t230.ReadOnly = true;
             this.t230.Size = new System.Drawing.Size(135, 67);
@@ -472,7 +478,7 @@
             // 
             // t1
             // 
-            this.t1.Location = new System.Drawing.Point(153, 327);
+            this.t1.Location = new System.Drawing.Point(153, 313);
             this.t1.Name = "t1";
             this.t1.ReadOnly = true;
             this.t1.Size = new System.Drawing.Size(135, 67);
@@ -482,7 +488,7 @@
             // 
             // r1130
             // 
-            this.r1130.Location = new System.Drawing.Point(439, 242);
+            this.r1130.Location = new System.Drawing.Point(439, 228);
             this.r1130.Name = "r1130";
             this.r1130.ReadOnly = true;
             this.r1130.Size = new System.Drawing.Size(135, 67);
@@ -492,7 +498,7 @@
             // 
             // r10
             // 
-            this.r10.Location = new System.Drawing.Point(439, 166);
+            this.r10.Location = new System.Drawing.Point(439, 152);
             this.r10.Name = "r10";
             this.r10.ReadOnly = true;
             this.r10.Size = new System.Drawing.Size(135, 67);
@@ -502,7 +508,7 @@
             // 
             // t1130
             // 
-            this.t1130.Location = new System.Drawing.Point(153, 242);
+            this.t1130.Location = new System.Drawing.Point(153, 228);
             this.t1130.Name = "t1130";
             this.t1130.ReadOnly = true;
             this.t1130.Size = new System.Drawing.Size(135, 67);
@@ -512,7 +518,7 @@
             // 
             // r8
             // 
-            this.r8.Location = new System.Drawing.Point(439, 51);
+            this.r8.Location = new System.Drawing.Point(439, 37);
             this.r8.Name = "r8";
             this.r8.ReadOnly = true;
             this.r8.Size = new System.Drawing.Size(135, 70);
@@ -524,7 +530,7 @@
             // 
             this.fHeader.AutoSize = true;
             this.fHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fHeader.Location = new System.Drawing.Point(623, 24);
+            this.fHeader.Location = new System.Drawing.Point(623, 16);
             this.fHeader.Name = "fHeader";
             this.fHeader.Size = new System.Drawing.Size(41, 13);
             this.fHeader.TabIndex = 57;
@@ -535,7 +541,7 @@
             // 
             this.rHeader.AutoSize = true;
             this.rHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rHeader.Location = new System.Drawing.Point(480, 24);
+            this.rHeader.Location = new System.Drawing.Point(480, 16);
             this.rHeader.Name = "rHeader";
             this.rHeader.Size = new System.Drawing.Size(59, 13);
             this.rHeader.TabIndex = 56;
@@ -545,7 +551,7 @@
             // 
             this.wHeader.AutoSize = true;
             this.wHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wHeader.Location = new System.Drawing.Point(332, 24);
+            this.wHeader.Location = new System.Drawing.Point(332, 16);
             this.wHeader.Name = "wHeader";
             this.wHeader.Size = new System.Drawing.Size(73, 13);
             this.wHeader.TabIndex = 55;
@@ -555,7 +561,7 @@
             // 
             this.tHeader.AutoSize = true;
             this.tHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tHeader.Location = new System.Drawing.Point(196, 24);
+            this.tHeader.Location = new System.Drawing.Point(196, 16);
             this.tHeader.Name = "tHeader";
             this.tHeader.Size = new System.Drawing.Size(55, 13);
             this.tHeader.TabIndex = 54;
@@ -565,7 +571,7 @@
             // 
             this.mHeader.AutoSize = true;
             this.mHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mHeader.Location = new System.Drawing.Point(54, 24);
+            this.mHeader.Location = new System.Drawing.Point(54, 16);
             this.mHeader.Name = "mHeader";
             this.mHeader.Size = new System.Drawing.Size(51, 13);
             this.mHeader.TabIndex = 53;
@@ -573,7 +579,7 @@
             // 
             // f3
             // 
-            this.f3.Location = new System.Drawing.Point(582, 431);
+            this.f3.Location = new System.Drawing.Point(582, 417);
             this.f3.Name = "f3";
             this.f3.ReadOnly = true;
             this.f3.Size = new System.Drawing.Size(135, 48);
@@ -583,7 +589,7 @@
             // 
             // w3
             // 
-            this.w3.Location = new System.Drawing.Point(296, 437);
+            this.w3.Location = new System.Drawing.Point(296, 423);
             this.w3.Name = "w3";
             this.w3.ReadOnly = true;
             this.w3.Size = new System.Drawing.Size(135, 48);
@@ -593,7 +599,7 @@
             // 
             // m3
             // 
-            this.m3.Location = new System.Drawing.Point(10, 437);
+            this.m3.Location = new System.Drawing.Point(10, 423);
             this.m3.Name = "m3";
             this.m3.ReadOnly = true;
             this.m3.Size = new System.Drawing.Size(135, 48);
@@ -603,7 +609,7 @@
             // 
             // f8
             // 
-            this.f8.Location = new System.Drawing.Point(582, 51);
+            this.f8.Location = new System.Drawing.Point(582, 37);
             this.f8.Name = "f8";
             this.f8.ReadOnly = true;
             this.f8.Size = new System.Drawing.Size(135, 48);
@@ -613,7 +619,7 @@
             // 
             // w8
             // 
-            this.w8.Location = new System.Drawing.Point(296, 51);
+            this.w8.Location = new System.Drawing.Point(296, 37);
             this.w8.Name = "w8";
             this.w8.ReadOnly = true;
             this.w8.Size = new System.Drawing.Size(135, 48);
@@ -623,7 +629,7 @@
             // 
             // t8
             // 
-            this.t8.Location = new System.Drawing.Point(153, 51);
+            this.t8.Location = new System.Drawing.Point(153, 37);
             this.t8.Name = "t8";
             this.t8.ReadOnly = true;
             this.t8.Size = new System.Drawing.Size(135, 70);
@@ -633,7 +639,7 @@
             // 
             // m8
             // 
-            this.m8.Location = new System.Drawing.Point(10, 51);
+            this.m8.Location = new System.Drawing.Point(10, 37);
             this.m8.Name = "m8";
             this.m8.ReadOnly = true;
             this.m8.Size = new System.Drawing.Size(135, 48);
@@ -643,7 +649,7 @@
             // 
             // f9
             // 
-            this.f9.Location = new System.Drawing.Point(582, 107);
+            this.f9.Location = new System.Drawing.Point(582, 93);
             this.f9.Name = "f9";
             this.f9.ReadOnly = true;
             this.f9.Size = new System.Drawing.Size(135, 48);
@@ -653,7 +659,7 @@
             // 
             // w9
             // 
-            this.w9.Location = new System.Drawing.Point(296, 107);
+            this.w9.Location = new System.Drawing.Point(296, 93);
             this.w9.Name = "w9";
             this.w9.ReadOnly = true;
             this.w9.Size = new System.Drawing.Size(135, 48);
@@ -663,7 +669,7 @@
             // 
             // m9
             // 
-            this.m9.Location = new System.Drawing.Point(10, 107);
+            this.m9.Location = new System.Drawing.Point(10, 93);
             this.m9.Name = "m9";
             this.m9.ReadOnly = true;
             this.m9.Size = new System.Drawing.Size(135, 48);
@@ -673,7 +679,7 @@
             // 
             // f10
             // 
-            this.f10.Location = new System.Drawing.Point(582, 161);
+            this.f10.Location = new System.Drawing.Point(582, 147);
             this.f10.Name = "f10";
             this.f10.ReadOnly = true;
             this.f10.Size = new System.Drawing.Size(135, 48);
@@ -683,7 +689,7 @@
             // 
             // w10
             // 
-            this.w10.Location = new System.Drawing.Point(295, 162);
+            this.w10.Location = new System.Drawing.Point(295, 148);
             this.w10.Name = "w10";
             this.w10.ReadOnly = true;
             this.w10.Size = new System.Drawing.Size(135, 48);
@@ -693,7 +699,7 @@
             // 
             // t10
             // 
-            this.t10.Location = new System.Drawing.Point(153, 166);
+            this.t10.Location = new System.Drawing.Point(153, 152);
             this.t10.Name = "t10";
             this.t10.ReadOnly = true;
             this.t10.Size = new System.Drawing.Size(135, 67);
@@ -703,7 +709,7 @@
             // 
             // m10
             // 
-            this.m10.Location = new System.Drawing.Point(10, 162);
+            this.m10.Location = new System.Drawing.Point(10, 148);
             this.m10.Name = "m10";
             this.m10.ReadOnly = true;
             this.m10.Size = new System.Drawing.Size(135, 48);
@@ -713,7 +719,7 @@
             // 
             // f11
             // 
-            this.f11.Location = new System.Drawing.Point(582, 215);
+            this.f11.Location = new System.Drawing.Point(582, 201);
             this.f11.Name = "f11";
             this.f11.ReadOnly = true;
             this.f11.Size = new System.Drawing.Size(135, 48);
@@ -723,7 +729,7 @@
             // 
             // w11
             // 
-            this.w11.Location = new System.Drawing.Point(295, 217);
+            this.w11.Location = new System.Drawing.Point(295, 203);
             this.w11.Name = "w11";
             this.w11.ReadOnly = true;
             this.w11.Size = new System.Drawing.Size(135, 48);
@@ -733,7 +739,7 @@
             // 
             // m11
             // 
-            this.m11.Location = new System.Drawing.Point(10, 217);
+            this.m11.Location = new System.Drawing.Point(10, 203);
             this.m11.Name = "m11";
             this.m11.ReadOnly = true;
             this.m11.Size = new System.Drawing.Size(135, 48);
@@ -743,7 +749,7 @@
             // 
             // f12
             // 
-            this.f12.Location = new System.Drawing.Point(582, 269);
+            this.f12.Location = new System.Drawing.Point(582, 255);
             this.f12.Name = "f12";
             this.f12.ReadOnly = true;
             this.f12.Size = new System.Drawing.Size(135, 48);
@@ -753,7 +759,7 @@
             // 
             // w12
             // 
-            this.w12.Location = new System.Drawing.Point(296, 272);
+            this.w12.Location = new System.Drawing.Point(296, 258);
             this.w12.Name = "w12";
             this.w12.ReadOnly = true;
             this.w12.Size = new System.Drawing.Size(135, 48);
@@ -763,7 +769,7 @@
             // 
             // m12
             // 
-            this.m12.Location = new System.Drawing.Point(10, 272);
+            this.m12.Location = new System.Drawing.Point(10, 258);
             this.m12.Name = "m12";
             this.m12.ReadOnly = true;
             this.m12.Size = new System.Drawing.Size(135, 48);
@@ -773,7 +779,7 @@
             // 
             // f1
             // 
-            this.f1.Location = new System.Drawing.Point(582, 323);
+            this.f1.Location = new System.Drawing.Point(582, 309);
             this.f1.Name = "f1";
             this.f1.ReadOnly = true;
             this.f1.Size = new System.Drawing.Size(135, 48);
@@ -783,7 +789,7 @@
             // 
             // w1
             // 
-            this.w1.Location = new System.Drawing.Point(295, 327);
+            this.w1.Location = new System.Drawing.Point(295, 313);
             this.w1.Name = "w1";
             this.w1.ReadOnly = true;
             this.w1.Size = new System.Drawing.Size(135, 48);
@@ -793,7 +799,7 @@
             // 
             // m1
             // 
-            this.m1.Location = new System.Drawing.Point(10, 327);
+            this.m1.Location = new System.Drawing.Point(10, 313);
             this.m1.Name = "m1";
             this.m1.ReadOnly = true;
             this.m1.Size = new System.Drawing.Size(135, 48);
@@ -803,7 +809,7 @@
             // 
             // f2
             // 
-            this.f2.Location = new System.Drawing.Point(582, 377);
+            this.f2.Location = new System.Drawing.Point(582, 363);
             this.f2.Name = "f2";
             this.f2.ReadOnly = true;
             this.f2.Size = new System.Drawing.Size(135, 48);
@@ -813,7 +819,7 @@
             // 
             // w2
             // 
-            this.w2.Location = new System.Drawing.Point(295, 382);
+            this.w2.Location = new System.Drawing.Point(295, 368);
             this.w2.Name = "w2";
             this.w2.ReadOnly = true;
             this.w2.Size = new System.Drawing.Size(135, 48);
@@ -823,13 +829,52 @@
             // 
             // m2
             // 
-            this.m2.Location = new System.Drawing.Point(10, 382);
+            this.m2.Location = new System.Drawing.Point(10, 368);
             this.m2.Name = "m2";
             this.m2.ReadOnly = true;
             this.m2.Size = new System.Drawing.Size(135, 48);
             this.m2.TabIndex = 8;
             this.m2.Tag = "2 PM";
             this.m2.Text = "2 PM";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.scheduleToolStripMenuItem,
+            this.completedCoursesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1362, 24);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // completedCoursesToolStripMenuItem
+            // 
+            this.completedCoursesToolStripMenuItem.Name = "completedCoursesToolStripMenuItem";
+            this.completedCoursesToolStripMenuItem.Size = new System.Drawing.Size(157, 20);
+            this.completedCoursesToolStripMenuItem.Text = "Add Completed Courses...";
+            this.completedCoursesToolStripMenuItem.Click += new System.EventHandler(this.completedCoursesToolStripMenuItem_Click);
+            // 
+            // scheduleToolStripMenuItem
+            // 
+            this.scheduleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem,
+            this.saveAsToolStripMenuItem});
+            this.scheduleToolStripMenuItem.Name = "scheduleToolStripMenuItem";
+            this.scheduleToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.scheduleToolStripMenuItem.Text = "Schedule";
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem.Text = "Load...";
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Text = "Save As...";
             // 
             // Form1
             // 
@@ -839,6 +884,8 @@
             this.Controls.Add(this.calendarGroup);
             this.Controls.Add(this.resultsGroup);
             this.Controls.Add(this.searchGroup);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "GCC++";
             this.searchGroup.ResumeLayout(false);
@@ -848,7 +895,10 @@
             this.resultsGroup.ResumeLayout(false);
             this.calendarGroup.ResumeLayout(false);
             this.calendarGroup.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -920,6 +970,11 @@
         private System.Windows.Forms.RichTextBox wNight;
         private System.Windows.Forms.RichTextBox tNight;
         private System.Windows.Forms.RichTextBox mNight;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem completedCoursesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem scheduleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
     }
 }
 
