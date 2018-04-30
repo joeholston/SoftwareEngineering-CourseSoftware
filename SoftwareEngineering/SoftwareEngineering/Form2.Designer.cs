@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 704);
             this.Name = "Form2";
-            this.Text = "GCC++: Prerequisites";
+            this.Text = "GCC++: Add Completed Courses";
             this.ResumeLayout(false);
 
         }
