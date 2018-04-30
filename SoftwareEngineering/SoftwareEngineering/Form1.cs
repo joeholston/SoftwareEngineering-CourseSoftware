@@ -165,7 +165,7 @@ namespace SoftwareEngineering
             courseResults.View = View.Details;
             courseResults.GridLines = true;
             courseResults.FullRowSelect = true;
-            
+
             courseResults.CheckBoxes = true;
         }
 
@@ -261,15 +261,28 @@ namespace SoftwareEngineering
             courseResults.Items.Clear();
             string searchString = searchBox.Text;
             Search s = new Search();
-
-            bool[] meetingdays = new bool[5];
-            meetingdays[0] = searchDay_Monday.Checked; 
-            meetingdays[1] = searchDay_Tuesday.Checked;
-            meetingdays[2] = searchDay_Wednesday.Checked;
-            meetingdays[3] = searchDay_Thursday.Checked;
-            meetingdays[4] = searchDay_Friday.Checked;
-
-            s.search(searchString, searchDropDown.SelectedIndex, meetingdays);
+            s.search(searchString, searchDropDown.SelectedIndex);
+            if (false)
+            {
+                for (int i = 0; i < s.searchCourses.Count; i++)
+                {
+                    for (int k = 0; k < s.searchCourses[i].prerequisiteCourses.Count; k++)
+                    {
+                        bool met = false;
+                        for (int j = 0; j < user.studentCompletedCourses.Count; j++)
+                        {
+                            if (s.searchCourses[i].prerequisiteCourses[k] == user.studentCompletedCourses[j].courseCode)
+                            {
+                                met = true;
+                            }
+                        }
+                        if (!met)
+                        {
+                            s.searchCourses.Remove(s.searchCourses[i]);
+                        }
+                    }
+                }
+            }
             if (s.searchCourses.Count != 0)
             {
                 for (int i = 0; i < s.searchCourses.Count; i++)
@@ -354,12 +367,6 @@ namespace SoftwareEngineering
                     }
                 }
             }
-        }
-
-        private void completedCoursesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form2 prereqForm = new Form2();
-            prereqForm.Show();
         }
     }
 }
