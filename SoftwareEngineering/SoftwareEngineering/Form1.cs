@@ -272,21 +272,27 @@ namespace SoftwareEngineering
             s.search(searchString, searchDropDown.SelectedIndex, meetingdays);
             if (false)
             {
-                for (int i = 0; i < s.searchCourses.Count; i++)
+                user.studentCompletedCourses = new List<Course>();
+                if(user.studentCompletedCourses !=  null)
                 {
-                    for (int k = 0; k < s.searchCourses[i].prerequisiteCourses.Count; k++)
+                    for (int i = 0; i < s.searchCourses.Count; i++)
                     {
-                        bool met = false;
-                        for (int j = 0; j < user.studentCompletedCourses.Count; j++)
+                        for (int k = 0; k < s.searchCourses[i].prerequisiteCourses.Count; k++)
                         {
-                            if (s.searchCourses[i].prerequisiteCourses[k] == user.studentCompletedCourses[j].courseCode)
+                            bool met = false;
+                            for (int j = 0; j < user.studentCompletedCourses.Count; j++)
                             {
-                                met = true;
+                                if (s.searchCourses[i].prerequisiteCourses[k] == user.studentCompletedCourses[j].courseCode)
+                               {
+                                    met = true;
+                                }
                             }
-                        }
-                        if (!met)
-                        {
-                            s.searchCourses.Remove(s.searchCourses[i]);
+                            if (!met)
+                            {
+                                s.searchCourses.Remove(s.searchCourses[i]);
+                                i--;
+                                break;
+                            }
                         }
                     }
                 }
