@@ -45,17 +45,18 @@ namespace SoftwareEngineering
                 }
             }
         }
-        static public Course findCourse(string courseCode)
+        static public List<Course> findCourse(string courseCode)
         {
             List<Course> courseList = BuildDB.Instance.courseDatabase;
+            List<Course> addingCourses = new List<Course>();
             foreach (Course classSection in courseList)
             {
                 if (courseCode==classSection.courseCode)
                 {
-                    return classSection;
+                    addingCourses.Add(classSection);
                 }
             }
-            return null;
+            return addingCourses;
         }
         public bool inSchedule(string courseCode)
         {
@@ -80,6 +81,10 @@ namespace SoftwareEngineering
             }
             foreach (Course course in studentCourses)
             {
+                if (course.courseCode==selectedCourse.courseCode)
+                {
+                    return null;
+                }
                 foreach(char c in course.meetingDays)
                 {
                     foreach(char c2 in selectedCourse.meetingDays)
