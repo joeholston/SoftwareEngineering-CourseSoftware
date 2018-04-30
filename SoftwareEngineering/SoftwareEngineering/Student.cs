@@ -72,11 +72,11 @@ namespace SoftwareEngineering
             }
             return false;
         }
-        public bool isConflict(Course selectedCourse)
+        public Course isConflict(Course selectedCourse)
         {
             if (studentCourses==null)
             {
-                return false;
+                return null;
             }
             foreach (Course course in studentCourses)
             {
@@ -86,12 +86,12 @@ namespace SoftwareEngineering
                     {
                         if ((c==c2) && (selectedCourse.beginTime==course.beginTime))
                         {
-                            return true;
+                            return course;
                         }
                     }
                 }
             }
-            return false;
+            return null;
         }
     }
 }
