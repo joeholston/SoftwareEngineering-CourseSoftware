@@ -308,7 +308,7 @@ namespace SoftwareEngineering
             }
             else
             {
-                System.Windows.Forms.MessageBox.Show("No Results: Please Search Again.", "",MessageBoxButtons.OK);
+                MessageBox.Show("No Results: Please Search Again.", "",MessageBoxButtons.OK);
                 searchBox.Focus();
                 searchBox.SelectionStart = 0;
                 searchBox.SelectionLength = searchBox.Text.Length;

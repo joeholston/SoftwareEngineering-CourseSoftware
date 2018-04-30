@@ -51,5 +51,24 @@ namespace SoftwareEngineering
             itm.Checked = selected;
             courseResults.Items.Add(itm);
         }
+
+        private void search()
+        {
+            courseResults.Items.Clear();
+            string searchString = searchBox.Text;
+        }
+
+        private void searchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                search();
+            }
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            search();
+        }
     }
 }

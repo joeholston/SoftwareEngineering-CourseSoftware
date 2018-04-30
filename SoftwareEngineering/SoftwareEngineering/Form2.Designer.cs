@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.calendarGroup = new System.Windows.Forms.GroupBox();
+            this.studentListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.resultsGroup = new System.Windows.Forms.GroupBox();
             this.courseResults = new System.Windows.Forms.ListView();
             this.cCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -37,9 +40,6 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.searchDropDown = new System.Windows.Forms.ComboBox();
-            this.studentListView = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.calendarGroup.SuspendLayout();
             this.resultsGroup.SuspendLayout();
             this.searchGroup.SuspendLayout();
@@ -54,6 +54,30 @@
             this.calendarGroup.TabIndex = 7;
             this.calendarGroup.TabStop = false;
             this.calendarGroup.Text = "Calendar";
+            // 
+            // studentListView
+            // 
+            this.studentListView.CheckBoxes = true;
+            this.studentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.studentListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentListView.Location = new System.Drawing.Point(8, 21);
+            this.studentListView.Margin = new System.Windows.Forms.Padding(5);
+            this.studentListView.Name = "studentListView";
+            this.studentListView.Size = new System.Drawing.Size(711, 555);
+            this.studentListView.TabIndex = 6;
+            this.studentListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Course Code";
+            this.columnHeader1.Width = 110;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Course Name";
+            this.columnHeader2.Width = 200;
             // 
             // resultsGroup
             // 
@@ -109,6 +133,7 @@
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // searchBox
             // 
@@ -116,6 +141,7 @@
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(427, 20);
             this.searchBox.TabIndex = 0;
+            this.searchBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_KeyDown);
             // 
             // searchDropDown
             // 
@@ -128,30 +154,6 @@
             this.searchDropDown.Name = "searchDropDown";
             this.searchDropDown.Size = new System.Drawing.Size(102, 21);
             this.searchDropDown.TabIndex = 1;
-            // 
-            // studentListView
-            // 
-            this.studentListView.CheckBoxes = true;
-            this.studentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.studentListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentListView.Location = new System.Drawing.Point(8, 21);
-            this.studentListView.Margin = new System.Windows.Forms.Padding(5);
-            this.studentListView.Name = "studentListView";
-            this.studentListView.Size = new System.Drawing.Size(711, 555);
-            this.studentListView.TabIndex = 6;
-            this.studentListView.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Course Code";
-            this.columnHeader1.Width = 110;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Course Name";
-            this.columnHeader2.Width = 200;
             // 
             // Form2
             // 
