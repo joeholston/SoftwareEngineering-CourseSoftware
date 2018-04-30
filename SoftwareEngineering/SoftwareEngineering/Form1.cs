@@ -272,7 +272,6 @@ namespace SoftwareEngineering
             s.search(searchString, searchDropDown.SelectedIndex, meetingdays);
             if (false)
             {
-                user.studentCompletedCourses = new List<Course>();
                 if(user.studentCompletedCourses !=  null)
                 {
                     for (int i = 0; i < s.searchCourses.Count; i++)
