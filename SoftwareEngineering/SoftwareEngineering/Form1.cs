@@ -165,7 +165,7 @@ namespace SoftwareEngineering
             courseResults.View = View.Details;
             courseResults.GridLines = true;
             courseResults.FullRowSelect = true;
-
+            
             courseResults.CheckBoxes = true;
         }
 
@@ -261,7 +261,15 @@ namespace SoftwareEngineering
             courseResults.Items.Clear();
             string searchString = searchBox.Text;
             Search s = new Search();
-            s.search(searchString, searchDropDown.SelectedIndex);
+
+            bool[] meetingdays = new bool[5];
+            meetingdays[0] = searchDay_Monday.Checked; 
+            meetingdays[1] = searchDay_Tuesday.Checked;
+            meetingdays[2] = searchDay_Wednesday.Checked;
+            meetingdays[3] = searchDay_Thursday.Checked;
+            meetingdays[4] = searchDay_Friday.Checked;
+
+            s.search(searchString, searchDropDown.SelectedIndex, meetingdays);
             if (s.searchCourses.Count != 0)
             {
                 for (int i = 0; i < s.searchCourses.Count; i++)
