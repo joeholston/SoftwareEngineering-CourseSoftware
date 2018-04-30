@@ -336,7 +336,8 @@ namespace SoftwareEngineering
                 //add course
                 string courseCode = e.Item.SubItems[0].Text; //Gets the courseCode from the ListView
                 Course selectedCourse = Student.findCourse(courseCode); //Gets the Course object from the database array
-                if (!user.isConflict(selectedCourse))
+                Course conflicting = user.isConflict(selectedCourse);
+                if (conflicting==null)
                 {
                     user.addCourse(selectedCourse, false); //Adds the course from the student array
                     addToCalender(selectedCourse); //Show the new course to the calender
@@ -346,7 +347,17 @@ namespace SoftwareEngineering
                     DialogResult conflictBox = System.Windows.Forms.MessageBox.Show("Conflicting Course!\nDo you want to replace the current " + selectedCourse.meetingDays + "- " + appendTime(selectedCourse.beginTime) + " class?" , "", MessageBoxButtons.YesNo);
                     if (conflictBox == DialogResult.Yes)
                     {
-                        
+                        foreach(ListViewItem item in courseResults.Items)
+                        {
+                            if (item.SubItems[0].Text==conflicting.courseCode)
+                            {
+                                item.Checked = false;
+                                break;
+                            }
+                        }  
+                        user.deleteCourse(conflicting,false);
+                        user.addCourse(selectedCourse, false); //Adds the course from the student array
+                        addToCalender(selectedCourse); //Show the new course to the calender
                     }
                     else if (conflictBox == DialogResult.No)
                     {
