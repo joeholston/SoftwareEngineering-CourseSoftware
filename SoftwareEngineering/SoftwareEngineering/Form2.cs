@@ -40,5 +40,16 @@ namespace SoftwareEngineering
 
             studentListView.CheckBoxes = true;
         }
+
+        private void addToLV(string code, string name, bool selected)
+        {
+            ListViewItem itm;
+            string[] arr = new string[6];
+            arr[0] = code;
+            arr[1] = name;
+            itm = new ListViewItem(arr);
+            itm.Checked = selected;
+            courseResults.Items.Add(itm);
+        }
     }
 }
