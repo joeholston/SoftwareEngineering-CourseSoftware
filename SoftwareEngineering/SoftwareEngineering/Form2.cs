@@ -41,14 +41,14 @@ namespace SoftwareEngineering
             studentListView.CheckBoxes = true;
         }
 
-        private void addToLV(string code, string name, bool selected)
+        private void addToLV(string code, string name)
         {
             ListViewItem itm;
             string[] arr = new string[6];
             arr[0] = code;
             arr[1] = name;
             itm = new ListViewItem(arr);
-            itm.Checked = selected;
+            //itm.Checked = selected;
             courseResults.Items.Add(itm);
         }
 
@@ -56,6 +56,27 @@ namespace SoftwareEngineering
         {
             courseResults.Items.Clear();
             string searchString = searchBox.Text;
+            Search s = new Search();
+
+            s.searchPrereq(searchString, searchDropDown.SelectedIndex);
+           
+            if (s.prereqCourses.Count != 0)
+            {
+                for (int i = 0; i < s.prereqCourses.Count; i++)
+                {
+                    Course c = s.prereqCourses[i];
+                    string newTime = appendTime(c.beginTime);
+                    //bool selected = user.inSchedule(c.courseCode);
+                    addToLV(c.courseCode, c.LongTitle);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Results: Please Search Again.", "", MessageBoxButtons.OK);
+                searchBox.Focus();
+                searchBox.SelectionStart = 0;
+                searchBox.SelectionLength = searchBox.Text.Length;
+            }
         }
 
         private void searchBox_KeyDown(object sender, KeyEventArgs e)
@@ -69,6 +90,24 @@ namespace SoftwareEngineering
         private void searchButton_Click(object sender, EventArgs e)
         {
             search();
+        }
+
+        private string appendTime(DateTime originalTime)
+        {
+            string newTime = originalTime.ToString("hh:mm tt");
+            return newTime;
+        }
+
+        private void courseResults_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            if (e.Item.Checked == false)
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("Test", "", MessageBoxButtons.OK);
+            }
         }
     }
 }

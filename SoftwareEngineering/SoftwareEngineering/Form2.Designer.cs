@@ -102,6 +102,7 @@
             this.courseResults.Size = new System.Drawing.Size(557, 626);
             this.courseResults.TabIndex = 5;
             this.courseResults.UseCompatibleStateImageBehavior = false;
+            this.courseResults.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.courseResults_ItemChecked);
             // 
             // cCode
             // 
