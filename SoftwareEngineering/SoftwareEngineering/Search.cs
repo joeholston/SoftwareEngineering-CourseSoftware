@@ -21,30 +21,40 @@ namespace SoftwareEngineering
 
         /*search the course database list for matches to the input string and add them to the searchCourses list
           searchSelection tells us whether to search by course code or course name
-            0 = Course Code
-            1 = Course Name
+               0 = Course Code
+               1 = Course Name
+         
+           meetingDays is a bool array that tells wehether the boxes for Monday through Friday are checked or not
+               0 = Monday
+               1 = Tuesday
+               2 = Wednesday
+               3 = Thursday
+               4 = Friday
         */
-        public void search(string input, int searchSelection)
+        public void search(string input, int searchSelection, bool[] meetingDays)
         {
             searchCourses.Clear();
 
             for (int i = 0; i < courseDB.Count; i++)
             {
-                if (searchSelection == 0)
-                {
-                    if (courseDB[i].courseCode.Contains(input.ToUpper()))
+                //if (meetingDays[0])
+                //{
+                    if (searchSelection == 0)
                     {
-                        searchCourses.Add(courseDB[i]);
+                        if (courseDB[i].courseCode.Contains(input.ToUpper()))
+                        {
+                            searchCourses.Add(courseDB[i]);
+                        }
                     }
-                }
-                else if (searchSelection == 1)
-                {
-                    //allows for searching both the short or long title of the courses
-                    if (courseDB[i].shortTitle.Contains(input.ToUpper()) | courseDB[i].LongTitle.Contains(input.ToUpper()))
+                    else if (searchSelection == 1)
                     {
-                        searchCourses.Add(courseDB[i]);
+                        //allows for searching both the short or long title of the courses
+                        if (courseDB[i].shortTitle.Contains(input.ToUpper()) | courseDB[i].LongTitle.Contains(input.ToUpper()))
+                        {
+                            searchCourses.Add(courseDB[i]);
+                        }
                     }
-                }
+                //}
             }
         }
 
@@ -63,6 +73,7 @@ namespace SoftwareEngineering
                 }
                 else if (searchSelection == 1)
                 {
+                    //allows for searching both the short or long title of the courses
                     if (prereqDB[i].shortTitle.Contains(input.ToUpper()) | prereqDB[i].LongTitle.Contains(input.ToUpper()))
                     {
                         prereqCourses.Add(prereqDB[i]);
@@ -70,6 +81,5 @@ namespace SoftwareEngineering
                 }
             }
         }
-
     }
 }
