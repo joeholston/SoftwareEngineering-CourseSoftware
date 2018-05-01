@@ -37,8 +37,13 @@ namespace SoftwareEngineering
 
             for (int i = 0; i < courseDB.Count; i++)
             {
-                //if (meetingDays[0])
-                //{
+                // this statements determines if the meeting day matches the selected weekdays
+                if ((meetingDays[0] && courseDB[i].meetingDays.Contains("M")) || 
+                    (meetingDays[1] && courseDB[i].meetingDays.Contains("T")) ||
+                    (meetingDays[2] && courseDB[i].meetingDays.Contains("W")) ||
+                    (meetingDays[3] && courseDB[i].meetingDays.Contains("R")) ||
+                    (meetingDays[4] && courseDB[i].meetingDays.Contains("F")) )
+                {
                     if (searchSelection == 0)
                     {
                         if (courseDB[i].courseCode.Contains(input.ToUpper()))
@@ -49,12 +54,12 @@ namespace SoftwareEngineering
                     else if (searchSelection == 1)
                     {
                         //allows for searching both the short or long title of the courses
-                        if (courseDB[i].shortTitle.Contains(input.ToUpper()) | courseDB[i].LongTitle.Contains(input.ToUpper()))
+                        if (courseDB[i].shortTitle.Contains(input.ToUpper()) || courseDB[i].LongTitle.Contains(input.ToUpper()))
                         {
                             searchCourses.Add(courseDB[i]);
                         }
                     }
-                //}
+                }
             }
         }
 
