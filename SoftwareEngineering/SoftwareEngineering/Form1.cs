@@ -272,6 +272,13 @@ namespace SoftwareEngineering
             else
             {
                 advancedSearch_Group.Hide();
+
+                // make all the boxes checked when you hide the advanced search
+                searchDay_Monday.Checked = true;
+                searchDay_Tuesday.Checked = true;
+                searchDay_Wednesday.Checked = true;
+                searchDay_Thursday.Checked = true;
+                searchDay_Friday.Checked = true;
             }
         }
 
