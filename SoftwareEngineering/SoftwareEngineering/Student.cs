@@ -32,7 +32,7 @@ namespace SoftwareEngineering
                 }
                 if (completed) { studentCompletedCourses.Add(selectedCourse); }
                 else{
-                    if (!inSchedule(selectedCourse.courseCode))
+                    if (!inSchedule(selectedCourse))
                     {
                         studentCourses.Add(selectedCourse);
                     }
@@ -66,7 +66,7 @@ namespace SoftwareEngineering
             }
             return addingCourses;
         }
-        public bool inSchedule(string courseCode)
+        public bool inSchedule(Course selectedCourse)
         {
             if (studentCourses==null)
             {
@@ -74,7 +74,7 @@ namespace SoftwareEngineering
             }
             foreach (Course courses in studentCourses)
             {
-                if (courses.courseCode == courseCode)
+                if (courses.courseCode == selectedCourse.courseCode && courses.meetingDays==selectedCourse.meetingDays)
                 {
                     return true;
                 }
