@@ -19,7 +19,7 @@ namespace SoftwareEngineering
 {
     public partial class Form1 : Form
     {
-        private Student user=new Student();
+        private Student user = Student.user;
         private RichTextBox[,] calendar = new RichTextBox[6, 13];
 
         public Form1()

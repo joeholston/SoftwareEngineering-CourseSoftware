@@ -8,8 +8,16 @@ namespace SoftwareEngineering
 {
     class Student
     {
+        private static Student instance;
         public List<Course> studentCompletedCourses { get; set; }
         public List<Course> studentCourses { get; set; }
+
+        private Student()
+        {
+            studentCourses = new List<Course>();
+            studentCompletedCourses = new List<Course>();
+        }
+
         public void addCourse(Course selectedCourse, bool completed)
         {
             if (selectedCourse != null)
@@ -97,6 +105,17 @@ namespace SoftwareEngineering
                 }
             }
             return null;
+        }
+        public static Student user
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new Student();
+                }
+                return instance;
+            }
         }
     }
 }
