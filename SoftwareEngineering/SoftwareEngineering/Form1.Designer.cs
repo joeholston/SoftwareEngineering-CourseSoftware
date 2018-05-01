@@ -43,14 +43,8 @@
             this.searchDay_Wednesday = new System.Windows.Forms.CheckBox();
             this.advancedSearch = new System.Windows.Forms.CheckBox();
             this.searchButton = new System.Windows.Forms.Button();
-            this.resultsGroup = new System.Windows.Forms.GroupBox();
-            this.courseResults = new System.Windows.Forms.ListView();
-            this.cCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cSeats = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.calendarTab = new System.Windows.Forms.TabPage();
             this.calendarGroup = new System.Windows.Forms.GroupBox();
             this.wNight = new System.Windows.Forms.RichTextBox();
             this.tNight = new System.Windows.Forms.RichTextBox();
@@ -94,16 +88,56 @@
             this.f2 = new System.Windows.Forms.RichTextBox();
             this.w2 = new System.Windows.Forms.RichTextBox();
             this.m2 = new System.Windows.Forms.RichTextBox();
+            this.listviewTab = new System.Windows.Forms.TabPage();
+            this.studentListView = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.resultsGroup = new System.Windows.Forms.GroupBox();
+            this.courseResults = new System.Windows.Forms.ListView();
+            this.cCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cDay = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cSeats = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.completedCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.completedCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pageTabControl = new System.Windows.Forms.TabControl();
+            this.schedulerTab = new System.Windows.Forms.TabPage();
+            this.completedTab = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.searchGroup.SuspendLayout();
             this.advancedSearch_Group.SuspendLayout();
-            this.resultsGroup.SuspendLayout();
+            this.tabControl.SuspendLayout();
+            this.calendarTab.SuspendLayout();
             this.calendarGroup.SuspendLayout();
+            this.listviewTab.SuspendLayout();
+            this.resultsGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.pageTabControl.SuspendLayout();
+            this.schedulerTab.SuspendLayout();
+            this.completedTab.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchBox
@@ -133,7 +167,7 @@
             this.searchGroup.Controls.Add(this.searchButton);
             this.searchGroup.Controls.Add(this.searchBox);
             this.searchGroup.Controls.Add(this.searchDropDown);
-            this.searchGroup.Location = new System.Drawing.Point(22, 30);
+            this.searchGroup.Location = new System.Drawing.Point(14, 6);
             this.searchGroup.Name = "searchGroup";
             this.searchGroup.Size = new System.Drawing.Size(727, 117);
             this.searchGroup.TabIndex = 2;
@@ -151,7 +185,7 @@
             this.advancedSearch_Group.Controls.Add(this.searchDay_Thursday);
             this.advancedSearch_Group.Controls.Add(this.searchDay_Tuesday);
             this.advancedSearch_Group.Controls.Add(this.searchDay_Wednesday);
-            this.advancedSearch_Group.Location = new System.Drawing.Point(42, 65);
+            this.advancedSearch_Group.Location = new System.Drawing.Point(42, 57);
             this.advancedSearch_Group.Name = "advancedSearch_Group";
             this.advancedSearch_Group.Size = new System.Drawing.Size(668, 46);
             this.advancedSearch_Group.TabIndex = 66;
@@ -288,7 +322,7 @@
             // advancedSearch
             // 
             this.advancedSearch.AutoSize = true;
-            this.advancedSearch.Location = new System.Drawing.Point(22, 64);
+            this.advancedSearch.Location = new System.Drawing.Point(22, 56);
             this.advancedSearch.Name = "advancedSearch";
             this.advancedSearch.Size = new System.Drawing.Size(121, 17);
             this.advancedSearch.TabIndex = 4;
@@ -307,63 +341,26 @@
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
-            // resultsGroup
+            // tabControl
             // 
-            this.resultsGroup.Controls.Add(this.courseResults);
-            this.resultsGroup.Location = new System.Drawing.Point(777, 30);
-            this.resultsGroup.Name = "resultsGroup";
-            this.resultsGroup.Size = new System.Drawing.Size(573, 655);
-            this.resultsGroup.TabIndex = 3;
-            this.resultsGroup.TabStop = false;
-            this.resultsGroup.Text = "Results";
+            this.tabControl.Controls.Add(this.calendarTab);
+            this.tabControl.Controls.Add(this.listviewTab);
+            this.tabControl.Location = new System.Drawing.Point(14, 129);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(727, 549);
+            this.tabControl.TabIndex = 69;
             // 
-            // courseResults
+            // calendarTab
             // 
-            this.courseResults.CheckBoxes = true;
-            this.courseResults.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.cCode,
-            this.cName,
-            this.cDay,
-            this.cTime,
-            this.cLocation,
-            this.cSeats});
-            this.courseResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseResults.Location = new System.Drawing.Point(8, 21);
-            this.courseResults.Margin = new System.Windows.Forms.Padding(5);
-            this.courseResults.Name = "courseResults";
-            this.courseResults.Size = new System.Drawing.Size(557, 626);
-            this.courseResults.TabIndex = 5;
-            this.courseResults.UseCompatibleStateImageBehavior = false;
-            this.courseResults.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.courseResults_ItemChecked);
-            // 
-            // cCode
-            // 
-            this.cCode.Text = "Course Code";
-            this.cCode.Width = 110;
-            // 
-            // cName
-            // 
-            this.cName.Text = "Course Name";
-            this.cName.Width = 200;
-            // 
-            // cDay
-            // 
-            this.cDay.Text = "Days";
-            this.cDay.Width = 55;
-            // 
-            // cTime
-            // 
-            this.cTime.Text = "Time";
-            this.cTime.Width = 70;
-            // 
-            // cLocation
-            // 
-            this.cLocation.Text = "Room";
-            this.cLocation.Width = 55;
-            // 
-            // cSeats
-            // 
-            this.cSeats.Text = "Seats";
+            this.calendarTab.Controls.Add(this.calendarGroup);
+            this.calendarTab.Location = new System.Drawing.Point(4, 22);
+            this.calendarTab.Name = "calendarTab";
+            this.calendarTab.Padding = new System.Windows.Forms.Padding(3);
+            this.calendarTab.Size = new System.Drawing.Size(719, 523);
+            this.calendarTab.TabIndex = 0;
+            this.calendarTab.Text = "Calendar";
+            this.calendarTab.UseVisualStyleBackColor = true;
             // 
             // calendarGroup
             // 
@@ -409,12 +406,11 @@
             this.calendarGroup.Controls.Add(this.f2);
             this.calendarGroup.Controls.Add(this.w2);
             this.calendarGroup.Controls.Add(this.m2);
-            this.calendarGroup.Location = new System.Drawing.Point(22, 160);
+            this.calendarGroup.Location = new System.Drawing.Point(-5, -7);
             this.calendarGroup.Name = "calendarGroup";
-            this.calendarGroup.Size = new System.Drawing.Size(727, 532);
+            this.calendarGroup.Size = new System.Drawing.Size(727, 534);
             this.calendarGroup.TabIndex = 4;
             this.calendarGroup.TabStop = false;
-            this.calendarGroup.Text = "Calendar";
             // 
             // wNight
             // 
@@ -837,6 +833,122 @@
             this.m2.Tag = "2 PM";
             this.m2.Text = "2 PM";
             // 
+            // listviewTab
+            // 
+            this.listviewTab.Controls.Add(this.studentListView);
+            this.listviewTab.Location = new System.Drawing.Point(4, 22);
+            this.listviewTab.Name = "listviewTab";
+            this.listviewTab.Padding = new System.Windows.Forms.Padding(3);
+            this.listviewTab.Size = new System.Drawing.Size(719, 523);
+            this.listviewTab.TabIndex = 1;
+            this.listviewTab.Text = "List View";
+            this.listviewTab.UseVisualStyleBackColor = true;
+            // 
+            // studentListView
+            // 
+            this.studentListView.CheckBoxes = true;
+            this.studentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.studentListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentListView.Location = new System.Drawing.Point(8, 8);
+            this.studentListView.Margin = new System.Windows.Forms.Padding(5);
+            this.studentListView.Name = "studentListView";
+            this.studentListView.Size = new System.Drawing.Size(703, 507);
+            this.studentListView.TabIndex = 6;
+            this.studentListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Course Code";
+            this.columnHeader1.Width = 110;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Course Name";
+            this.columnHeader2.Width = 200;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Days";
+            this.columnHeader3.Width = 55;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Time";
+            this.columnHeader4.Width = 70;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Room";
+            this.columnHeader5.Width = 55;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Seats";
+            // 
+            // resultsGroup
+            // 
+            this.resultsGroup.Controls.Add(this.courseResults);
+            this.resultsGroup.Location = new System.Drawing.Point(769, 6);
+            this.resultsGroup.Name = "resultsGroup";
+            this.resultsGroup.Size = new System.Drawing.Size(573, 672);
+            this.resultsGroup.TabIndex = 3;
+            this.resultsGroup.TabStop = false;
+            this.resultsGroup.Text = "Results";
+            // 
+            // courseResults
+            // 
+            this.courseResults.CheckBoxes = true;
+            this.courseResults.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.cCode,
+            this.cName,
+            this.cDay,
+            this.cTime,
+            this.cLocation,
+            this.cSeats});
+            this.courseResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseResults.Location = new System.Drawing.Point(8, 21);
+            this.courseResults.Margin = new System.Windows.Forms.Padding(5);
+            this.courseResults.Name = "courseResults";
+            this.courseResults.Size = new System.Drawing.Size(557, 643);
+            this.courseResults.TabIndex = 5;
+            this.courseResults.UseCompatibleStateImageBehavior = false;
+            this.courseResults.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.courseResults_ItemChecked);
+            // 
+            // cCode
+            // 
+            this.cCode.Text = "Course Code";
+            this.cCode.Width = 110;
+            // 
+            // cName
+            // 
+            this.cName.Text = "Course Name";
+            this.cName.Width = 200;
+            // 
+            // cDay
+            // 
+            this.cDay.Text = "Days";
+            this.cDay.Width = 55;
+            // 
+            // cTime
+            // 
+            this.cTime.Text = "Time";
+            this.cTime.Width = 70;
+            // 
+            // cLocation
+            // 
+            this.cLocation.Text = "Room";
+            this.cLocation.Width = 55;
+            // 
+            // cSeats
+            // 
+            this.cSeats.Text = "Seats";
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -847,13 +959,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1362, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // completedCoursesToolStripMenuItem
-            // 
-            this.completedCoursesToolStripMenuItem.Name = "completedCoursesToolStripMenuItem";
-            this.completedCoursesToolStripMenuItem.Size = new System.Drawing.Size(157, 20);
-            this.completedCoursesToolStripMenuItem.Text = "Add Completed Courses...";
-            this.completedCoursesToolStripMenuItem.Click += new System.EventHandler(this.completedCoursesToolStripMenuItem_Click);
+            this.menuStrip1.Visible = false;
             // 
             // scheduleToolStripMenuItem
             // 
@@ -867,24 +973,173 @@
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.loadToolStripMenuItem.Text = "Load...";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
+            // 
+            // completedCoursesToolStripMenuItem
+            // 
+            this.completedCoursesToolStripMenuItem.Name = "completedCoursesToolStripMenuItem";
+            this.completedCoursesToolStripMenuItem.Size = new System.Drawing.Size(157, 20);
+            this.completedCoursesToolStripMenuItem.Text = "Add Completed Courses...";
+            this.completedCoursesToolStripMenuItem.Click += new System.EventHandler(this.completedCoursesToolStripMenuItem_Click);
+            // 
+            // pageTabControl
+            // 
+            this.pageTabControl.Controls.Add(this.schedulerTab);
+            this.pageTabControl.Controls.Add(this.completedTab);
+            this.pageTabControl.Location = new System.Drawing.Point(0, 4);
+            this.pageTabControl.Name = "pageTabControl";
+            this.pageTabControl.SelectedIndex = 0;
+            this.pageTabControl.Size = new System.Drawing.Size(1366, 711);
+            this.pageTabControl.TabIndex = 69;
+            // 
+            // schedulerTab
+            // 
+            this.schedulerTab.Controls.Add(this.tabControl);
+            this.schedulerTab.Controls.Add(this.resultsGroup);
+            this.schedulerTab.Controls.Add(this.searchGroup);
+            this.schedulerTab.Location = new System.Drawing.Point(4, 22);
+            this.schedulerTab.Name = "schedulerTab";
+            this.schedulerTab.Padding = new System.Windows.Forms.Padding(3);
+            this.schedulerTab.Size = new System.Drawing.Size(1358, 685);
+            this.schedulerTab.TabIndex = 0;
+            this.schedulerTab.Text = "Scheduler";
+            this.schedulerTab.UseVisualStyleBackColor = true;
+            // 
+            // completedTab
+            // 
+            this.completedTab.Controls.Add(this.groupBox1);
+            this.completedTab.Controls.Add(this.groupBox3);
+            this.completedTab.Controls.Add(this.groupBox2);
+            this.completedTab.Location = new System.Drawing.Point(4, 22);
+            this.completedTab.Name = "completedTab";
+            this.completedTab.Padding = new System.Windows.Forms.Padding(3);
+            this.completedTab.Size = new System.Drawing.Size(1358, 685);
+            this.completedTab.TabIndex = 1;
+            this.completedTab.Text = "Completed Courses";
+            this.completedTab.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Location = new System.Drawing.Point(8, 84);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(727, 584);
+            this.groupBox1.TabIndex = 72;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Calendar";
+            // 
+            // listView1
+            // 
+            this.listView1.CheckBoxes = true;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader8});
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.Location = new System.Drawing.Point(8, 21);
+            this.listView1.Margin = new System.Windows.Forms.Padding(5);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(711, 555);
+            this.listView1.TabIndex = 6;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Course Code";
+            this.columnHeader7.Width = 110;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Course Name";
+            this.columnHeader8.Width = 200;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.listView2);
+            this.groupBox2.Location = new System.Drawing.Point(763, 13);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(573, 655);
+            this.groupBox2.TabIndex = 71;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Results";
+            // 
+            // listView2
+            // 
+            this.listView2.CheckBoxes = true;
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader9,
+            this.columnHeader10});
+            this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView2.Location = new System.Drawing.Point(8, 21);
+            this.listView2.Margin = new System.Windows.Forms.Padding(5);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(557, 626);
+            this.listView2.TabIndex = 5;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Course Code";
+            this.columnHeader9.Width = 110;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Course Name";
+            this.columnHeader10.Width = 200;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Location = new System.Drawing.Point(8, 13);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(727, 65);
+            this.groupBox3.TabIndex = 70;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Search";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(616, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(144, 25);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(427, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Course Code",
+            "Course Name"});
+            this.comboBox1.Location = new System.Drawing.Point(22, 25);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(102, 21);
+            this.comboBox1.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 704);
-            this.Controls.Add(this.calendarGroup);
-            this.Controls.Add(this.resultsGroup);
-            this.Controls.Add(this.searchGroup);
+            this.ClientSize = new System.Drawing.Size(1362, 740);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.pageTabControl);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "GCC++";
@@ -892,11 +1147,21 @@
             this.searchGroup.PerformLayout();
             this.advancedSearch_Group.ResumeLayout(false);
             this.advancedSearch_Group.PerformLayout();
-            this.resultsGroup.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
+            this.calendarTab.ResumeLayout(false);
             this.calendarGroup.ResumeLayout(false);
             this.calendarGroup.PerformLayout();
+            this.listviewTab.ResumeLayout(false);
+            this.resultsGroup.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.pageTabControl.ResumeLayout(false);
+            this.schedulerTab.ResumeLayout(false);
+            this.completedTab.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -975,6 +1240,31 @@
         private System.Windows.Forms.ToolStripMenuItem scheduleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
+        private System.Windows.Forms.ListView studentListView;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage calendarTab;
+        private System.Windows.Forms.TabPage listviewTab;
+        private System.Windows.Forms.TabControl pageTabControl;
+        private System.Windows.Forms.TabPage schedulerTab;
+        private System.Windows.Forms.TabPage completedTab;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
     }
 }
 

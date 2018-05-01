@@ -41,7 +41,7 @@ namespace SoftwareEngineering
             studentListView.CheckBoxes = true;
         }
 
-        private void addToLV(string code, string name)
+        private void addToLV(ListView lv, string code, string name)
         {
             ListViewItem itm;
             string[] arr = new string[6];
@@ -49,7 +49,7 @@ namespace SoftwareEngineering
             arr[1] = name;
             itm = new ListViewItem(arr);
             //itm.Checked = selected;
-            courseResults.Items.Add(itm);
+            lv.Items.Add(itm);
         }
 
         private void search()
@@ -67,7 +67,7 @@ namespace SoftwareEngineering
                     Course c = s.prereqCourses[i];
                     string newTime = appendTime(c.beginTime);
                     //bool selected = user.inSchedule(c.courseCode);
-                    addToLV(c.courseCode, c.LongTitle);
+                    addToLV(courseResults, c.courseCode, c.LongTitle);
                 }
             }
             else
@@ -106,7 +106,7 @@ namespace SoftwareEngineering
             }
             else
             {
-                MessageBox.Show("Test", "", MessageBoxButtons.OK);
+                addToLV(studentListView, e.Item.SubItems[0].Text, e.Item.SubItems[1].Text);
             }
         }
     }

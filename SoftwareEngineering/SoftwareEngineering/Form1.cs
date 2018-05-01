@@ -31,7 +31,8 @@ namespace SoftwareEngineering
             searchDropDown.SelectedIndex = 0;
             startTime.SelectedIndex = 0;
             endTime.SelectedIndex = endTime.Items.Count - 1;
-            createLV();
+            createLV(courseResults);
+            createLV(studentListView);
             fillCalendarArray();            
         }
 
@@ -83,7 +84,25 @@ namespace SoftwareEngineering
         //showCourses was designed to use a code to determine which UI calendar blocks should be shown
         //it will call specialized MWF or TR functions to actually display and edit the calendar blocks
         private void showCourses(Course course, int time, bool show)
-        {   
+        {
+            //add to student list view
+            if (show)
+            {
+                addToLV(studentListView, course, true);
+            }
+            //remove from student list view
+            else
+            {
+                foreach(ListViewItem item in studentListView.Items)
+                {
+                    if (item.SubItems[0].Text.Equals(course.courseCode))
+                    {
+                        studentListView.Items.Remove(item);
+                    }
+                }
+            }
+
+            //adding/removing from calendar
             foreach (char c in course.meetingDays)
             {
                 if (c == 'M')
@@ -160,30 +179,30 @@ namespace SoftwareEngineering
         }
 
         //createLV creates the List View with the desired preset settings
-        private void createLV()
+        private void createLV(ListView lv)
         {
-            courseResults.View = View.Details;
-            courseResults.GridLines = true;
-            courseResults.FullRowSelect = true;
+            lv.View = View.Details;
+            lv.GridLines = true;
+            lv.FullRowSelect = true;
             
-            courseResults.CheckBoxes = true;
+            lv.CheckBoxes = true;
         }
 
         //addToLv takes the desired arguements and adds them as List View Items
-        private void addToLV(string code, string name, string days, string time, string location, string seats, bool selected)
+        private void addToLV(ListView lv, Course c, bool selected)
         {
             //creates a List View Item
             ListViewItem itm;
             string[] arr = new string[6];
-            arr[0] = code;
-            arr[1] = name;
-            arr[2] = days;
-            arr[3] = time;
-            arr[4] = location;
-            arr[5] = seats;
+            arr[0] = c.courseCode;
+            arr[1] = c.LongTitle;
+            arr[2] = c.meetingDays;
+            arr[3] = appendTime(c.beginTime);
+            arr[4] = c.building;
+            arr[5] = c.enrollment.ToString();
             itm = new ListViewItem(arr);
             itm.Checked = selected;
-            courseResults.Items.Add(itm);
+            lv.Items.Add(itm);
         }
 
 
@@ -301,9 +320,8 @@ namespace SoftwareEngineering
                 for (int i = 0; i < s.searchCourses.Count; i++)
                 {
                     Course c = s.searchCourses[i];
-                    string newTime = appendTime(c.beginTime);
                     bool selected = user.inSchedule(c.courseCode);
-                    addToLV(c.courseCode, c.LongTitle, c.meetingDays, newTime, c.building, c.enrollment.ToString(), selected);
+                    addToLV(courseResults, c, selected);
                 }
             }
             else
