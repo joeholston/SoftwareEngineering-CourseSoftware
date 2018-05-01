@@ -33,7 +33,11 @@ namespace SoftwareEngineering
             endTime.SelectedIndex = endTime.Items.Count - 1;
             createLV(courseResults);
             createLV(studentListView);
-            fillCalendarArray();            
+            fillCalendarArray();
+
+            searchDropDown_prereq.SelectedIndex = 0;
+            createLV(courseResults_prereq);
+            createLV(studentListView_prereq);
         }
 
         private void fillCalendarArray()
@@ -205,6 +209,16 @@ namespace SoftwareEngineering
             lv.Items.Add(itm);
         }
 
+        private void addToLV_prereq(ListView lv, string code, string name)
+        {
+            ListViewItem itm;
+            string[] arr = new string[6];
+            arr[0] = code;
+            arr[1] = name;
+            itm = new ListViewItem(arr);
+            lv.Items.Add(itm);
+        }
+
 
         //getTime takes a DateTime item and returns the simple integer version of the time.
         //This is used for the time code and for printing to the List View and Calendar UI.
@@ -340,6 +354,33 @@ namespace SoftwareEngineering
             }
         }
 
+        private void search_prereq()
+        {
+            courseResults_prereq.Items.Clear();
+            string searchString = searchBox_prereq.Text;
+            Search s = new Search();
+
+            s.searchPrereq(searchString, searchDropDown_prereq.SelectedIndex);
+
+            if (s.prereqCourses.Count != 0)
+            {
+                for (int i = 0; i < s.prereqCourses.Count; i++)
+                {
+                    Course c = s.prereqCourses[i];
+                    string newTime = appendTime(c.beginTime);
+                    //bool selected = user.inSchedule(c.courseCode);
+                    addToLV_prereq(courseResults_prereq, c.courseCode, c.LongTitle);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Results: Please Search Again.", "", MessageBoxButtons.OK);
+                searchBox_prereq.Focus();
+                searchBox_prereq.SelectionStart = 0;
+                searchBox_prereq.SelectionLength = searchBox_prereq.Text.Length;
+            }
+        }
+
         //searchButton_Click sets the functionality for the search button being clicked.
         //This specifically takes the searchBox string and uses the search algorithm. Then is displays the results on the List View.
         private void searchButton_Click(object sender, EventArgs e)
@@ -354,6 +395,20 @@ namespace SoftwareEngineering
                 search();
             }
         }
+
+        private void searchButton_prereq_Click(object sender, EventArgs e)
+        {
+            search_prereq();
+        }
+
+        private void searchBox_prereq_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                search_prereq();
+            }
+        }
+
         public void addALL()
         {
             if (user.studentCourses != null)
@@ -546,10 +601,16 @@ namespace SoftwareEngineering
             }
         }
 
-        private void completedCoursesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void courseResults_prereq_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
-            Form2 prereqForm = new Form2();
-            prereqForm.Show();
+            if (e.Item.Checked == false)
+            {
+
+            }
+            else
+            {
+                addToLV_prereq(studentListView_prereq, e.Item.SubItems[0].Text, e.Item.SubItems[1].Text);
+            }
         }
     }
 }

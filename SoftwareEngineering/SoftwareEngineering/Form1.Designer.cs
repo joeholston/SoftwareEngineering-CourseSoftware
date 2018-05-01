@@ -104,26 +104,24 @@
             this.cTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cLocation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cSeats = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.scheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.completedCoursesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pageTabControl = new System.Windows.Forms.TabControl();
             this.schedulerTab = new System.Windows.Forms.TabPage();
             this.completedTab = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.calendarGroup_prereq = new System.Windows.Forms.GroupBox();
+            this.studentListView_prereq = new System.Windows.Forms.ListView();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.searchGroup_prereq = new System.Windows.Forms.GroupBox();
+            this.searchButton_prereq = new System.Windows.Forms.Button();
+            this.searchBox_prereq = new System.Windows.Forms.TextBox();
+            this.searchDropDown_prereq = new System.Windows.Forms.ComboBox();
+            this.resultsGroup_prereq = new System.Windows.Forms.GroupBox();
+            this.courseResults_prereq = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.loadButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.prereqButton = new System.Windows.Forms.CheckBox();
             this.searchGroup.SuspendLayout();
             this.advancedSearch_Group.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -131,18 +129,17 @@
             this.calendarGroup.SuspendLayout();
             this.listviewTab.SuspendLayout();
             this.resultsGroup.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.pageTabControl.SuspendLayout();
             this.schedulerTab.SuspendLayout();
             this.completedTab.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.calendarGroup_prereq.SuspendLayout();
+            this.searchGroup_prereq.SuspendLayout();
+            this.resultsGroup_prereq.SuspendLayout();
             this.SuspendLayout();
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(144, 25);
+            this.searchBox.Location = new System.Drawing.Point(138, 22);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(427, 20);
             this.searchBox.TabIndex = 0;
@@ -155,9 +152,9 @@
             this.searchDropDown.Items.AddRange(new object[] {
             "Course Code",
             "Course Name"});
-            this.searchDropDown.Location = new System.Drawing.Point(22, 25);
+            this.searchDropDown.Location = new System.Drawing.Point(14, 21);
             this.searchDropDown.Name = "searchDropDown";
-            this.searchDropDown.Size = new System.Drawing.Size(102, 21);
+            this.searchDropDown.Size = new System.Drawing.Size(97, 21);
             this.searchDropDown.TabIndex = 1;
             // 
             // searchGroup
@@ -167,15 +164,16 @@
             this.searchGroup.Controls.Add(this.searchButton);
             this.searchGroup.Controls.Add(this.searchBox);
             this.searchGroup.Controls.Add(this.searchDropDown);
-            this.searchGroup.Location = new System.Drawing.Point(14, 6);
+            this.searchGroup.Location = new System.Drawing.Point(14, 0);
             this.searchGroup.Name = "searchGroup";
-            this.searchGroup.Size = new System.Drawing.Size(727, 117);
+            this.searchGroup.Size = new System.Drawing.Size(727, 101);
             this.searchGroup.TabIndex = 2;
             this.searchGroup.TabStop = false;
             this.searchGroup.Text = "Search";
             // 
             // advancedSearch_Group
             // 
+            this.advancedSearch_Group.Controls.Add(this.prereqButton);
             this.advancedSearch_Group.Controls.Add(this.endLabel);
             this.advancedSearch_Group.Controls.Add(this.startLabel);
             this.advancedSearch_Group.Controls.Add(this.endTime);
@@ -185,9 +183,9 @@
             this.advancedSearch_Group.Controls.Add(this.searchDay_Thursday);
             this.advancedSearch_Group.Controls.Add(this.searchDay_Tuesday);
             this.advancedSearch_Group.Controls.Add(this.searchDay_Wednesday);
-            this.advancedSearch_Group.Location = new System.Drawing.Point(42, 57);
+            this.advancedSearch_Group.Location = new System.Drawing.Point(34, 49);
             this.advancedSearch_Group.Name = "advancedSearch_Group";
-            this.advancedSearch_Group.Size = new System.Drawing.Size(668, 46);
+            this.advancedSearch_Group.Size = new System.Drawing.Size(682, 46);
             this.advancedSearch_Group.TabIndex = 66;
             this.advancedSearch_Group.TabStop = false;
             this.advancedSearch_Group.Text = "Advanced Search";
@@ -196,7 +194,7 @@
             // endLabel
             // 
             this.endLabel.AutoSize = true;
-            this.endLabel.Location = new System.Drawing.Point(549, 21);
+            this.endLabel.Location = new System.Drawing.Point(581, 21);
             this.endLabel.Name = "endLabel";
             this.endLabel.Size = new System.Drawing.Size(29, 13);
             this.endLabel.TabIndex = 70;
@@ -205,7 +203,7 @@
             // startLabel
             // 
             this.startLabel.AutoSize = true;
-            this.startLabel.Location = new System.Drawing.Point(417, 21);
+            this.startLabel.Location = new System.Drawing.Point(482, 21);
             this.startLabel.Name = "startLabel";
             this.startLabel.Size = new System.Drawing.Size(32, 13);
             this.startLabel.TabIndex = 69;
@@ -230,7 +228,7 @@
             "  7 PM",
             "  8 PM",
             "  9 PM"});
-            this.endTime.Location = new System.Drawing.Point(584, 16);
+            this.endTime.Location = new System.Drawing.Point(610, 16);
             this.endTime.Name = "endTime";
             this.endTime.Size = new System.Drawing.Size(65, 21);
             this.endTime.TabIndex = 68;
@@ -254,7 +252,7 @@
             "  7 PM",
             "  8 PM",
             "  9 PM"});
-            this.startTime.Location = new System.Drawing.Point(455, 16);
+            this.startTime.Location = new System.Drawing.Point(514, 16);
             this.startTime.Name = "startTime";
             this.startTime.Size = new System.Drawing.Size(65, 21);
             this.startTime.TabIndex = 67;
@@ -264,7 +262,7 @@
             this.searchDay_Friday.AutoSize = true;
             this.searchDay_Friday.Checked = true;
             this.searchDay_Friday.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.searchDay_Friday.Location = new System.Drawing.Point(339, 20);
+            this.searchDay_Friday.Location = new System.Drawing.Point(426, 20);
             this.searchDay_Friday.Name = "searchDay_Friday";
             this.searchDay_Friday.Size = new System.Drawing.Size(54, 17);
             this.searchDay_Friday.TabIndex = 9;
@@ -276,7 +274,7 @@
             this.searchDay_Monday.AutoSize = true;
             this.searchDay_Monday.Checked = true;
             this.searchDay_Monday.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.searchDay_Monday.Location = new System.Drawing.Point(31, 20);
+            this.searchDay_Monday.Location = new System.Drawing.Point(122, 20);
             this.searchDay_Monday.Name = "searchDay_Monday";
             this.searchDay_Monday.Size = new System.Drawing.Size(64, 17);
             this.searchDay_Monday.TabIndex = 5;
@@ -288,7 +286,7 @@
             this.searchDay_Thursday.AutoSize = true;
             this.searchDay_Thursday.Checked = true;
             this.searchDay_Thursday.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.searchDay_Thursday.Location = new System.Drawing.Point(263, 20);
+            this.searchDay_Thursday.Location = new System.Drawing.Point(353, 20);
             this.searchDay_Thursday.Name = "searchDay_Thursday";
             this.searchDay_Thursday.Size = new System.Drawing.Size(70, 17);
             this.searchDay_Thursday.TabIndex = 8;
@@ -300,7 +298,7 @@
             this.searchDay_Tuesday.AutoSize = true;
             this.searchDay_Tuesday.Checked = true;
             this.searchDay_Tuesday.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.searchDay_Tuesday.Location = new System.Drawing.Point(101, 20);
+            this.searchDay_Tuesday.Location = new System.Drawing.Point(192, 20);
             this.searchDay_Tuesday.Name = "searchDay_Tuesday";
             this.searchDay_Tuesday.Size = new System.Drawing.Size(67, 17);
             this.searchDay_Tuesday.TabIndex = 6;
@@ -312,7 +310,7 @@
             this.searchDay_Wednesday.AutoSize = true;
             this.searchDay_Wednesday.Checked = true;
             this.searchDay_Wednesday.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.searchDay_Wednesday.Location = new System.Drawing.Point(174, 20);
+            this.searchDay_Wednesday.Location = new System.Drawing.Point(265, 20);
             this.searchDay_Wednesday.Name = "searchDay_Wednesday";
             this.searchDay_Wednesday.Size = new System.Drawing.Size(83, 17);
             this.searchDay_Wednesday.TabIndex = 7;
@@ -322,7 +320,7 @@
             // advancedSearch
             // 
             this.advancedSearch.AutoSize = true;
-            this.advancedSearch.Location = new System.Drawing.Point(22, 56);
+            this.advancedSearch.Location = new System.Drawing.Point(14, 48);
             this.advancedSearch.Name = "advancedSearch";
             this.advancedSearch.Size = new System.Drawing.Size(121, 17);
             this.advancedSearch.TabIndex = 4;
@@ -333,9 +331,9 @@
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(616, 25);
+            this.searchButton.Location = new System.Drawing.Point(598, 21);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.Size = new System.Drawing.Size(76, 23);
             this.searchButton.TabIndex = 3;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
@@ -345,7 +343,7 @@
             // 
             this.tabControl.Controls.Add(this.calendarTab);
             this.tabControl.Controls.Add(this.listviewTab);
-            this.tabControl.Location = new System.Drawing.Point(14, 129);
+            this.tabControl.Location = new System.Drawing.Point(14, 104);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(727, 549);
@@ -894,9 +892,9 @@
             // resultsGroup
             // 
             this.resultsGroup.Controls.Add(this.courseResults);
-            this.resultsGroup.Location = new System.Drawing.Point(769, 6);
+            this.resultsGroup.Location = new System.Drawing.Point(773, 0);
             this.resultsGroup.Name = "resultsGroup";
-            this.resultsGroup.Size = new System.Drawing.Size(573, 672);
+            this.resultsGroup.Size = new System.Drawing.Size(573, 653);
             this.resultsGroup.TabIndex = 3;
             this.resultsGroup.TabStop = false;
             this.resultsGroup.Text = "Results";
@@ -915,7 +913,7 @@
             this.courseResults.Location = new System.Drawing.Point(8, 21);
             this.courseResults.Margin = new System.Windows.Forms.Padding(5);
             this.courseResults.Name = "courseResults";
-            this.courseResults.Size = new System.Drawing.Size(557, 643);
+            this.courseResults.Size = new System.Drawing.Size(557, 622);
             this.courseResults.TabIndex = 5;
             this.courseResults.UseCompatibleStateImageBehavior = false;
             this.courseResults.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.courseResults_ItemChecked);
@@ -949,51 +947,11 @@
             // 
             this.cSeats.Text = "Seats";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.scheduleToolStripMenuItem,
-            this.completedCoursesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1362, 24);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.Visible = false;
-            // 
-            // scheduleToolStripMenuItem
-            // 
-            this.scheduleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadToolStripMenuItem,
-            this.saveAsToolStripMenuItem});
-            this.scheduleToolStripMenuItem.Name = "scheduleToolStripMenuItem";
-            this.scheduleToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.scheduleToolStripMenuItem.Text = "Schedule";
-            // 
-            // loadToolStripMenuItem
-            // 
-            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.loadToolStripMenuItem.Text = "Load...";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
-            this.saveAsToolStripMenuItem.Text = "Save As...";
-            // 
-            // completedCoursesToolStripMenuItem
-            // 
-            this.completedCoursesToolStripMenuItem.Name = "completedCoursesToolStripMenuItem";
-            this.completedCoursesToolStripMenuItem.Size = new System.Drawing.Size(157, 20);
-            this.completedCoursesToolStripMenuItem.Text = "Add Completed Courses...";
-            this.completedCoursesToolStripMenuItem.Click += new System.EventHandler(this.completedCoursesToolStripMenuItem_Click);
-            // 
             // pageTabControl
             // 
             this.pageTabControl.Controls.Add(this.schedulerTab);
             this.pageTabControl.Controls.Add(this.completedTab);
-            this.pageTabControl.Location = new System.Drawing.Point(0, 4);
+            this.pageTabControl.Location = new System.Drawing.Point(0, 0);
             this.pageTabControl.Name = "pageTabControl";
             this.pageTabControl.SelectedIndex = 0;
             this.pageTabControl.Size = new System.Drawing.Size(1366, 711);
@@ -1001,6 +959,8 @@
             // 
             // schedulerTab
             // 
+            this.schedulerTab.Controls.Add(this.saveButton);
+            this.schedulerTab.Controls.Add(this.loadButton);
             this.schedulerTab.Controls.Add(this.tabControl);
             this.schedulerTab.Controls.Add(this.resultsGroup);
             this.schedulerTab.Controls.Add(this.searchGroup);
@@ -1014,9 +974,9 @@
             // 
             // completedTab
             // 
-            this.completedTab.Controls.Add(this.groupBox1);
-            this.completedTab.Controls.Add(this.groupBox3);
-            this.completedTab.Controls.Add(this.groupBox2);
+            this.completedTab.Controls.Add(this.calendarGroup_prereq);
+            this.completedTab.Controls.Add(this.searchGroup_prereq);
+            this.completedTab.Controls.Add(this.resultsGroup_prereq);
             this.completedTab.Location = new System.Drawing.Point(4, 22);
             this.completedTab.Name = "completedTab";
             this.completedTab.Padding = new System.Windows.Forms.Padding(3);
@@ -1025,29 +985,29 @@
             this.completedTab.Text = "Completed Courses";
             this.completedTab.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // calendarGroup_prereq
             // 
-            this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Location = new System.Drawing.Point(8, 84);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(727, 584);
-            this.groupBox1.TabIndex = 72;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Calendar";
+            this.calendarGroup_prereq.Controls.Add(this.studentListView_prereq);
+            this.calendarGroup_prereq.Location = new System.Drawing.Point(8, 84);
+            this.calendarGroup_prereq.Name = "calendarGroup_prereq";
+            this.calendarGroup_prereq.Size = new System.Drawing.Size(727, 584);
+            this.calendarGroup_prereq.TabIndex = 72;
+            this.calendarGroup_prereq.TabStop = false;
+            this.calendarGroup_prereq.Text = "Calendar";
             // 
-            // listView1
+            // studentListView_prereq
             // 
-            this.listView1.CheckBoxes = true;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.studentListView_prereq.CheckBoxes = true;
+            this.studentListView_prereq.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader7,
             this.columnHeader8});
-            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.Location = new System.Drawing.Point(8, 21);
-            this.listView1.Margin = new System.Windows.Forms.Padding(5);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(711, 555);
-            this.listView1.TabIndex = 6;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.studentListView_prereq.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentListView_prereq.Location = new System.Drawing.Point(8, 21);
+            this.studentListView_prereq.Margin = new System.Windows.Forms.Padding(5);
+            this.studentListView_prereq.Name = "studentListView_prereq";
+            this.studentListView_prereq.Size = new System.Drawing.Size(711, 555);
+            this.studentListView_prereq.TabIndex = 6;
+            this.studentListView_prereq.UseCompatibleStateImageBehavior = false;
             // 
             // columnHeader7
             // 
@@ -1059,29 +1019,72 @@
             this.columnHeader8.Text = "Course Name";
             this.columnHeader8.Width = 200;
             // 
-            // groupBox2
+            // searchGroup_prereq
             // 
-            this.groupBox2.Controls.Add(this.listView2);
-            this.groupBox2.Location = new System.Drawing.Point(763, 13);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(573, 655);
-            this.groupBox2.TabIndex = 71;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Results";
+            this.searchGroup_prereq.Controls.Add(this.searchButton_prereq);
+            this.searchGroup_prereq.Controls.Add(this.searchBox_prereq);
+            this.searchGroup_prereq.Controls.Add(this.searchDropDown_prereq);
+            this.searchGroup_prereq.Location = new System.Drawing.Point(8, 13);
+            this.searchGroup_prereq.Name = "searchGroup_prereq";
+            this.searchGroup_prereq.Size = new System.Drawing.Size(727, 65);
+            this.searchGroup_prereq.TabIndex = 70;
+            this.searchGroup_prereq.TabStop = false;
+            this.searchGroup_prereq.Text = "Search";
             // 
-            // listView2
+            // searchButton_prereq
             // 
-            this.listView2.CheckBoxes = true;
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.searchButton_prereq.Location = new System.Drawing.Point(616, 25);
+            this.searchButton_prereq.Name = "searchButton_prereq";
+            this.searchButton_prereq.Size = new System.Drawing.Size(75, 23);
+            this.searchButton_prereq.TabIndex = 3;
+            this.searchButton_prereq.Text = "Search";
+            this.searchButton_prereq.UseVisualStyleBackColor = true;
+            this.searchButton_prereq.Click += new System.EventHandler(this.searchButton_prereq_Click);
+            // 
+            // searchBox_prereq
+            // 
+            this.searchBox_prereq.Location = new System.Drawing.Point(144, 25);
+            this.searchBox_prereq.Name = "searchBox_prereq";
+            this.searchBox_prereq.Size = new System.Drawing.Size(427, 20);
+            this.searchBox_prereq.TabIndex = 0;
+            this.searchBox_prereq.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchBox_prereq_KeyDown);
+            // 
+            // searchDropDown_prereq
+            // 
+            this.searchDropDown_prereq.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchDropDown_prereq.FormattingEnabled = true;
+            this.searchDropDown_prereq.Items.AddRange(new object[] {
+            "Course Code",
+            "Course Name"});
+            this.searchDropDown_prereq.Location = new System.Drawing.Point(22, 25);
+            this.searchDropDown_prereq.Name = "searchDropDown_prereq";
+            this.searchDropDown_prereq.Size = new System.Drawing.Size(102, 21);
+            this.searchDropDown_prereq.TabIndex = 1;
+            // 
+            // resultsGroup_prereq
+            // 
+            this.resultsGroup_prereq.Controls.Add(this.courseResults_prereq);
+            this.resultsGroup_prereq.Location = new System.Drawing.Point(763, 13);
+            this.resultsGroup_prereq.Name = "resultsGroup_prereq";
+            this.resultsGroup_prereq.Size = new System.Drawing.Size(573, 655);
+            this.resultsGroup_prereq.TabIndex = 71;
+            this.resultsGroup_prereq.TabStop = false;
+            this.resultsGroup_prereq.Text = "Results";
+            // 
+            // courseResults_prereq
+            // 
+            this.courseResults_prereq.CheckBoxes = true;
+            this.courseResults_prereq.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader9,
             this.columnHeader10});
-            this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView2.Location = new System.Drawing.Point(8, 21);
-            this.listView2.Margin = new System.Windows.Forms.Padding(5);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(557, 626);
-            this.listView2.TabIndex = 5;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.courseResults_prereq.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.courseResults_prereq.Location = new System.Drawing.Point(8, 21);
+            this.courseResults_prereq.Margin = new System.Windows.Forms.Padding(5);
+            this.courseResults_prereq.Name = "courseResults_prereq";
+            this.courseResults_prereq.Size = new System.Drawing.Size(557, 626);
+            this.courseResults_prereq.TabIndex = 5;
+            this.courseResults_prereq.UseCompatibleStateImageBehavior = false;
+            this.courseResults_prereq.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.courseResults_prereq_ItemChecked);
             // 
             // columnHeader9
             // 
@@ -1093,54 +1096,42 @@
             this.columnHeader10.Text = "Course Name";
             this.columnHeader10.Width = 200;
             // 
-            // groupBox3
+            // loadButton
             // 
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Location = new System.Drawing.Point(8, 13);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(727, 65);
-            this.groupBox3.TabIndex = 70;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Search";
+            this.loadButton.Location = new System.Drawing.Point(14, 656);
+            this.loadButton.Name = "loadButton";
+            this.loadButton.Size = new System.Drawing.Size(75, 23);
+            this.loadButton.TabIndex = 70;
+            this.loadButton.Text = "Load...";
+            this.loadButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // saveButton
             // 
-            this.button1.Location = new System.Drawing.Point(616, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.saveButton.Location = new System.Drawing.Point(103, 656);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 71;
+            this.saveButton.Text = "Save As...";
+            this.saveButton.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // prereqButton
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(427, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Course Code",
-            "Course Name"});
-            this.comboBox1.Location = new System.Drawing.Point(22, 25);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(102, 21);
-            this.comboBox1.TabIndex = 1;
+            this.prereqButton.AutoSize = true;
+            this.prereqButton.Checked = true;
+            this.prereqButton.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.prereqButton.Location = new System.Drawing.Point(7, 20);
+            this.prereqButton.Name = "prereqButton";
+            this.prereqButton.Size = new System.Drawing.Size(108, 17);
+            this.prereqButton.TabIndex = 71;
+            this.prereqButton.Text = "Show All Courses";
+            this.prereqButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 740);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pageTabControl);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "GCC++";
             this.searchGroup.ResumeLayout(false);
@@ -1153,17 +1144,14 @@
             this.calendarGroup.PerformLayout();
             this.listviewTab.ResumeLayout(false);
             this.resultsGroup.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.pageTabControl.ResumeLayout(false);
             this.schedulerTab.ResumeLayout(false);
             this.completedTab.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.calendarGroup_prereq.ResumeLayout(false);
+            this.searchGroup_prereq.ResumeLayout(false);
+            this.searchGroup_prereq.PerformLayout();
+            this.resultsGroup_prereq.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -1235,11 +1223,6 @@
         private System.Windows.Forms.RichTextBox wNight;
         private System.Windows.Forms.RichTextBox tNight;
         private System.Windows.Forms.RichTextBox mNight;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem completedCoursesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem scheduleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ListView studentListView;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -1253,18 +1236,21 @@
         private System.Windows.Forms.TabControl pageTabControl;
         private System.Windows.Forms.TabPage schedulerTab;
         private System.Windows.Forms.TabPage completedTab;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.GroupBox calendarGroup_prereq;
+        private System.Windows.Forms.ListView studentListView_prereq;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.GroupBox searchGroup_prereq;
+        private System.Windows.Forms.Button searchButton_prereq;
+        private System.Windows.Forms.TextBox searchBox_prereq;
+        private System.Windows.Forms.ComboBox searchDropDown_prereq;
+        private System.Windows.Forms.GroupBox resultsGroup_prereq;
+        private System.Windows.Forms.ListView courseResults_prereq;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.Button loadButton;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.CheckBox prereqButton;
     }
 }
 
