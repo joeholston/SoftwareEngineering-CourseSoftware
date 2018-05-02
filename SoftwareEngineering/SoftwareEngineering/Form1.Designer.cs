@@ -268,6 +268,7 @@
             this.startTime.Name = "startTime";
             this.startTime.Size = new System.Drawing.Size(65, 21);
             this.startTime.TabIndex = 67;
+            this.startTime.SelectedIndexChanged += new System.EventHandler(this.startTime_SelectedIndexChanged);
             // 
             // searchDay_Friday
             // 

@@ -17,10 +17,7 @@ namespace SoftwareEngineering
         public List<Course> searchCourses = new List<Course>();
         public List<Course> prereqCourses = new List<Course>();
 
-        //search for checked boxes look at form one for name
-
-        /*search the course database list for matches to the input string and add them to the searchCourses list
-          searchSelection tells us whether to search by course code or course name
+        /*searchSelection tells us whether to search by course code or course name
                0 = Course Code
                1 = Course Name
          
@@ -39,7 +36,7 @@ namespace SoftwareEngineering
             {
                 if (searchMethod(input, searchSelection, i))
                 {
-                    if (searchDays(input, meetingDays, i))
+                    if (searchDays(meetingDays, i))
                     {
                         searchCourses.Add(courseDB[i]);
                     }
@@ -66,7 +63,9 @@ namespace SoftwareEngineering
             return false;
         }
 
-        private bool searchDays(string input, bool[] meetingDays, int i)
+        private bool searchTime(
+
+        private bool searchDays(bool[] meetingDays, int i)
         {
             switch (boolArrayToString(meetingDays))
             {
