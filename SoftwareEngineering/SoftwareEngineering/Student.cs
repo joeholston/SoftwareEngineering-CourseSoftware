@@ -32,7 +32,7 @@ namespace SoftwareEngineering
                 }
                 if (completed) { studentCompletedCourses.Add(selectedCourse); }
                 else{
-                    if (!inSchedule(selectedCourse))
+                    if (!inSchedule(selectedCourse,false))
                     {
                         studentCourses.Add(selectedCourse);
                     }
@@ -53,6 +53,18 @@ namespace SoftwareEngineering
                 }
             }
         }
+        static public Course findPreReqCourse(string courseCode)
+        {
+            List<Course> courseList = BuildDB.Instance.prereqDatabase;
+            foreach (Course classSection in courseList)
+            {
+                if (courseCode == classSection.courseCode)
+                {
+                    return classSection;
+                }
+            }
+            return null;
+        }
         static public List<Course> findCourse(string courseCode)
         {
             List<Course> courseList = BuildDB.Instance.courseDatabase;
@@ -66,17 +78,30 @@ namespace SoftwareEngineering
             }
             return addingCourses;
         }
-        public bool inSchedule(Course selectedCourse)
+        public bool inSchedule(Course selectedCourse,bool completed)
         {
             if (studentCourses==null)
             {
                 return false;
             }
-            foreach (Course courses in studentCourses)
+            if (completed)
             {
-                if (courses.courseCode == selectedCourse.courseCode && courses.meetingDays==selectedCourse.meetingDays)
+                foreach (Course courses in studentCompletedCourses)
                 {
-                    return true;
+                    if (courses.courseCode == selectedCourse.courseCode && courses.meetingDays == selectedCourse.meetingDays)
+                    {
+                        return true;
+                    }
+                }
+            }
+            else
+            {
+                foreach (Course courses in studentCourses)
+                {
+                    if (courses.courseCode == selectedCourse.courseCode && courses.meetingDays == selectedCourse.meetingDays)
+                    {
+                        return true;
+                    }
                 }
             }
             return false;

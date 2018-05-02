@@ -341,7 +341,7 @@ namespace SoftwareEngineering
                 for (int i = 0; i < s.searchCourses.Count; i++)
                 {
                     Course c = s.searchCourses[i];
-                    bool selected = user.inSchedule(c);
+                    bool selected = user.inSchedule(c,false);
                     addToLV(courseResults, c, selected);
                 }
             }
@@ -431,7 +431,7 @@ namespace SoftwareEngineering
                 //delete course
                 string courseCode = e.Item.SubItems[0].Text; //Gets the courseCode from the ListView
                 List<Course> selectedCourses = Student.findCourse(courseCode); //Gets the Course object from the database array
-                if (user.inSchedule(selectedCourses[0])) //If one is in, both will be
+                if (user.inSchedule(selectedCourses[0],false)) //If one is in, both will be
                 {
                     foreach (Course selectedCourse in selectedCourses)
                     {
@@ -603,12 +603,19 @@ namespace SoftwareEngineering
 
         private void courseResults_prereq_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
+            string courseCode = e.Item.SubItems[0].Text;
+            Course selected = Student.findPreReqCourse(courseCode);
             if (e.Item.Checked == false)
             {
 
+                if (user.inSchedule(selected,true))
+                {
+                    user.deleteCourse(selected, true);
+                }
             }
             else
             {
+                user.addCourse(selected, true);
                 addToLV_prereq(studentListView_prereq, e.Item.SubItems[0].Text, e.Item.SubItems[1].Text);
             }
         }
