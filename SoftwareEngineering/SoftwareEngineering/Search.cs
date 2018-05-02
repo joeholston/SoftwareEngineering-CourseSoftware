@@ -35,31 +35,25 @@ namespace SoftwareEngineering
         {
             searchCourses.Clear();
 
+            searchMethod(input, searchSelection);
+        }
+        
+        private void searchMethod(string input, int searchSelection)
+        {
             for (int i = 0; i < courseDB.Count; i++)
             {
-                // these statements determines if the meeting day matches the selected weekdays
-                if ((meetingDays[0] && courseDB[i].meetingDays.Contains("M")) || 
-                    (meetingDays[1] && courseDB[i].meetingDays.Contains("T")) ||
-                    (meetingDays[2] && courseDB[i].meetingDays.Contains("W")) ||
-                    (meetingDays[3] && courseDB[i].meetingDays.Contains("R")) ||
-                    (meetingDays[4] && courseDB[i].meetingDays.Contains("F")) ||
-                    (!meetingDays[0] && !meetingDays[1] && !meetingDays[2] && !meetingDays[3] && !meetingDays[4] && string.IsNullOrEmpty(courseDB[i].meetingDays)) ||
-                    (meetingDays[0] && meetingDays[1] && meetingDays[2] && meetingDays[3] && meetingDays[4] && string.IsNullOrEmpty(courseDB[i].meetingDays)) )
+                if (searchSelection == 0)
                 {
-                    if (searchSelection == 0)
+                    if (courseDB[i].courseCode.Contains(input.ToUpper()))
                     {
-                        if (courseDB[i].courseCode.Contains(input.ToUpper()))
-                        {
-                            searchCourses.Add(courseDB[i]);
-                        }
+                        searchCourses.Add(courseDB[i]);
                     }
-                    else if (searchSelection == 1)
+                }
+                else if (searchSelection == 1)
+                {
+                    if (courseDB[i].shortTitle.Contains(input.ToUpper()) || courseDB[i].LongTitle.Contains(input.ToUpper()))
                     {
-                        //allows for searching both the short or long title of the courses
-                        if (courseDB[i].shortTitle.Contains(input.ToUpper()) || courseDB[i].LongTitle.Contains(input.ToUpper()))
-                        {
-                            searchCourses.Add(courseDB[i]);
-                        }
+                        searchCourses.Add(courseDB[i]);
                     }
                 }
             }
