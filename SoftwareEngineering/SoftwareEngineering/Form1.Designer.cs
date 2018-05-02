@@ -32,6 +32,7 @@
             this.searchDropDown = new System.Windows.Forms.ComboBox();
             this.searchGroup = new System.Windows.Forms.GroupBox();
             this.advancedSearch_Group = new System.Windows.Forms.GroupBox();
+            this.prereqButton = new System.Windows.Forms.CheckBox();
             this.endLabel = new System.Windows.Forms.Label();
             this.startLabel = new System.Windows.Forms.Label();
             this.endTime = new System.Windows.Forms.ComboBox();
@@ -106,6 +107,8 @@
             this.cSeats = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pageTabControl = new System.Windows.Forms.TabControl();
             this.schedulerTab = new System.Windows.Forms.TabPage();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.loadButton = new System.Windows.Forms.Button();
             this.completedTab = new System.Windows.Forms.TabPage();
             this.calendarGroup_prereq = new System.Windows.Forms.GroupBox();
             this.studentListView_prereq = new System.Windows.Forms.ListView();
@@ -119,9 +122,6 @@
             this.courseResults_prereq = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.loadButton = new System.Windows.Forms.Button();
-            this.saveButton = new System.Windows.Forms.Button();
-            this.prereqButton = new System.Windows.Forms.CheckBox();
             this.searchGroup.SuspendLayout();
             this.advancedSearch_Group.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -190,6 +190,18 @@
             this.advancedSearch_Group.TabStop = false;
             this.advancedSearch_Group.Text = "Advanced Search";
             this.advancedSearch_Group.Visible = false;
+            // 
+            // prereqButton
+            // 
+            this.prereqButton.AutoSize = true;
+            this.prereqButton.Checked = true;
+            this.prereqButton.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.prereqButton.Location = new System.Drawing.Point(6, 19);
+            this.prereqButton.Name = "prereqButton";
+            this.prereqButton.Size = new System.Drawing.Size(162, 17);
+            this.prereqButton.TabIndex = 71;
+            this.prereqButton.Text = "Show Only Qualified Courses";
+            this.prereqButton.UseVisualStyleBackColor = true;
             // 
             // endLabel
             // 
@@ -972,6 +984,24 @@
             this.schedulerTab.Text = "Scheduler";
             this.schedulerTab.UseVisualStyleBackColor = true;
             // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(103, 656);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 71;
+            this.saveButton.Text = "Save As...";
+            this.saveButton.UseVisualStyleBackColor = true;
+            // 
+            // loadButton
+            // 
+            this.loadButton.Location = new System.Drawing.Point(14, 656);
+            this.loadButton.Name = "loadButton";
+            this.loadButton.Size = new System.Drawing.Size(75, 23);
+            this.loadButton.TabIndex = 70;
+            this.loadButton.Text = "Load...";
+            this.loadButton.UseVisualStyleBackColor = true;
+            // 
             // completedTab
             // 
             this.completedTab.Controls.Add(this.calendarGroup_prereq);
@@ -1095,36 +1125,6 @@
             // 
             this.columnHeader10.Text = "Course Name";
             this.columnHeader10.Width = 200;
-            // 
-            // loadButton
-            // 
-            this.loadButton.Location = new System.Drawing.Point(14, 656);
-            this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(75, 23);
-            this.loadButton.TabIndex = 70;
-            this.loadButton.Text = "Load...";
-            this.loadButton.UseVisualStyleBackColor = true;
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(103, 656);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 71;
-            this.saveButton.Text = "Save As...";
-            this.saveButton.UseVisualStyleBackColor = true;
-            // 
-            // prereqButton
-            // 
-            this.prereqButton.AutoSize = true;
-            this.prereqButton.Checked = true;
-            this.prereqButton.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.prereqButton.Location = new System.Drawing.Point(7, 20);
-            this.prereqButton.Name = "prereqButton";
-            this.prereqButton.Size = new System.Drawing.Size(108, 17);
-            this.prereqButton.TabIndex = 71;
-            this.prereqButton.Text = "Show All Courses";
-            this.prereqButton.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

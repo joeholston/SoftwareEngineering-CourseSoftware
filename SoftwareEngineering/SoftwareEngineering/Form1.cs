@@ -288,11 +288,14 @@ namespace SoftwareEngineering
                 advancedSearch_Group.Hide();
 
                 // make all the boxes checked when you hide the advanced search
+                prereqButton.Checked = true;
                 searchDay_Monday.Checked = true;
                 searchDay_Tuesday.Checked = true;
                 searchDay_Wednesday.Checked = true;
                 searchDay_Thursday.Checked = true;
                 searchDay_Friday.Checked = true;
+                startTime.SelectedIndex = 0;
+                endTime.SelectedIndex = endTime.Items.Count - 1;
             }
         }
 
@@ -387,7 +390,7 @@ namespace SoftwareEngineering
         {
             search();
         }
-
+        
         private void searchBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
