@@ -310,7 +310,7 @@ namespace SoftwareEngineering
             meetingdays[4] = searchDay_Friday.Checked;
 
             s.search(searchString, searchDropDown.SelectedIndex, meetingdays);
-            if (false)
+            if (!prereqButton.Checked)
             {
                 if(user.studentCompletedCourses !=  null)
                 {
