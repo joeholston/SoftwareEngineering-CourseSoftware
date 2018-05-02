@@ -78,7 +78,7 @@ namespace SoftwareEngineering
                     {
                         prereqDB.Add(new Course(inputs[0].Substring(0, 8), inputs[1], inputs[2]));
                     }
-                    if (prereqDB.Last().courseCode != inputs[0])
+                    if (prereqDB.Last().courseCode != inputs[0].Substring(0,8))
                     {
                         prereqDB.Add(new Course(inputs[0].Substring(0, 8), inputs[1], inputs[2]));
                     }
