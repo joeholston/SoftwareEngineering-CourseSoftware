@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 
 namespace SoftwareEngineering
@@ -621,6 +622,41 @@ namespace SoftwareEngineering
                 user.addCourse(selected, true);
                 addToLV_prereq(studentListView_prereq, e.Item.SubItems[0].Text, e.Item.SubItems[1].Text);
             }
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.Filter = "Text|*.txt";
+            save.Title = "Save Student Schedule";
+
+            if(save.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(save.OpenFile());
+                for(int i = 0; i < user.studentCourses.Count-1; i++)
+                {
+                    writer.WriteLine(user.studentCourses[i].courseCode.ToString());
+                }
+                writer.Dispose();
+                writer.Close();
+            }
+
+        }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog load = new OpenFileDialog();
+            load.Filter = "Text|*.txt";
+            load.Title = "Load Student Schedule";
+
+            if(load.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader reader = new StreamReader(load.OpenFile());
+                string temp = reader.ReadToEnd();
+                searchBox.Text = temp;
+                reader.Close();
+            }
+            
         }
     }
 }

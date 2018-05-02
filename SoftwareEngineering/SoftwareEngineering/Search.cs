@@ -63,7 +63,10 @@ namespace SoftwareEngineering
             return false;
         }
 
-        private bool searchTime(
+        private bool searchTime()
+        {
+            return false;
+        }
 
         private bool searchDays(bool[] meetingDays, int i)
         {

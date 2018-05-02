@@ -992,6 +992,7 @@
             this.saveButton.TabIndex = 71;
             this.saveButton.Text = "Save As...";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // loadButton
             // 
@@ -1001,6 +1002,7 @@
             this.loadButton.TabIndex = 70;
             this.loadButton.Text = "Load...";
             this.loadButton.UseVisualStyleBackColor = true;
+            this.loadButton.Click += new System.EventHandler(this.loadButton_Click);
             // 
             // completedTab
             // 
