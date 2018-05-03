@@ -774,15 +774,15 @@ namespace SoftwareEngineering
                                     item.Checked = true;
                                 }
                             }
-                            foreach (Course course in user.studentCourses)
+                            for (int j=user.studentCourses.Count -1; j>=0; j--)
                             {
-                                if (i == 0 && course.courseCode == conflicting1.courseCode)
+                                if (i == 0 && user.studentCourses[j].courseCode == conflicting1.courseCode)
                                 {
-                                    user.deleteCourse(course, false);
+                                    user.deleteCourse(user.studentCourses[j], false);
                                 }
-                                else if (i == 1 && course.courseCode == conflicting2.courseCode)
+                                else if (i == 1 && user.studentCourses[j].courseCode == conflicting2.courseCode)
                                 {
-                                    user.deleteCourse(course, false);
+                                    user.deleteCourse(user.studentCourses[j], false);
                                 }
                             }
                             foreach (Course selected in selectedCourses)
