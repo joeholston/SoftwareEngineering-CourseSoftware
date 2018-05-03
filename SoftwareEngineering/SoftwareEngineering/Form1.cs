@@ -40,6 +40,8 @@ namespace SoftwareEngineering
             searchDropDown_prereq.SelectedIndex = 0;
             createLV(courseResults_prereq);
             createLV(studentListView_prereq);
+
+            ActiveControl = searchBox;
         }
 
         private void fillCalendarArray()
@@ -164,7 +166,8 @@ namespace SoftwareEngineering
             }
 
             //if it is a lab
-            if(course.courseCode[course.courseCode.Length - 1] == 'L')
+            //if(course.courseCode[course.courseCode.Length - 1] == 'L')
+            if (course.LongTitle.Contains("LAB"))
             {
                 foreach (char c in course.meetingDays)
                 {
