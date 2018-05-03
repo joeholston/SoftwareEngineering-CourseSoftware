@@ -1411,6 +1411,7 @@
             this.studentListView_prereq.Size = new System.Drawing.Size(711, 555);
             this.studentListView_prereq.TabIndex = 6;
             this.studentListView_prereq.UseCompatibleStateImageBehavior = false;
+            this.studentListView_prereq.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.studentListView_prereq_ItemChecked);
             // 
             // columnHeader7
             // 
