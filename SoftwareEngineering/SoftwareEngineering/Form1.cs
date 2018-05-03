@@ -528,7 +528,6 @@ namespace SoftwareEngineering
                 advancedSearch_Group.Hide();
 
                 // make all the boxes checked when you hide the advanced search
-                prereqButton.Checked = true;
                 searchDay_Monday.Checked = true;
                 searchDay_Tuesday.Checked = true;
                 searchDay_Wednesday.Checked = true;
@@ -553,7 +552,7 @@ namespace SoftwareEngineering
             meetingdays[4] = searchDay_Friday.Checked;
 
             s.search(searchString, searchDropDown.SelectedIndex, meetingdays);
-            if (!prereqButton.Checked)
+            if (prereqButton.Checked)
             {
                 if(user.studentCompletedCourses !=  null)
                 {
@@ -910,7 +909,6 @@ namespace SoftwareEngineering
                 }
                 reader.Close();
                 addALL();
-                
             }
         }
 
