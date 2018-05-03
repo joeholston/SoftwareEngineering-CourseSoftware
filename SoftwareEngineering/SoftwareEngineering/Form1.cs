@@ -46,6 +46,7 @@ namespace SoftwareEngineering
             calendar[1, 1] = m1;
             calendar[1, 2] = m2;
             calendar[1, 3] = m3;
+            calendar[1, 4] = m4;
             calendar[1, 6] = mNight;
             calendar[1, 8] = m8;
             calendar[1, 9] = m9;
@@ -55,6 +56,7 @@ namespace SoftwareEngineering
             
             calendar[2, 1] = t1;
             calendar[2, 2] = t230;
+            calendar[3, 4] = t4;
             calendar[2, 6] = tNight;
             calendar[2, 8] = t8;
             calendar[2, 10] = t10;
@@ -63,6 +65,7 @@ namespace SoftwareEngineering
             calendar[3, 1] = w1;
             calendar[3, 2] = w2;
             calendar[3, 3] = w3;
+            calendar[3, 4] = w4;
             calendar[3, 6] = wNight;
             calendar[3, 8] = w8;
             calendar[3, 9] = w9;
@@ -72,6 +75,7 @@ namespace SoftwareEngineering
 
             calendar[4, 1] = r1;
             calendar[4, 2] = r230;
+            calendar[4, 4] = r4;
             calendar[4, 8] = r8;
             calendar[4, 10] = r10;
             calendar[4, 11] = r1130;
@@ -79,6 +83,7 @@ namespace SoftwareEngineering
             calendar[5, 1] = f1;
             calendar[5, 2] = f2;
             calendar[5, 3] = f3;
+            calendar[5, 4] = f4;
             calendar[5, 8] = f8;
             calendar[5, 9] = f9;
             calendar[5, 10] = f10;
@@ -182,6 +187,7 @@ namespace SoftwareEngineering
                 resetCalendarBox(i, 1);
                 resetCalendarBox(i, 2);
                 resetCalendarBox(i, 3);
+                resetCalendarBox(i, 4);
                 if (i == 1 || i == 3)
                 {
                     resetCalendarBox(i, 6);
@@ -194,6 +200,7 @@ namespace SoftwareEngineering
                 resetCalendarBox(i, 1);
                 resetCalendarBox(i, 1);
                 resetCalendarBox(i, 2);
+                resetCalendarBox(i, 4);
                 if (i == 2)
                 {
                     resetCalendarBox(i, 6);
