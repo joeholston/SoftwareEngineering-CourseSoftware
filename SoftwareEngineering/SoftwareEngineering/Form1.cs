@@ -22,11 +22,6 @@ namespace SoftwareEngineering
     {
         private Student user = Student.user;
         private RichTextBox[,] calendar = new RichTextBox[6, 13];
-        private RichTextBox[] mLab = new RichTextBox[3];
-        private RichTextBox[] tLab = new RichTextBox[8];
-        private RichTextBox[] wLab = new RichTextBox[5];
-        private RichTextBox[] rLab = new RichTextBox[6];
-        private RichTextBox[] fLab = new RichTextBox[4];
 
         public Form1()
         {
@@ -131,23 +126,6 @@ namespace SoftwareEngineering
             fLab_3_4.Hide();
         }
 
-        private void showLab(Course course, int day)
-        {
-            switch (day)
-            {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-            }
-        }
-    
         //showCourses was designed to use a code to determine which UI calendar blocks should be shown
         //it will call specialized MWF or TR functions to actually display and edit the calendar blocks
         private void showCourses(Course course, int time, bool show)
@@ -176,42 +154,243 @@ namespace SoftwareEngineering
                 {
                     if (c == 'M')
                     {
-                        if (show)
+                        switch (time)
                         {
-                            showLab(course, 1);
-                        }
-                        else
-                        {
-                            
+                            case 11:
+                                if (!show)
+                                {
+                                    mLab_11_12.Hide();
+                                }
+                                else
+                                {
+                                    mLab_11_12.Show();
+                                    mLab_11_12.Clear();
+                                    mLab_11_12.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                    mLab_11_12.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                }
+                                break;
+                            case 2:
+                                switch (appendTime(course.endTime))
+                                {
+                                    case "03:59 PM":
+                                        if (!show)
+                                        {
+                                            mLab_2_4.Hide();
+                                        }
+                                        else
+                                        {
+                                            mLab_2_4.Show();
+                                            mLab_2_4.Clear();
+                                            mLab_2_4.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                            mLab_2_4.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                        }
+                                        break;
+                                    case "04:59 PM":
+                                        if (!show)
+                                        {
+                                            mLab_2_5.Hide();
+                                        }
+                                        else
+                                        {
+                                            mLab_2_5.Show();
+                                            mLab_2_5.Clear();
+                                            mLab_2_5.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                            mLab_2_5.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                        }
+                                        break;
+                                }
+                                break;
                         }
                     }
                     else if (c == 'T')
                     {
-                        if (show)
+                        switch (time)
                         {
-                            showLab(course, 2);
-                        }
-                        else
-                        {
-                            
+                            case 10:
+                                switch (appendTime(course.endTime))
+                                {
+                                    case "10:59 AM":
+                                        if (!show)
+                                        {
+                                            tLab_10_11.Hide();
+                                        }
+                                        else
+                                        {
+                                            tLab_10_11.Show();
+                                            tLab_10_11.Clear();
+                                            tLab_10_11.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                            tLab_10_11.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                        }
+                                        break;
+                                    case "12:59 PM":
+                                        if (!show)
+                                        {
+                                            tLab_10_1.Hide();
+                                        }
+                                        else
+                                        {
+                                            tLab_10_1.Show();
+                                            tLab_10_1.Clear();
+                                            tLab_10_1.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                            tLab_10_1.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                        }
+                                        break;
+                                }
+                                break;
+                            case 1:
+                                if (!show)
+                                {
+                                    tLab_1_3.Hide();
+                                }
+                                else
+                                {
+                                    tLab_1_3.Show();
+                                    tLab_1_3.Clear();
+                                    tLab_1_3.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                    tLab_1_3.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                }
+                                break;
+                            case 2:
+                                switch (appendTime(course.endTime))
+                                {
+                                    case "04:15 PM":
+                                        if (!show)
+                                        {
+                                            tLab_225_415.Hide();
+                                        }
+                                        else
+                                        {
+                                            tLab_225_415.Show();
+                                            tLab_225_415.Clear();
+                                            tLab_225_415.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                            tLab_225_415.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                        }
+                                        break;
+                                    case "04:59 PM":
+                                        if (!show)
+                                        {
+                                            tLab_230_5.Hide();
+                                        }
+                                        else
+                                        {
+                                            tLab_230_5.Show();
+                                            tLab_230_5.Clear();
+                                            tLab_230_5.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                            tLab_230_5.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                        }
+                                        break;
+                                    case "05:29 PM":
+                                        if (!show)
+                                        {
+                                            tLab_230_530.Hide();
+                                        }
+                                        else
+                                        {
+                                            tLab_230_530.Show();
+                                            tLab_230_530.Clear();
+                                            tLab_230_530.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                            tLab_230_530.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                        }
+                                        break;
+                                }
+                                break;
+                            case 3:
+                                if (!show)
+                                {
+                                    tLab_3_5.Hide();
+                                }
+                                else
+                                {
+                                    tLab_3_5.Show();
+                                    tLab_3_5.Clear();
+                                    tLab_3_5.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                    tLab_3_5.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                }
+                                break;
                         }
                     }
                     else if (c == 'W')
                     {
-                        if (show)
+                        switch (time)
                         {
-                            showLab(course, 3;
+                            case 9:
+                                if (!show)
+                                {
+                                    wLab_9_10.Hide();
+                                }
+                                else
+                                {
+                                    wLab_9_10.Show();
+                                    wLab_9_10.Clear();
+                                    wLab_9_10.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                    wLab_9_10.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                }
+                                break;
+                            case 1:
+                                if (!show)
+                                {
+                                    wLab_1_5.Hide();
+                                }
+                                else
+                                {
+                                    wLab_1_5.Show();
+                                    wLab_1_5.Clear();
+                                    wLab_1_5.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                    wLab_1_5.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                }
+                                break;
+                            case 2:
+                                if (!show)
+                                {
+                                    wLab_2_5.Hide();
+                                }
+                                else
+                                {
+                                    wLab_2_5.Show();
+                                    wLab_2_5.Clear();
+                                    wLab_2_5.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                    wLab_2_5.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                }
+                                break;
+                            case 3:
+                                switch (appendTime(course.endTime))
+                                {
+                                    case "03:59 PM":
+                                        if (!show)
+                                        {
+                                            wLab_3_4.Hide();
+                                        }
+                                        else
+                                        {
+                                            wLab_3_4.Show();
+                                            wLab_3_4.Clear();
+                                            wLab_3_4.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                            wLab_3_4.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                        }
+                                        break;
+                                    case "05:29 PM":
+                                        if (!show)
+                                        {
+                                            wLab_330_530.Hide();
+                                        }
+                                        else
+                                        {
+                                            wLab_330_530.Show();
+                                            wLab_330_530.Clear();
+                                            wLab_330_530.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                                            wLab_330_530.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+                                        }
+                                        break;
+                                }
+                                break;
                         }
-                        else
-                        {
-                            
-                        }
+
                     }
                     else if (c == 'R')
                     {
                         if (show)
                         {
-                            showLab(course, 4);
+                            //showLab(course, 4);
                         }
                         else
                         {
@@ -222,7 +401,7 @@ namespace SoftwareEngineering
                     {
                         if (show)
                         {
-                            showLab(course, 5);
+                            //showLab(course, 5);
                         }
                         else
                         {

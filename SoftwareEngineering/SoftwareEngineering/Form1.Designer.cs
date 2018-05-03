@@ -435,7 +435,6 @@
             this.calendarGroup.Controls.Add(this.mNight);
             this.calendarGroup.Controls.Add(this.r230);
             this.calendarGroup.Controls.Add(this.r1);
-            this.calendarGroup.Controls.Add(this.t1);
             this.calendarGroup.Controls.Add(this.r1130);
             this.calendarGroup.Controls.Add(this.r10);
             this.calendarGroup.Controls.Add(this.t1130);
@@ -471,13 +470,14 @@
             this.calendarGroup.Controls.Add(this.f2);
             this.calendarGroup.Controls.Add(this.w2);
             this.calendarGroup.Controls.Add(this.m2);
+            this.calendarGroup.Controls.Add(this.tLab_225_415);
             this.calendarGroup.Controls.Add(this.tLab_2_5);
             this.calendarGroup.Controls.Add(this.tLab_230_5);
             this.calendarGroup.Controls.Add(this.t230);
             this.calendarGroup.Controls.Add(this.tLab_3_5);
-            this.calendarGroup.Controls.Add(this.tLab_1_3);
             this.calendarGroup.Controls.Add(this.tLab_230_530);
-            this.calendarGroup.Controls.Add(this.tLab_225_415);
+            this.calendarGroup.Controls.Add(this.tLab_1_3);
+            this.calendarGroup.Controls.Add(this.t1);
             this.calendarGroup.Location = new System.Drawing.Point(-5, -7);
             this.calendarGroup.Name = "calendarGroup";
             this.calendarGroup.Size = new System.Drawing.Size(727, 534);
