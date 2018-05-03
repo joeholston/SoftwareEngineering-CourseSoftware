@@ -449,13 +449,22 @@ namespace SoftwareEngineering
             lv.Items.Add(itm);
         }
 
-        private void addToLV_prereq(ListView lv, string code, string name)
+        private void addToLV_prereq(ListView lv, string code, string name,bool selected)
         {
             ListViewItem itm;
+            foreach (ListViewItem course in lv.Items)
+            {
+                if (course.SubItems[0].Text == code)
+                {
+                    return;
+                }
+            }
             string[] arr = new string[6];
             arr[0] = code;
             arr[1] = name;
+            arr[2] = "true"; //Is it the first time this is created
             itm = new ListViewItem(arr);
+            itm.Checked = selected;
             lv.Items.Add(itm);
         }
 
@@ -610,8 +619,8 @@ namespace SoftwareEngineering
                 {
                     Course c = s.prereqCourses[i];
                     string newTime = appendTime(c.beginTime);
-                    //bool selected = user.inSchedule(c.courseCode);
-                    addToLV_prereq(courseResults_prereq, c.courseCode, c.LongTitle);
+                    bool selected = user.inSchedule(c,true);
+                    addToLV_prereq(courseResults_prereq, c.courseCode, c.LongTitle,selected);
                 }
             }
             else
@@ -858,7 +867,7 @@ namespace SoftwareEngineering
             else
             {
                 user.addCourse(selected, true);
-                addToLV_prereq(studentListView_prereq, e.Item.SubItems[0].Text, e.Item.SubItems[1].Text);
+                addToLV_prereq(studentListView_prereq, e.Item.SubItems[0].Text, e.Item.SubItems[1].Text,true);
             }
         }
 
@@ -934,6 +943,29 @@ namespace SoftwareEngineering
                 }
             }
             e.Item.SubItems[6].Text = "false";
+        }
+
+        private void studentListView_prereq_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            Course course = Student.findPreReqCourse(e.Item.SubItems[0].Text);
+
+            if (e.Item.SubItems[2].Text != "true")
+            {
+                if (e.Item.Checked == false)
+                {
+                    user.deleteCourse(course, true);
+
+                    foreach (ListViewItem courses in courseResults.Items)
+                    {
+                        if (courses.SubItems[0].Text == e.Item.SubItems[0].Text)
+                        {
+                            courses.Checked = false;
+                        }
+                    }
+                    e.Item.Remove();
+                }
+            }
+            e.Item.SubItems[2].Text = "false";
         }
     }
 }
