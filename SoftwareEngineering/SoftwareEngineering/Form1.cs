@@ -1278,6 +1278,18 @@ namespace SoftwareEngineering
         {
             hideAllLabs();
             clearCalendar();
+            for (int i=user.studentCourses.Count-1;i>=0;i--)
+            {
+                user.deleteCourse(user.studentCourses[i],false);
+            }
+            foreach (ListViewItem course in courseResults.Items)
+            {
+                course.Checked = false;
+            }
+            foreach (ListViewItem course in studentListView.Items)
+            {
+                course.Checked = false;
+            }
         }
     }
 }
