@@ -31,8 +31,8 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.searchDropDown = new System.Windows.Forms.ComboBox();
             this.searchGroup = new System.Windows.Forms.GroupBox();
-            this.advancedSearch_Group = new System.Windows.Forms.GroupBox();
             this.prereqButton = new System.Windows.Forms.CheckBox();
+            this.advancedSearch_Group = new System.Windows.Forms.GroupBox();
             this.endLabel = new System.Windows.Forms.Label();
             this.startLabel = new System.Windows.Forms.Label();
             this.endTime = new System.Windows.Forms.ComboBox();
@@ -203,6 +203,16 @@
             this.searchGroup.TabStop = false;
             this.searchGroup.Text = "Search";
             // 
+            // prereqButton
+            // 
+            this.prereqButton.AutoSize = true;
+            this.prereqButton.Location = new System.Drawing.Point(554, 23);
+            this.prereqButton.Name = "prereqButton";
+            this.prereqButton.Size = new System.Drawing.Size(162, 17);
+            this.prereqButton.TabIndex = 71;
+            this.prereqButton.Text = "Show Only Qualified Courses";
+            this.prereqButton.UseVisualStyleBackColor = true;
+            // 
             // advancedSearch_Group
             // 
             this.advancedSearch_Group.Controls.Add(this.endLabel);
@@ -221,16 +231,6 @@
             this.advancedSearch_Group.TabStop = false;
             this.advancedSearch_Group.Text = "Advanced Search";
             this.advancedSearch_Group.Visible = false;
-            // 
-            // prereqButton
-            // 
-            this.prereqButton.AutoSize = true;
-            this.prereqButton.Location = new System.Drawing.Point(554, 23);
-            this.prereqButton.Name = "prereqButton";
-            this.prereqButton.Size = new System.Drawing.Size(162, 17);
-            this.prereqButton.TabIndex = 71;
-            this.prereqButton.Text = "Show Only Qualified Courses";
-            this.prereqButton.UseVisualStyleBackColor = true;
             // 
             // endLabel
             // 

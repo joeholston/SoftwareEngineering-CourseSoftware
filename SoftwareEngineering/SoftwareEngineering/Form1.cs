@@ -197,6 +197,14 @@ namespace SoftwareEngineering
                                 {
                                     case "10:59 AM":
                                         updateLabBox(tLab_10_11, course, show);
+                                        if (show)
+                                        {
+                                            t10.Hide();
+                                        }
+                                        else
+                                        {
+                                            t10.Show();
+                                        }
                                         break;
                                     case "12:59 PM":
                                         updateLabBox(tLab_10_1, course, show);
@@ -205,9 +213,28 @@ namespace SoftwareEngineering
                                 break;
                             case "01:00 PM":
                                 updateLabBox(tLab_1_3, course, show);
+                                if (show)
+                                {
+                                    t230.Hide();
+                                }
+                                else
+                                {
+                                    t230.Show();
+                                }
+                                break;
+                            case "02:00 PM":
+                                updateLabBox(tLab_2_5, course, show);
                                 break;
                             case "02:25 PM":
                                 updateLabBox(tLab_225_415, course, show);
+                                if (show)
+                                {
+                                    t4.Hide();
+                                }
+                                else
+                                {
+                                    t4.Show();
+                                }
                                 break;
                             case "02:30 PM":
                                 switch (appendTime(course.endTime))
@@ -222,6 +249,14 @@ namespace SoftwareEngineering
                                 break;
                             case "03:00 PM":
                                 updateLabBox(tLab_3_5, course, show);
+                                if (show)
+                                {
+                                    t230.Hide();
+                                }
+                                else
+                                {
+                                    t230.Show();
+                                }
                                 break;
                         }
                     }
@@ -243,6 +278,14 @@ namespace SoftwareEngineering
                                 break;
                             case "03:30 PM":
                                 updateLabBox(wLab_330_530, course, show);
+                                if (show)
+                                {
+                                    w3.Hide();
+                                }
+                                else
+                                {
+                                    w3.Show();
+                                }
                                 break;
                         }
 
@@ -259,6 +302,14 @@ namespace SoftwareEngineering
                                         break;
                                     case "10:29 AM":
                                         updateLabBox(rLab_10_11, course, show);
+                                        if (show)
+                                        {
+                                            r10.Hide();
+                                        }
+                                        else
+                                        {
+                                            r10.Show();
+                                        }
                                         break;
                                 }
                                 break;
@@ -267,6 +318,14 @@ namespace SoftwareEngineering
                                 {
                                     case "04:29 PM":
                                         updateLabBox(rLab_230_430, course, show);
+                                        if (show)
+                                        {
+                                            r4.Hide();
+                                        }
+                                        else
+                                        {
+                                            r4.Show();
+                                        }
                                         break;
                                     case "04:59 PM":
                                         updateLabBox(rLab_230_5, course, show);
@@ -278,6 +337,14 @@ namespace SoftwareEngineering
                                 break;
                             case "02:00 PM":
                                 updateLabBox(rLab_2_5, course, show);
+                                if (show)
+                                {
+                                    r1.Hide();
+                                }
+                                else
+                                {
+                                    r1.Show();
+                                }
                                 break;
                         }
 
