@@ -56,7 +56,7 @@ namespace SoftwareEngineering
             
             calendar[2, 1] = t1;
             calendar[2, 2] = t230;
-            calendar[3, 4] = t4;
+            calendar[2, 4] = t4;
             calendar[2, 6] = tNight;
             calendar[2, 8] = t8;
             calendar[2, 10] = t10;
@@ -672,10 +672,13 @@ namespace SoftwareEngineering
             if(save.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter writer = new StreamWriter(save.OpenFile());
+                StringBuilder output = new StringBuilder();
                 for(int i = 0; i < user.studentCourses.Count; i++)
                 {
-                    writer.WriteLine(user.studentCourses[i].courseCode.ToString() + ",");
+                    output.Append(user.studentCourses[i].courseCode.ToString());
+                    output.Append(',');
                 }
+                writer.Write(output);
                 writer.Dispose();
                 writer.Close();
             }
@@ -691,16 +694,22 @@ namespace SoftwareEngineering
             if(load.ShowDialog() == DialogResult.OK)
             {
                 clearCalendar();
+                user.studentCourses.Clear();
 
                 StreamReader reader = new StreamReader(load.OpenFile());
                 List<string> inputFromFile = reader.ReadToEnd().Split(',').ToList<string>();
                 for(int i = 0; i< inputFromFile.Count-1; i++)
                 {
-                                        
+                    List<Course> coursesFromFile = new List<Course>();
+                    coursesFromFile = Student.findCourse(inputFromFile[i]);
+                    for (int j = 0; j < coursesFromFile.Count; j++)
+                    {
+                        user.studentCourses.Add(coursesFromFile[j]);
+                    }              
                 }
                 reader.Close();
+                addALL();
             }
-            
         }
     }
 }
