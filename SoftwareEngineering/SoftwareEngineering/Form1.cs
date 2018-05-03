@@ -126,6 +126,22 @@ namespace SoftwareEngineering
             fLab_3_4.Hide();
         }
 
+        private void updateLabBox(RichTextBox lab, Course course, bool show)
+        {
+            if (!show)
+            {
+                lab.Hide();
+            }
+            else
+            {
+                lab.Show();
+                lab.BringToFront();
+                lab.Clear();
+                lab.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                lab.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
+            }
+        }
+
         //showCourses was designed to use a code to determine which UI calendar blocks should be shown
         //it will call specialized MWF or TR functions to actually display and edit the calendar blocks
         private void showCourses(Course course, int time, bool show)
@@ -154,49 +170,19 @@ namespace SoftwareEngineering
                 {
                     if (c == 'M')
                     {
-                        switch (time)
+                        switch (appendTime(course.beginTime))
                         {
-                            case 11:
-                                if (!show)
-                                {
-                                    mLab_11_12.Hide();
-                                }
-                                else
-                                {
-                                    mLab_11_12.Show();
-                                    mLab_11_12.Clear();
-                                    mLab_11_12.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                    mLab_11_12.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                }
+                            case "11:00 AM":
+                                updateLabBox(mLab_11_12, course, show);
                                 break;
-                            case 2:
+                            case "02:00 PM":
                                 switch (appendTime(course.endTime))
                                 {
                                     case "03:59 PM":
-                                        if (!show)
-                                        {
-                                            mLab_2_4.Hide();
-                                        }
-                                        else
-                                        {
-                                            mLab_2_4.Show();
-                                            mLab_2_4.Clear();
-                                            mLab_2_4.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                            mLab_2_4.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                        }
+                                        updateLabBox(mLab_2_4, course, show);
                                         break;
                                     case "04:59 PM":
-                                        if (!show)
-                                        {
-                                            mLab_2_5.Hide();
-                                        }
-                                        else
-                                        {
-                                            mLab_2_5.Show();
-                                            mLab_2_5.Clear();
-                                            mLab_2_5.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                            mLab_2_5.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                        }
+                                        updateLabBox(mLab_2_5, course, show);
                                         break;
                                 }
                                 break;
@@ -204,208 +190,114 @@ namespace SoftwareEngineering
                     }
                     else if (c == 'T')
                     {
-                        switch (time)
+                        switch (appendTime(course.beginTime))
                         {
-                            case 10:
+                            case "10:05 AM":
                                 switch (appendTime(course.endTime))
                                 {
                                     case "10:59 AM":
-                                        if (!show)
-                                        {
-                                            tLab_10_11.Hide();
-                                        }
-                                        else
-                                        {
-                                            tLab_10_11.Show();
-                                            tLab_10_11.Clear();
-                                            tLab_10_11.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                            tLab_10_11.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                        }
+                                        updateLabBox(tLab_10_11, course, show);
                                         break;
                                     case "12:59 PM":
-                                        if (!show)
-                                        {
-                                            tLab_10_1.Hide();
-                                        }
-                                        else
-                                        {
-                                            tLab_10_1.Show();
-                                            tLab_10_1.Clear();
-                                            tLab_10_1.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                            tLab_10_1.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                        }
+                                        updateLabBox(tLab_10_1, course, show);
                                         break;
                                 }
                                 break;
-                            case 1:
-                                if (!show)
-                                {
-                                    tLab_1_3.Hide();
-                                }
-                                else
-                                {
-                                    tLab_1_3.Show();
-                                    tLab_1_3.Clear();
-                                    tLab_1_3.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                    tLab_1_3.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                }
+                            case "01:00 PM":
+                                updateLabBox(tLab_1_3, course, show);
                                 break;
-                            case 2:
+                            case "02:25 PM":
+                                updateLabBox(tLab_225_415, course, show);
+                                break;
+                            case "02:30 PM":
                                 switch (appendTime(course.endTime))
                                 {
-                                    case "04:15 PM":
-                                        if (!show)
-                                        {
-                                            tLab_225_415.Hide();
-                                        }
-                                        else
-                                        {
-                                            tLab_225_415.Show();
-                                            tLab_225_415.Clear();
-                                            tLab_225_415.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                            tLab_225_415.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                        }
-                                        break;
                                     case "04:59 PM":
-                                        if (!show)
-                                        {
-                                            tLab_230_5.Hide();
-                                        }
-                                        else
-                                        {
-                                            tLab_230_5.Show();
-                                            tLab_230_5.Clear();
-                                            tLab_230_5.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                            tLab_230_5.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                        }
+                                        updateLabBox(tLab_230_5, course, show);
                                         break;
                                     case "05:29 PM":
-                                        if (!show)
-                                        {
-                                            tLab_230_530.Hide();
-                                        }
-                                        else
-                                        {
-                                            tLab_230_530.Show();
-                                            tLab_230_530.Clear();
-                                            tLab_230_530.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                            tLab_230_530.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                        }
+                                        updateLabBox(tLab_230_530, course, show);
                                         break;
                                 }
                                 break;
-                            case 3:
-                                if (!show)
-                                {
-                                    tLab_3_5.Hide();
-                                }
-                                else
-                                {
-                                    tLab_3_5.Show();
-                                    tLab_3_5.Clear();
-                                    tLab_3_5.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                    tLab_3_5.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                }
+                            case "03:00 PM":
+                                updateLabBox(tLab_3_5, course, show);
                                 break;
                         }
                     }
                     else if (c == 'W')
                     {
-                        switch (time)
+                        switch (appendTime(course.beginTime))
                         {
-                            case 9:
-                                if (!show)
-                                {
-                                    wLab_9_10.Hide();
-                                }
-                                else
-                                {
-                                    wLab_9_10.Show();
-                                    wLab_9_10.Clear();
-                                    wLab_9_10.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                    wLab_9_10.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                }
+                            case "09:00 AM":
+                                updateLabBox(wLab_9_10, course, show);
                                 break;
-                            case 1:
-                                if (!show)
-                                {
-                                    wLab_1_5.Hide();
-                                }
-                                else
-                                {
-                                    wLab_1_5.Show();
-                                    wLab_1_5.Clear();
-                                    wLab_1_5.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                    wLab_1_5.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                }
+                            case "01:00 PM":
+                                updateLabBox(wLab_1_5, course, show);
                                 break;
-                            case 2:
-                                if (!show)
-                                {
-                                    wLab_2_5.Hide();
-                                }
-                                else
-                                {
-                                    wLab_2_5.Show();
-                                    wLab_2_5.Clear();
-                                    wLab_2_5.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                    wLab_2_5.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                }
+                            case "02:00 PM":
+                                updateLabBox(wLab_2_5, course, show);
                                 break;
-                            case 3:
-                                switch (appendTime(course.endTime))
-                                {
-                                    case "03:59 PM":
-                                        if (!show)
-                                        {
-                                            wLab_3_4.Hide();
-                                        }
-                                        else
-                                        {
-                                            wLab_3_4.Show();
-                                            wLab_3_4.Clear();
-                                            wLab_3_4.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                            wLab_3_4.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                        }
-                                        break;
-                                    case "05:29 PM":
-                                        if (!show)
-                                        {
-                                            wLab_330_530.Hide();
-                                        }
-                                        else
-                                        {
-                                            wLab_330_530.Show();
-                                            wLab_330_530.Clear();
-                                            wLab_330_530.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
-                                            wLab_330_530.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
-                                        }
-                                        break;
-                                }
+                            case "03:00 PM":
+                                updateLabBox(wLab_3_4, course, show);
+                                break;
+                            case "03:30 PM":
+                                updateLabBox(wLab_330_530, course, show);
                                 break;
                         }
 
                     }
                     else if (c == 'R')
                     {
-                        if (show)
+                        switch (appendTime(course.beginTime))
                         {
-                            //showLab(course, 4);
+                            case "10:05 AM":
+                                switch (appendTime(course.endTime))
+                                {
+                                    case "12:59 PM":
+                                        updateLabBox(rLab_10_1, course, show);
+                                        break;
+                                    case "10:29 AM":
+                                        updateLabBox(rLab_10_11, course, show);
+                                        break;
+                                }
+                                break;
+                            case "02:30 PM":
+                                switch (appendTime(course.endTime))
+                                {
+                                    case "04:29 PM":
+                                        updateLabBox(rLab_230_430, course, show);
+                                        break;
+                                    case "04:59 PM":
+                                        updateLabBox(rLab_230_5, course, show);
+                                        break;
+                                    case "05:29 PM":
+                                        updateLabBox(rLab_230_530, course, show);
+                                        break;
+                                }
+                                break;
+                            case "02:00 PM":
+                                updateLabBox(rLab_2_5, course, show);
+                                break;
                         }
-                        else
-                        {
-                            
-                        }
+
                     }
                     else if (c == 'F')
                     {
-                        if (show)
+                        switch (appendTime(course.beginTime))
                         {
-                            //showLab(course, 5);
-                        }
-                        else
-                        {
-                            
+                            case "09:00 AM":
+                                updateLabBox(fLab_9_10, course, show);
+                                break;
+                            case "01:00 PM":
+                                updateLabBox(fLab_1_3, course, show);
+                                break;
+                            case "02:00 PM":
+                                updateLabBox(fLab_2_5, course, show);
+                                break;
+                            case "03:00 PM":
+                                updateLabBox(fLab_3_4, course, show);
+                                break;
                         }
                     }
                 }
@@ -994,6 +886,7 @@ namespace SoftwareEngineering
             if(load.ShowDialog() == DialogResult.OK)
             {
                 clearCalendar();
+                hideAllLabs();
                 user.studentCourses.Clear();
 
                 StreamReader reader = new StreamReader(load.OpenFile());
