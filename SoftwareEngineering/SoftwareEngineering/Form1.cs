@@ -22,6 +22,11 @@ namespace SoftwareEngineering
     {
         private Student user = Student.user;
         private RichTextBox[,] calendar = new RichTextBox[6, 13];
+        private RichTextBox[] mLab = new RichTextBox[3];
+        private RichTextBox[] tLab = new RichTextBox[8];
+        private RichTextBox[] wLab = new RichTextBox[5];
+        private RichTextBox[] rLab = new RichTextBox[6];
+        private RichTextBox[] fLab = new RichTextBox[4];
 
         public Form1()
         {
@@ -35,6 +40,7 @@ namespace SoftwareEngineering
             createLV(courseResults);
             createLV(studentListView);
             fillCalendarArray();
+            hideAllLabs();
 
             searchDropDown_prereq.SelectedIndex = 0;
             createLV(courseResults_prereq);
@@ -90,6 +96,57 @@ namespace SoftwareEngineering
             calendar[5, 11] = f11;
             calendar[5, 12] = f12;
         }
+
+        private void hideAllLabs()
+        {
+            mLab_11_12.Hide();
+            mLab_2_4.Hide();
+            mLab_2_5.Hide();
+
+            tLab_10_1.Hide();
+            tLab_10_11.Hide();
+            tLab_1_3.Hide();
+            tLab_225_415.Hide();
+            tLab_230_5.Hide();
+            tLab_230_530.Hide();
+            tLab_2_5.Hide();
+            tLab_3_5.Hide();
+
+            wLab_9_10.Hide();
+            wLab_1_5.Hide();
+            wLab_2_5.Hide();
+            wLab_330_530.Hide();
+            wLab_3_4.Hide();
+
+            rLab_10_1.Hide();
+            rLab_10_11.Hide();
+            rLab_230_430.Hide();
+            rLab_230_5.Hide();
+            rLab_230_530.Hide();
+            rLab_2_5.Hide();
+
+            fLab_9_10.Hide();
+            fLab_1_3.Hide();
+            fLab_2_5.Hide();
+            fLab_3_4.Hide();
+        }
+
+        private void showLab(Course course, int day)
+        {
+            switch (day)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+            }
+        }
     
         //showCourses was designed to use a code to determine which UI calendar blocks should be shown
         //it will call specialized MWF or TR functions to actually display and edit the calendar blocks
@@ -112,66 +169,130 @@ namespace SoftwareEngineering
                 }
             }
 
-            //adding/removing from calendar
-            foreach (char c in course.meetingDays)
+            //if it is a lab
+            if(course.courseCode[course.courseCode.Length - 1] == 'L')
             {
-                if (c == 'M')
+                foreach (char c in course.meetingDays)
                 {
-                    if (show)
+                    if (c == 'M')
                     {
-                        updateCalendarBox(course, 1, time);
+                        if (show)
+                        {
+                            showLab(course, 1);
+                        }
+                        else
+                        {
+                            
+                        }
                     }
-                    else
+                    else if (c == 'T')
                     {
-                        resetCalendarBox(1, time);
+                        if (show)
+                        {
+                            showLab(course, 2);
+                        }
+                        else
+                        {
+                            
+                        }
                     }
-                }
-                else if (c == 'T')
-                {
-                    if (show)
+                    else if (c == 'W')
                     {
-                        updateCalendarBox(course, 2, time);
+                        if (show)
+                        {
+                            showLab(course, 3;
+                        }
+                        else
+                        {
+                            
+                        }
                     }
-                    else
+                    else if (c == 'R')
                     {
-                        resetCalendarBox(2, time);
+                        if (show)
+                        {
+                            showLab(course, 4);
+                        }
+                        else
+                        {
+                            
+                        }
                     }
-                }
-                else if (c == 'W')
-                {
-                    if (show)
+                    else if (c == 'F')
                     {
-                        updateCalendarBox(course, 3, time);
-                    }
-                    else
-                    {
-                        resetCalendarBox(3, time);
-                    }
-                }
-                else if (c == 'R')
-                {
-                    if (show)
-                    {
-                        updateCalendarBox(course, 4, time);
-                    }
-                    else
-                    {
-                        resetCalendarBox(4, time);
-                    }
-                }
-                else if (c == 'F')
-                {
-                    if (show)
-                    {
-                        updateCalendarBox(course, 5, time);
-                    }
-                    else
-                    {
-                        resetCalendarBox(5, time);
+                        if (show)
+                        {
+                            showLab(course, 5);
+                        }
+                        else
+                        {
+                            
+                        }
                     }
                 }
             }
-            
+            else
+            {
+                //adding/removing from calendar
+                foreach (char c in course.meetingDays)
+                {
+                    if (c == 'M')
+                    {
+                        if (show)
+                        {
+                            updateCalendarBox(course, 1, time);
+                        }
+                        else
+                        {
+                            resetCalendarBox(1, time);
+                        }
+                    }
+                    else if (c == 'T')
+                    {
+                        if (show)
+                        {
+                            updateCalendarBox(course, 2, time);
+                        }
+                        else
+                        {
+                            resetCalendarBox(2, time);
+                        }
+                    }
+                    else if (c == 'W')
+                    {
+                        if (show)
+                        {
+                            updateCalendarBox(course, 3, time);
+                        }
+                        else
+                        {
+                            resetCalendarBox(3, time);
+                        }
+                    }
+                    else if (c == 'R')
+                    {
+                        if (show)
+                        {
+                            updateCalendarBox(course, 4, time);
+                        }
+                        else
+                        {
+                            resetCalendarBox(4, time);
+                        }
+                    }
+                    else if (c == 'F')
+                    {
+                        if (show)
+                        {
+                            updateCalendarBox(course, 5, time);
+                        }
+                        else
+                        {
+                            resetCalendarBox(5, time);
+                        }
+                    }
+                }
+            }
         }
 
         private void clearCalendar()
@@ -709,7 +830,9 @@ namespace SoftwareEngineering
                 }
                 reader.Close();
                 addALL();
+                
             }
         }
+
     }
 }

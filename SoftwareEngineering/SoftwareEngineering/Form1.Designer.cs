@@ -47,6 +47,22 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.calendarTab = new System.Windows.Forms.TabPage();
             this.calendarGroup = new System.Windows.Forms.GroupBox();
+            this.tLab_3_5 = new System.Windows.Forms.RichTextBox();
+            this.tLab_1_3 = new System.Windows.Forms.RichTextBox();
+            this.fLab_1_3 = new System.Windows.Forms.RichTextBox();
+            this.rLab_230_5 = new System.Windows.Forms.RichTextBox();
+            this.rLab_10_1 = new System.Windows.Forms.RichTextBox();
+            this.tLab_230_5 = new System.Windows.Forms.RichTextBox();
+            this.rLab_230_530 = new System.Windows.Forms.RichTextBox();
+            this.wLab_2_5 = new System.Windows.Forms.RichTextBox();
+            this.tLab_230_530 = new System.Windows.Forms.RichTextBox();
+            this.tLab_10_1 = new System.Windows.Forms.RichTextBox();
+            this.mLab_2_5 = new System.Windows.Forms.RichTextBox();
+            this.t4 = new System.Windows.Forms.RichTextBox();
+            this.r4 = new System.Windows.Forms.RichTextBox();
+            this.f4 = new System.Windows.Forms.RichTextBox();
+            this.w4 = new System.Windows.Forms.RichTextBox();
+            this.m4 = new System.Windows.Forms.RichTextBox();
             this.wNight = new System.Windows.Forms.RichTextBox();
             this.tNight = new System.Windows.Forms.RichTextBox();
             this.mNight = new System.Windows.Forms.RichTextBox();
@@ -122,11 +138,21 @@
             this.courseResults_prereq = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.m4 = new System.Windows.Forms.RichTextBox();
-            this.w4 = new System.Windows.Forms.RichTextBox();
-            this.f4 = new System.Windows.Forms.RichTextBox();
-            this.r4 = new System.Windows.Forms.RichTextBox();
-            this.t4 = new System.Windows.Forms.RichTextBox();
+            this.fLab_2_5 = new System.Windows.Forms.RichTextBox();
+            this.tLab_2_5 = new System.Windows.Forms.RichTextBox();
+            this.rLab_2_5 = new System.Windows.Forms.RichTextBox();
+            this.wLab_1_5 = new System.Windows.Forms.RichTextBox();
+            this.tLab_225_415 = new System.Windows.Forms.RichTextBox();
+            this.wLab_9_10 = new System.Windows.Forms.RichTextBox();
+            this.fLab_9_10 = new System.Windows.Forms.RichTextBox();
+            this.mLab_11_12 = new System.Windows.Forms.RichTextBox();
+            this.tLab_10_11 = new System.Windows.Forms.RichTextBox();
+            this.rLab_10_11 = new System.Windows.Forms.RichTextBox();
+            this.wLab_3_4 = new System.Windows.Forms.RichTextBox();
+            this.fLab_3_4 = new System.Windows.Forms.RichTextBox();
+            this.rLab_230_430 = new System.Windows.Forms.RichTextBox();
+            this.mLab_2_4 = new System.Windows.Forms.RichTextBox();
+            this.wLab_330_530 = new System.Windows.Forms.RichTextBox();
             this.searchGroup.SuspendLayout();
             this.advancedSearch_Group.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -379,6 +405,26 @@
             // 
             // calendarGroup
             // 
+            this.calendarGroup.Controls.Add(this.wLab_330_530);
+            this.calendarGroup.Controls.Add(this.mLab_2_4);
+            this.calendarGroup.Controls.Add(this.rLab_230_430);
+            this.calendarGroup.Controls.Add(this.fLab_3_4);
+            this.calendarGroup.Controls.Add(this.wLab_3_4);
+            this.calendarGroup.Controls.Add(this.rLab_10_11);
+            this.calendarGroup.Controls.Add(this.tLab_10_11);
+            this.calendarGroup.Controls.Add(this.mLab_11_12);
+            this.calendarGroup.Controls.Add(this.fLab_9_10);
+            this.calendarGroup.Controls.Add(this.wLab_9_10);
+            this.calendarGroup.Controls.Add(this.wLab_1_5);
+            this.calendarGroup.Controls.Add(this.rLab_2_5);
+            this.calendarGroup.Controls.Add(this.fLab_2_5);
+            this.calendarGroup.Controls.Add(this.fLab_1_3);
+            this.calendarGroup.Controls.Add(this.rLab_230_5);
+            this.calendarGroup.Controls.Add(this.rLab_10_1);
+            this.calendarGroup.Controls.Add(this.rLab_230_530);
+            this.calendarGroup.Controls.Add(this.wLab_2_5);
+            this.calendarGroup.Controls.Add(this.tLab_10_1);
+            this.calendarGroup.Controls.Add(this.mLab_2_5);
             this.calendarGroup.Controls.Add(this.t4);
             this.calendarGroup.Controls.Add(this.r4);
             this.calendarGroup.Controls.Add(this.f4);
@@ -389,7 +435,6 @@
             this.calendarGroup.Controls.Add(this.mNight);
             this.calendarGroup.Controls.Add(this.r230);
             this.calendarGroup.Controls.Add(this.r1);
-            this.calendarGroup.Controls.Add(this.t230);
             this.calendarGroup.Controls.Add(this.t1);
             this.calendarGroup.Controls.Add(this.r1130);
             this.calendarGroup.Controls.Add(this.r10);
@@ -426,11 +471,178 @@
             this.calendarGroup.Controls.Add(this.f2);
             this.calendarGroup.Controls.Add(this.w2);
             this.calendarGroup.Controls.Add(this.m2);
+            this.calendarGroup.Controls.Add(this.tLab_2_5);
+            this.calendarGroup.Controls.Add(this.tLab_230_5);
+            this.calendarGroup.Controls.Add(this.t230);
+            this.calendarGroup.Controls.Add(this.tLab_3_5);
+            this.calendarGroup.Controls.Add(this.tLab_1_3);
+            this.calendarGroup.Controls.Add(this.tLab_230_530);
+            this.calendarGroup.Controls.Add(this.tLab_225_415);
             this.calendarGroup.Location = new System.Drawing.Point(-5, -7);
             this.calendarGroup.Name = "calendarGroup";
             this.calendarGroup.Size = new System.Drawing.Size(727, 534);
             this.calendarGroup.TabIndex = 4;
             this.calendarGroup.TabStop = false;
+            // 
+            // tLab_3_5
+            // 
+            this.tLab_3_5.Location = new System.Drawing.Point(153, 359);
+            this.tLab_3_5.Name = "tLab_3_5";
+            this.tLab_3_5.ReadOnly = true;
+            this.tLab_3_5.Size = new System.Drawing.Size(135, 86);
+            this.tLab_3_5.TabIndex = 84;
+            this.tLab_3_5.Tag = "3 - 5 PM";
+            this.tLab_3_5.Text = "3 - 5 PM ";
+            // 
+            // tLab_1_3
+            // 
+            this.tLab_1_3.Location = new System.Drawing.Point(153, 267);
+            this.tLab_1_3.Name = "tLab_1_3";
+            this.tLab_1_3.ReadOnly = true;
+            this.tLab_1_3.Size = new System.Drawing.Size(135, 86);
+            this.tLab_1_3.TabIndex = 83;
+            this.tLab_1_3.Tag = "1 - 3 PM";
+            this.tLab_1_3.Text = "1 - 3 PM ";
+            // 
+            // fLab_1_3
+            // 
+            this.fLab_1_3.Location = new System.Drawing.Point(582, 267);
+            this.fLab_1_3.Name = "fLab_1_3";
+            this.fLab_1_3.ReadOnly = true;
+            this.fLab_1_3.Size = new System.Drawing.Size(135, 86);
+            this.fLab_1_3.TabIndex = 82;
+            this.fLab_1_3.Tag = "1 - 3 PM";
+            this.fLab_1_3.Text = "1 - 3 PM ";
+            // 
+            // rLab_230_5
+            // 
+            this.rLab_230_5.Location = new System.Drawing.Point(439, 333);
+            this.rLab_230_5.Name = "rLab_230_5";
+            this.rLab_230_5.ReadOnly = true;
+            this.rLab_230_5.Size = new System.Drawing.Size(135, 112);
+            this.rLab_230_5.TabIndex = 81;
+            this.rLab_230_5.Tag = "2:30 PM - 5:00 PM";
+            this.rLab_230_5.Text = "2:30 PM - 5:00 PM";
+            // 
+            // rLab_10_1
+            // 
+            this.rLab_10_1.Location = new System.Drawing.Point(439, 131);
+            this.rLab_10_1.Name = "rLab_10_1";
+            this.rLab_10_1.ReadOnly = true;
+            this.rLab_10_1.Size = new System.Drawing.Size(135, 130);
+            this.rLab_10_1.TabIndex = 80;
+            this.rLab_10_1.Tag = "10:05 AM - 1:00 PM";
+            this.rLab_10_1.Text = "10:05 AM - 1:00 PM";
+            // 
+            // tLab_230_5
+            // 
+            this.tLab_230_5.Location = new System.Drawing.Point(153, 333);
+            this.tLab_230_5.Name = "tLab_230_5";
+            this.tLab_230_5.ReadOnly = true;
+            this.tLab_230_5.Size = new System.Drawing.Size(135, 112);
+            this.tLab_230_5.TabIndex = 79;
+            this.tLab_230_5.Tag = "2:30 PM - 5:00 PM";
+            this.tLab_230_5.Text = "2:30 PM - 5:00 PM";
+            // 
+            // rLab_230_530
+            // 
+            this.rLab_230_530.Location = new System.Drawing.Point(439, 333);
+            this.rLab_230_530.Name = "rLab_230_530";
+            this.rLab_230_530.ReadOnly = true;
+            this.rLab_230_530.Size = new System.Drawing.Size(135, 130);
+            this.rLab_230_530.TabIndex = 78;
+            this.rLab_230_530.Tag = "2:30 PM - 5:30 PM";
+            this.rLab_230_530.Text = "2:30 PM - 5:30 PM";
+            // 
+            // wLab_2_5
+            // 
+            this.wLab_2_5.Location = new System.Drawing.Point(296, 313);
+            this.wLab_2_5.Name = "wLab_2_5";
+            this.wLab_2_5.ReadOnly = true;
+            this.wLab_2_5.Size = new System.Drawing.Size(135, 132);
+            this.wLab_2_5.TabIndex = 77;
+            this.wLab_2_5.Tag = "2 - 5 PM";
+            this.wLab_2_5.Text = "2 - 5 PM ";
+            // 
+            // tLab_230_530
+            // 
+            this.tLab_230_530.Location = new System.Drawing.Point(153, 333);
+            this.tLab_230_530.Name = "tLab_230_530";
+            this.tLab_230_530.ReadOnly = true;
+            this.tLab_230_530.Size = new System.Drawing.Size(135, 130);
+            this.tLab_230_530.TabIndex = 76;
+            this.tLab_230_530.Tag = "2:30 PM - 5:30 PM";
+            this.tLab_230_530.Text = "2:30 PM - 5:30 PM";
+            // 
+            // tLab_10_1
+            // 
+            this.tLab_10_1.Location = new System.Drawing.Point(153, 131);
+            this.tLab_10_1.Name = "tLab_10_1";
+            this.tLab_10_1.ReadOnly = true;
+            this.tLab_10_1.Size = new System.Drawing.Size(135, 130);
+            this.tLab_10_1.TabIndex = 75;
+            this.tLab_10_1.Tag = "10:05 AM - 1:00 PM";
+            this.tLab_10_1.Text = "10:05 AM - 1:00 PM";
+            // 
+            // mLab_2_5
+            // 
+            this.mLab_2_5.Location = new System.Drawing.Point(10, 313);
+            this.mLab_2_5.Name = "mLab_2_5";
+            this.mLab_2_5.ReadOnly = true;
+            this.mLab_2_5.Size = new System.Drawing.Size(135, 132);
+            this.mLab_2_5.TabIndex = 74;
+            this.mLab_2_5.Tag = "2 - 5 PM";
+            this.mLab_2_5.Text = "2 - 5 PM ";
+            // 
+            // t4
+            // 
+            this.t4.Location = new System.Drawing.Point(153, 405);
+            this.t4.Name = "t4";
+            this.t4.ReadOnly = true;
+            this.t4.Size = new System.Drawing.Size(135, 40);
+            this.t4.TabIndex = 73;
+            this.t4.Tag = "4 PM";
+            this.t4.Text = "4 PM";
+            // 
+            // r4
+            // 
+            this.r4.Location = new System.Drawing.Point(439, 405);
+            this.r4.Name = "r4";
+            this.r4.ReadOnly = true;
+            this.r4.Size = new System.Drawing.Size(135, 40);
+            this.r4.TabIndex = 72;
+            this.r4.Tag = "4 PM";
+            this.r4.Text = "4 PM";
+            // 
+            // f4
+            // 
+            this.f4.Location = new System.Drawing.Point(582, 405);
+            this.f4.Name = "f4";
+            this.f4.ReadOnly = true;
+            this.f4.Size = new System.Drawing.Size(135, 40);
+            this.f4.TabIndex = 71;
+            this.f4.Tag = "4 PM";
+            this.f4.Text = "4 PM";
+            // 
+            // w4
+            // 
+            this.w4.Location = new System.Drawing.Point(295, 405);
+            this.w4.Name = "w4";
+            this.w4.ReadOnly = true;
+            this.w4.Size = new System.Drawing.Size(135, 40);
+            this.w4.TabIndex = 70;
+            this.w4.Tag = "4 PM";
+            this.w4.Text = "4 PM";
+            // 
+            // m4
+            // 
+            this.m4.Location = new System.Drawing.Point(10, 405);
+            this.m4.Name = "m4";
+            this.m4.ReadOnly = true;
+            this.m4.Size = new System.Drawing.Size(135, 40);
+            this.m4.TabIndex = 69;
+            this.m4.Tag = "4 PM";
+            this.m4.Text = "4 PM";
             // 
             // wNight
             // 
@@ -1138,55 +1350,155 @@
             this.columnHeader10.Text = "Course Name";
             this.columnHeader10.Width = 200;
             // 
-            // m4
+            // fLab_2_5
             // 
-            this.m4.Location = new System.Drawing.Point(10, 405);
-            this.m4.Name = "m4";
-            this.m4.ReadOnly = true;
-            this.m4.Size = new System.Drawing.Size(135, 40);
-            this.m4.TabIndex = 69;
-            this.m4.Tag = "4 PM";
-            this.m4.Text = "4 PM";
+            this.fLab_2_5.Location = new System.Drawing.Point(582, 313);
+            this.fLab_2_5.Name = "fLab_2_5";
+            this.fLab_2_5.ReadOnly = true;
+            this.fLab_2_5.Size = new System.Drawing.Size(135, 132);
+            this.fLab_2_5.TabIndex = 85;
+            this.fLab_2_5.Tag = "2 - 5 PM";
+            this.fLab_2_5.Text = "2 - 5 PM ";
             // 
-            // w4
+            // tLab_2_5
             // 
-            this.w4.Location = new System.Drawing.Point(295, 405);
-            this.w4.Name = "w4";
-            this.w4.ReadOnly = true;
-            this.w4.Size = new System.Drawing.Size(135, 40);
-            this.w4.TabIndex = 70;
-            this.w4.Tag = "4 PM";
-            this.w4.Text = "4 PM";
+            this.tLab_2_5.Location = new System.Drawing.Point(153, 313);
+            this.tLab_2_5.Name = "tLab_2_5";
+            this.tLab_2_5.ReadOnly = true;
+            this.tLab_2_5.Size = new System.Drawing.Size(135, 132);
+            this.tLab_2_5.TabIndex = 86;
+            this.tLab_2_5.Tag = "2 - 5 PM";
+            this.tLab_2_5.Text = "2 - 5 PM ";
             // 
-            // f4
+            // rLab_2_5
             // 
-            this.f4.Location = new System.Drawing.Point(582, 405);
-            this.f4.Name = "f4";
-            this.f4.ReadOnly = true;
-            this.f4.Size = new System.Drawing.Size(135, 40);
-            this.f4.TabIndex = 71;
-            this.f4.Tag = "4 PM";
-            this.f4.Text = "4 PM";
+            this.rLab_2_5.Location = new System.Drawing.Point(439, 313);
+            this.rLab_2_5.Name = "rLab_2_5";
+            this.rLab_2_5.ReadOnly = true;
+            this.rLab_2_5.Size = new System.Drawing.Size(135, 132);
+            this.rLab_2_5.TabIndex = 87;
+            this.rLab_2_5.Tag = "2 - 5 PM";
+            this.rLab_2_5.Text = "2 - 5 PM ";
             // 
-            // r4
+            // wLab_1_5
             // 
-            this.r4.Location = new System.Drawing.Point(439, 405);
-            this.r4.Name = "r4";
-            this.r4.ReadOnly = true;
-            this.r4.Size = new System.Drawing.Size(135, 40);
-            this.r4.TabIndex = 72;
-            this.r4.Tag = "4 PM";
-            this.r4.Text = "4 PM";
+            this.wLab_1_5.Location = new System.Drawing.Point(296, 267);
+            this.wLab_1_5.Name = "wLab_1_5";
+            this.wLab_1_5.ReadOnly = true;
+            this.wLab_1_5.Size = new System.Drawing.Size(135, 178);
+            this.wLab_1_5.TabIndex = 88;
+            this.wLab_1_5.Tag = "1 - 5 PM";
+            this.wLab_1_5.Text = "1 - 5 PM ";
             // 
-            // t4
+            // tLab_225_415
             // 
-            this.t4.Location = new System.Drawing.Point(151, 405);
-            this.t4.Name = "t4";
-            this.t4.ReadOnly = true;
-            this.t4.Size = new System.Drawing.Size(135, 40);
-            this.t4.TabIndex = 73;
-            this.t4.Tag = "4 PM";
-            this.t4.Text = "4 PM";
+            this.tLab_225_415.Location = new System.Drawing.Point(153, 333);
+            this.tLab_225_415.Name = "tLab_225_415";
+            this.tLab_225_415.ReadOnly = true;
+            this.tLab_225_415.Size = new System.Drawing.Size(135, 81);
+            this.tLab_225_415.TabIndex = 89;
+            this.tLab_225_415.Tag = "2:25 - 4:15 PM";
+            this.tLab_225_415.Text = "2:25 - 4:15 PM";
+            // 
+            // wLab_9_10
+            // 
+            this.wLab_9_10.Location = new System.Drawing.Point(296, 83);
+            this.wLab_9_10.Name = "wLab_9_10";
+            this.wLab_9_10.ReadOnly = true;
+            this.wLab_9_10.Size = new System.Drawing.Size(135, 40);
+            this.wLab_9_10.TabIndex = 90;
+            this.wLab_9_10.Tag = "9 AM";
+            this.wLab_9_10.Text = "9 AM";
+            // 
+            // fLab_9_10
+            // 
+            this.fLab_9_10.Location = new System.Drawing.Point(582, 83);
+            this.fLab_9_10.Name = "fLab_9_10";
+            this.fLab_9_10.ReadOnly = true;
+            this.fLab_9_10.Size = new System.Drawing.Size(135, 40);
+            this.fLab_9_10.TabIndex = 91;
+            this.fLab_9_10.Tag = "9 AM";
+            this.fLab_9_10.Text = "9 AM";
+            // 
+            // mLab_11_12
+            // 
+            this.mLab_11_12.Location = new System.Drawing.Point(10, 175);
+            this.mLab_11_12.Name = "mLab_11_12";
+            this.mLab_11_12.ReadOnly = true;
+            this.mLab_11_12.Size = new System.Drawing.Size(135, 40);
+            this.mLab_11_12.TabIndex = 92;
+            this.mLab_11_12.Tag = "11 AM";
+            this.mLab_11_12.Text = "11 AM";
+            // 
+            // tLab_10_11
+            // 
+            this.tLab_10_11.Location = new System.Drawing.Point(153, 131);
+            this.tLab_10_11.Name = "tLab_10_11";
+            this.tLab_10_11.ReadOnly = true;
+            this.tLab_10_11.Size = new System.Drawing.Size(135, 38);
+            this.tLab_10_11.TabIndex = 93;
+            this.tLab_10_11.Tag = "10:05 AM - 11:00 AM";
+            this.tLab_10_11.Text = "10:05 AM - 11:00 AM";
+            // 
+            // rLab_10_11
+            // 
+            this.rLab_10_11.Location = new System.Drawing.Point(439, 131);
+            this.rLab_10_11.Name = "rLab_10_11";
+            this.rLab_10_11.ReadOnly = true;
+            this.rLab_10_11.Size = new System.Drawing.Size(135, 38);
+            this.rLab_10_11.TabIndex = 94;
+            this.rLab_10_11.Tag = "10:05 AM - 11:00 AM";
+            this.rLab_10_11.Text = "10:05 AM - 11:00 AM";
+            // 
+            // wLab_3_4
+            // 
+            this.wLab_3_4.Location = new System.Drawing.Point(296, 359);
+            this.wLab_3_4.Name = "wLab_3_4";
+            this.wLab_3_4.ReadOnly = true;
+            this.wLab_3_4.Size = new System.Drawing.Size(135, 40);
+            this.wLab_3_4.TabIndex = 95;
+            this.wLab_3_4.Tag = "3 PM";
+            this.wLab_3_4.Text = "3 PM";
+            // 
+            // fLab_3_4
+            // 
+            this.fLab_3_4.Location = new System.Drawing.Point(582, 359);
+            this.fLab_3_4.Name = "fLab_3_4";
+            this.fLab_3_4.ReadOnly = true;
+            this.fLab_3_4.Size = new System.Drawing.Size(135, 40);
+            this.fLab_3_4.TabIndex = 96;
+            this.fLab_3_4.Tag = "3 PM";
+            this.fLab_3_4.Text = "3 PM";
+            // 
+            // rLab_230_430
+            // 
+            this.rLab_230_430.Location = new System.Drawing.Point(439, 333);
+            this.rLab_230_430.Name = "rLab_230_430";
+            this.rLab_230_430.ReadOnly = true;
+            this.rLab_230_430.Size = new System.Drawing.Size(135, 99);
+            this.rLab_230_430.TabIndex = 97;
+            this.rLab_230_430.Tag = "2:30 - 4:30 PM";
+            this.rLab_230_430.Text = "2:30 - 4:30 PM ";
+            // 
+            // mLab_2_4
+            // 
+            this.mLab_2_4.Location = new System.Drawing.Point(10, 313);
+            this.mLab_2_4.Name = "mLab_2_4";
+            this.mLab_2_4.ReadOnly = true;
+            this.mLab_2_4.Size = new System.Drawing.Size(135, 86);
+            this.mLab_2_4.TabIndex = 98;
+            this.mLab_2_4.Tag = "2 - 4 PM";
+            this.mLab_2_4.Text = "2 - 4 PM ";
+            // 
+            // wLab_330_530
+            // 
+            this.wLab_330_530.Location = new System.Drawing.Point(295, 375);
+            this.wLab_330_530.Name = "wLab_330_530";
+            this.wLab_330_530.ReadOnly = true;
+            this.wLab_330_530.Size = new System.Drawing.Size(135, 88);
+            this.wLab_330_530.TabIndex = 99;
+            this.wLab_330_530.Tag = "3:30 PM - 5:30 PM";
+            this.wLab_330_530.Text = "3:30 PM - 5:30 PM";
             // 
             // Form1
             // 
@@ -1318,6 +1630,32 @@
         private System.Windows.Forms.RichTextBox w4;
         private System.Windows.Forms.RichTextBox t4;
         private System.Windows.Forms.RichTextBox r4;
+        private System.Windows.Forms.RichTextBox mLab_2_5;
+        private System.Windows.Forms.RichTextBox tLab_10_1;
+        private System.Windows.Forms.RichTextBox wLab_2_5;
+        private System.Windows.Forms.RichTextBox tLab_230_530;
+        private System.Windows.Forms.RichTextBox rLab_230_530;
+        private System.Windows.Forms.RichTextBox tLab_230_5;
+        private System.Windows.Forms.RichTextBox rLab_230_5;
+        private System.Windows.Forms.RichTextBox rLab_10_1;
+        private System.Windows.Forms.RichTextBox fLab_1_3;
+        private System.Windows.Forms.RichTextBox tLab_1_3;
+        private System.Windows.Forms.RichTextBox tLab_3_5;
+        private System.Windows.Forms.RichTextBox fLab_2_5;
+        private System.Windows.Forms.RichTextBox tLab_2_5;
+        private System.Windows.Forms.RichTextBox wLab_1_5;
+        private System.Windows.Forms.RichTextBox rLab_2_5;
+        private System.Windows.Forms.RichTextBox tLab_225_415;
+        private System.Windows.Forms.RichTextBox fLab_9_10;
+        private System.Windows.Forms.RichTextBox wLab_9_10;
+        private System.Windows.Forms.RichTextBox mLab_11_12;
+        private System.Windows.Forms.RichTextBox tLab_10_11;
+        private System.Windows.Forms.RichTextBox rLab_10_11;
+        private System.Windows.Forms.RichTextBox fLab_3_4;
+        private System.Windows.Forms.RichTextBox wLab_3_4;
+        private System.Windows.Forms.RichTextBox rLab_230_430;
+        private System.Windows.Forms.RichTextBox mLab_2_4;
+        private System.Windows.Forms.RichTextBox wLab_330_530;
     }
 }
 
