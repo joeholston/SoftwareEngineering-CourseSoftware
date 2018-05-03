@@ -1044,5 +1044,11 @@ namespace SoftwareEngineering
             }
             e.Item.SubItems[2].Text = "false";
         }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            hideAllLabs();
+            clearCalendar();
+        }
     }
 }

@@ -153,6 +153,7 @@
             this.courseResults_prereq = new System.Windows.Forms.ListView();
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.clearButton = new System.Windows.Forms.Button();
             this.searchGroup.SuspendLayout();
             this.advancedSearch_Group.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -584,7 +585,7 @@
             // 
             // wLab_1_5
             // 
-            this.wLab_1_5.Location = new System.Drawing.Point(296, 267);
+            this.wLab_1_5.Location = new System.Drawing.Point(295, 267);
             this.wLab_1_5.Name = "wLab_1_5";
             this.wLab_1_5.ReadOnly = true;
             this.wLab_1_5.Size = new System.Drawing.Size(135, 178);
@@ -634,7 +635,7 @@
             // 
             // rLab_10_1
             // 
-            this.rLab_10_1.Location = new System.Drawing.Point(439, 131);
+            this.rLab_10_1.Location = new System.Drawing.Point(439, 129);
             this.rLab_10_1.Name = "rLab_10_1";
             this.rLab_10_1.ReadOnly = true;
             this.rLab_10_1.Size = new System.Drawing.Size(135, 130);
@@ -1342,6 +1343,7 @@
             // 
             // schedulerTab
             // 
+            this.schedulerTab.Controls.Add(this.clearButton);
             this.schedulerTab.Controls.Add(this.saveButton);
             this.schedulerTab.Controls.Add(this.loadButton);
             this.schedulerTab.Controls.Add(this.tabControl);
@@ -1500,6 +1502,16 @@
             this.columnHeader10.Text = "Course Name";
             this.columnHeader10.Width = 200;
             // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(642, 656);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(95, 23);
+            this.clearButton.TabIndex = 72;
+            this.clearButton.Text = "Clear Calendar";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1656,6 +1668,7 @@
         private System.Windows.Forms.RichTextBox rLab_230_430;
         private System.Windows.Forms.RichTextBox mLab_2_4;
         private System.Windows.Forms.RichTextBox wLab_330_530;
+        private System.Windows.Forms.Button clearButton;
     }
 }
 
