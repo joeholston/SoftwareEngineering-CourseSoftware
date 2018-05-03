@@ -39,6 +39,8 @@ namespace SoftwareEngineering
                 } //Add the selected Course to the end of the list
             }
         }
+
+
         public void deleteCourse(Course deselectedCourse, bool completed)//completed is true if adding to prereqs, is false if adding to stude
         {
             if (deselectedCourse != null)

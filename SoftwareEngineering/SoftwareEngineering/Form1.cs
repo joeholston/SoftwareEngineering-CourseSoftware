@@ -169,6 +169,38 @@ namespace SoftwareEngineering
             
         }
 
+        private void clearCalendar()
+        {
+            //MWF
+            for(int i = 1; i <= 5; i += 2)
+            {
+                resetCalendarBox(i, 8);
+                resetCalendarBox(i, 9);
+                resetCalendarBox(i, 10);
+                resetCalendarBox(i, 11);
+                resetCalendarBox(i, 12);
+                resetCalendarBox(i, 1);
+                resetCalendarBox(i, 2);
+                resetCalendarBox(i, 3);
+                if (i == 1 || i == 3)
+                {
+                    resetCalendarBox(i, 6);
+                }
+            }
+            for (int i = 2; i <= 4; i += 2)
+            {
+                resetCalendarBox(i, 8);
+                resetCalendarBox(i, 10);
+                resetCalendarBox(i, 1);
+                resetCalendarBox(i, 1);
+                resetCalendarBox(i, 2);
+                if (i == 2)
+                {
+                    resetCalendarBox(i, 6);
+                }
+            }
+        }
+
         private void updateCalendarBox(Course course, int day, int time)
         {
             string newTime = appendTime(course.beginTime);
@@ -633,9 +665,9 @@ namespace SoftwareEngineering
             if(save.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter writer = new StreamWriter(save.OpenFile());
-                for(int i = 0; i < user.studentCourses.Count-1; i++)
+                for(int i = 0; i < user.studentCourses.Count; i++)
                 {
-                    writer.WriteLine(user.studentCourses[i].courseCode.ToString());
+                    writer.WriteLine(user.studentCourses[i].courseCode.ToString() + ",");
                 }
                 writer.Dispose();
                 writer.Close();
@@ -651,9 +683,14 @@ namespace SoftwareEngineering
 
             if(load.ShowDialog() == DialogResult.OK)
             {
+                clearCalendar();
+
                 StreamReader reader = new StreamReader(load.OpenFile());
-                string temp = reader.ReadToEnd();
-                searchBox.Text = temp;
+                List<string> inputFromFile = reader.ReadToEnd().Split(',').ToList<string>();
+                for(int i = 0; i< inputFromFile.Count-1; i++)
+                {
+                                        
+                }
                 reader.Close();
             }
             
