@@ -1093,6 +1093,7 @@
             this.studentListView.Size = new System.Drawing.Size(703, 507);
             this.studentListView.TabIndex = 6;
             this.studentListView.UseCompatibleStateImageBehavior = false;
+            this.studentListView.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.studentListView_ItemChecked);
             // 
             // columnHeader1
             // 
