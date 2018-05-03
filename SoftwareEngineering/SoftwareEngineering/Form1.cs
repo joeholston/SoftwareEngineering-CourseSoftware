@@ -920,13 +920,13 @@ namespace SoftwareEngineering
                 //add course
                 string courseCode = e.Item.SubItems[0].Text; //Gets the courseCode from the ListView
                 List<Course> selectedCourses = Student.findCourse(courseCode); //Gets the Course object from the database array
-                Course conflicting1 = null;
-                Course conflicting2 = null;
+                List<Course> conflicting1 = new List<Course>();
+                List<Course> conflicting2 = new List<Course>();
                 if (selectedCourses.Count == 2)
                 {
                     conflicting1 = user.isConflict(selectedCourses[0]);
                     conflicting2 = user.isConflict(selectedCourses[1]);
-                    if (conflicting1 == null && conflicting2 == null)
+                    if (conflicting1.Count == 0 && conflicting2.Count == 0)
                     {
                         user.addCourse(selectedCourses[0], false);
                         user.addCourse(selectedCourses[1], false);
@@ -941,34 +941,64 @@ namespace SoftwareEngineering
                         }
 
                     }
-                    else if (conflicting1 != null && conflicting2 != null)
+                    else if (conflicting1.Count !=0 && conflicting2.Count != 0)
                     {
                         DialogResult conflictBox1 = System.Windows.Forms.MessageBox.Show("Conflicting Courses!\nDo you want to replace the current " + selectedCourses[0].meetingDays + "- " + appendTime(selectedCourses[0].beginTime) + " class AND the current " + selectedCourses[1].meetingDays + "- " + appendTime(selectedCourses[1].beginTime) + " class?", "", MessageBoxButtons.YesNo);
                         if (conflictBox1 == DialogResult.Yes)
                         {
-                            foreach (ListViewItem item in courseResults.Items)
+                            foreach (Course course in conflicting1)
                             {
-                                if (item.SubItems[0].Text == conflicting1.courseCode || item.SubItems[0].Text == conflicting2.courseCode)
+                                foreach (ListViewItem item in courseResults.Items)
                                 {
-                                    item.Checked = false;
+                                    if (item.SubItems[0].Text == course.courseCode)
+                                    {
+                                        item.Checked = false;
+                                    }
+                                    else if (item.SubItems[0].Text == courseCode)
+                                    {
+                                        item.Checked = true;
+                                    }
                                 }
-                                else if (item.SubItems[0].Text == courseCode)
+                                foreach (Course course2 in user.studentCourses)
                                 {
-                                    item.Checked = true;
+                                    if (course2.courseCode == course.courseCode)
+                                    {
+                                        user.deleteCourse(course, false);
+                                    }
+                                }
+                                foreach (Course selected in selectedCourses)
+                                {
+                                    user.addCourse(selected, false);
+                                    addToCalender(selected); //Show the new course to the calender
                                 }
                             }
-                            foreach (Course course in user.studentCourses)
+                            foreach (Course course in conflicting2)
                             {
-                                if (course.courseCode == conflicting1.courseCode || course.courseCode == conflicting2.courseCode)
+                                foreach (ListViewItem item in courseResults.Items)
                                 {
-                                    user.deleteCourse(course, false);
+                                    if (item.SubItems[0].Text == course.courseCode)
+                                    {
+                                        item.Checked = false;
+                                    }
+                                    else if (item.SubItems[0].Text == courseCode)
+                                    {
+                                        item.Checked = true;
+                                    }
+                                }
+                                foreach (Course course2 in user.studentCourses)
+                                {
+                                    if (course2.courseCode == course.courseCode)
+                                    {
+                                        user.deleteCourse(course, false);
+                                    }
+                                }
+                                foreach (Course selected in selectedCourses)
+                                {
+                                    user.addCourse(selected, false);
+                                    addToCalender(selected); //Show the new course to the calender
                                 }
                             }
-                            foreach (Course selected in selectedCourses)
-                            {
-                                user.addCourse(selected, false);
-                                addToCalender(selected); //Show the new course to the calender
-                            }
+
                         }
                         else if (conflictBox1 == DialogResult.No)
                         {
@@ -978,37 +1008,84 @@ namespace SoftwareEngineering
                     else
                     {
                         int i = 0;
-                        if (conflicting2 != null)
+                        if (conflicting2.Count != 0)
                         {
                             i = 1;
                         }
                         DialogResult  conflictBox2 = System.Windows.Forms.MessageBox.Show("Conflicting Courses!\nDo you want to replace the current " + selectedCourses[i].meetingDays + "- " + appendTime(selectedCourses[i].beginTime) + " class?", "", MessageBoxButtons.YesNo);
                         if (conflictBox2 == DialogResult.Yes)
                         {
-                            foreach (ListViewItem item in courseResults.Items)
+                            if (i==1)
                             {
-                                if (i==0 && item.SubItems[0].Text == conflicting1.courseCode)
+                                foreach (Course course in conflicting2)
                                 {
-                                    item.Checked = false;
+                                    foreach (ListViewItem item in courseResults.Items)
+                                    {
+                                        if (i == 0 && item.SubItems[0].Text == course.courseCode)
+                                        {
+                                            item.Checked = false;
+                                        }
+                                        else if (i == 1 && item.SubItems[0].Text == course.courseCode)
+                                        {
+                                            item.Checked = false;
+                                        }
+                                        else if (item.SubItems[0].Text == courseCode)
+                                        {
+                                            item.Checked = true;
+                                        }
+                                    }
+                                    for (int j = user.studentCourses.Count - 1; j >= 0; j--)
+                                    {
+                                        if (i == 0 && user.studentCourses[j].courseCode == course.courseCode)
+                                        {
+                                            user.deleteCourse(user.studentCourses[j], false);
+                                        }
+                                        else if (i == 1 && user.studentCourses[j].courseCode == course.courseCode)
+                                        {
+                                            user.deleteCourse(user.studentCourses[j], false);
+                                        }
+                                    }
                                 }
-                                else if(i==1 && item.SubItems[0].Text==conflicting2.courseCode)
+                                foreach (Course selected in selectedCourses)
                                 {
-                                    item.Checked = false;
-                                }
-                                else if (item.SubItems[0].Text == courseCode)
-                                {
-                                    item.Checked = true;
+                                    user.addCourse(selected, false);
+                                    addToCalender(selected); //Show the new course to the calender
                                 }
                             }
-                            for (int j=user.studentCourses.Count -1; j>=0; j--)
+                            else if (conflictBox2 == DialogResult.No)
                             {
-                                if (i == 0 && user.studentCourses[j].courseCode == conflicting1.courseCode)
+                                e.Item.Checked = false;
+                            }
+                        }
+                        if (i == 0)
+                        {
+                            foreach (Course course in conflicting1)
+                            {
+                                foreach (ListViewItem item in courseResults.Items)
                                 {
-                                    user.deleteCourse(user.studentCourses[j], false);
+                                    if (i == 0 && item.SubItems[0].Text == course.courseCode)
+                                    {
+                                        item.Checked = false;
+                                    }
+                                    else if (i == 1 && item.SubItems[0].Text == course.courseCode)
+                                    {
+                                        item.Checked = false;
+                                    }
+                                    else if (item.SubItems[0].Text == courseCode)
+                                    {
+                                        item.Checked = true;
+                                    }
                                 }
-                                else if (i == 1 && user.studentCourses[j].courseCode == conflicting2.courseCode)
+                                for (int j = user.studentCourses.Count - 1; j >= 0; j--)
                                 {
-                                    user.deleteCourse(user.studentCourses[j], false);
+                                    if (i == 0 && user.studentCourses[j].courseCode == course.courseCode)
+                                    {
+                                        user.deleteCourse(user.studentCourses[j], false);
+                                    }
+                                    else if (i == 1 && user.studentCourses[j].courseCode == course.courseCode)
+                                    {
+                                        user.deleteCourse(user.studentCourses[j], false);
+                                    }
                                 }
                             }
                             foreach (Course selected in selectedCourses)
@@ -1022,11 +1099,13 @@ namespace SoftwareEngineering
                             e.Item.Checked = false;
                         }
                     }
+
                 }
                 else if (selectedCourses.Count == 1)
                 {
-                    Course conflicting = user.isConflict(selectedCourses[0]);
-                    if (conflicting == null)
+                    List<Course> conflicting = new List<Course>();
+                    conflicting=user.isConflict(selectedCourses[0]);
+                    if (conflicting.Count == 0)
                     {
                         user.addCourse(selectedCourses[0], false); //Adds the course from the student array
                         addToCalender(selectedCourses[0]); //Show the new course to the calender
@@ -1036,28 +1115,31 @@ namespace SoftwareEngineering
                         DialogResult conflictBox3 = System.Windows.Forms.MessageBox.Show("Conflicting Course!\nDo you want to replace the current " + selectedCourses[0].meetingDays + "- " + appendTime(selectedCourses[0].beginTime) + " class?", "", MessageBoxButtons.YesNo);
                         if (conflictBox3 == DialogResult.Yes)
                         {
-                            foreach (ListViewItem item in courseResults.Items)
+                            foreach (Course course in conflicting)
                             {
-                                if (item.SubItems[0].Text == conflicting.courseCode)
+                                foreach (ListViewItem item in courseResults.Items)
                                 {
-                                    item.Checked = false;
+                                    if (item.SubItems[0].Text == course.courseCode)
+                                    {
+                                        item.Checked = false;
+                                    }
+                                    else if (item.SubItems[0].Text == courseCode)
+                                    {
+                                        item.Checked = true;
+                                    }
                                 }
-                                else if (item.SubItems[0].Text == courseCode)
+                                foreach (Course course2 in user.studentCourses)
                                 {
-                                    item.Checked = true;
+                                    if (course2.courseCode == course.courseCode)
+                                    {
+                                        user.deleteCourse(course, false);
+                                    }
                                 }
-                            }
-                            foreach (Course course in user.studentCourses)
-                            {
-                                if (course.courseCode == conflicting.courseCode)
+                                foreach (Course selected in selectedCourses)
                                 {
-                                    user.deleteCourse(course, false);
+                                    user.addCourse(selected, false);
+                                    addToCalender(selected); //Show the new course to the calender
                                 }
-                            }
-                            foreach (Course selected in selectedCourses)
-                            {
-                                user.addCourse(selected, false);
-                                addToCalender(selected); //Show the new course to the calender
                             }
                         }
                         else if (conflictBox3 == DialogResult.No)

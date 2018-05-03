@@ -108,17 +108,18 @@ namespace SoftwareEngineering
             }
             return false;
         }
-        public Course isConflict(Course selectedCourse)
+        public List<Course> isConflict(Course selectedCourse)
         {
-            if (studentCourses==null)
+            List<Course> conflicting=new List<Course>();
+            if (studentCourses.Count==0)
             {
-                return null;
+                return conflicting;
             }
             foreach (Course course in studentCourses)
             {
                 if (course.courseCode==selectedCourse.courseCode)
                 {
-                    return null;
+                    return conflicting;
                 }
                 foreach(char c in course.meetingDays)
                 {
@@ -126,12 +127,20 @@ namespace SoftwareEngineering
                     {
                         if ((c==c2) && (selectedCourse.beginTime==course.beginTime))
                         {
-                            return course;
+                            conflicting.Add(course);
+                        }
+                        else if ((c==c2) &&(selectedCourse.beginTime>course.beginTime && selectedCourse.beginTime<course.endTime))
+                        {
+                            conflicting.Add(course);
+                        }
+                        else if ((c==c2) &&(selectedCourse.endTime>course.beginTime &&selectedCourse.endTime<=course.endTime))
+                        {
+                            conflicting.Add(course);
                         }
                     }
                 }
             }
-            return null;
+            return conflicting;
         }
         public static Student user
         {
