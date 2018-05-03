@@ -63,8 +63,12 @@ namespace SoftwareEngineering
             return false;
         }
 
-        private bool searchTime()
+        private bool searchTime(DateTime beginTime, DateTime endTime, int i)
         {
+            if (courseDB[i].beginTime > beginTime && courseDB[i].endTime < endTime)
+            {
+                return true;
+            }
             return false;
         }
 
@@ -260,7 +264,6 @@ namespace SoftwareEngineering
                     break;
                 case "11111":
                         return true;
-                    break;
             }
             return false;
         }
