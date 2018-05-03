@@ -932,6 +932,13 @@ namespace SoftwareEngineering
                 if (user.inSchedule(selected,true))
                 {
                     user.deleteCourse(selected, true);
+                    foreach (ListViewItem item in studentListView_prereq.Items)
+                    {
+                        if (item.SubItems[0].Text==courseCode)
+                        {
+                            studentListView_prereq.Items.Remove(item);
+                        }
+                    }
                 }
             }
             else
