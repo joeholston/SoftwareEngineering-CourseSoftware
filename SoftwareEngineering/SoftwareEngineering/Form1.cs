@@ -428,14 +428,22 @@ namespace SoftwareEngineering
         private void addToLV(ListView lv, Course c, bool selected)
         {
             //creates a List View Item
+            foreach (ListViewItem course in lv.Items)
+            {
+                if (course.SubItems[0].Text==c.courseCode && course.SubItems[2].Text==c.meetingDays)
+                {
+                    return;
+                }
+            }
             ListViewItem itm;
-            string[] arr = new string[6];
+            string[] arr = new string[7];
             arr[0] = c.courseCode;
             arr[1] = c.LongTitle;
             arr[2] = c.meetingDays;
             arr[3] = appendTime(c.beginTime);
             arr[4] = c.building;
             arr[5] = c.enrollment.ToString();
+            arr[6] = "true";  //IS the first time having this item in the LV 
             itm = new ListViewItem(arr);
             itm.Checked = selected;
             lv.Items.Add(itm);
@@ -906,5 +914,35 @@ namespace SoftwareEngineering
             }
         }
 
+<<<<<<< Updated upstream
+=======
+        private void studentListView_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            List<Course> selectedCourses = Student.findCourse(e.Item.SubItems[0].Text);
+            System.Text.StringBuilder messageBoxCS = new System.Text.StringBuilder();
+            messageBoxCS.AppendFormat("{0} = {1}", "Item",e.Item);
+            messageBoxCS.AppendLine();
+            MessageBox.Show(messageBoxCS.ToString(), "ItemChecked Event");
+            if (e.Item.SubItems[6].Text != "true")
+            {
+                if (e.Item.Checked == false)
+                {
+                    foreach (Course course in selectedCourses)
+                    {
+                        user.deleteCourse(course, false);
+                        deleteFromCalender(course);
+                    }
+                    foreach (ListViewItem course in courseResults.Items)
+                    {
+                        if (course.SubItems[0].Text == e.Item.SubItems[0].Text)
+                        {
+                            course.Checked = false;
+                        }
+                    }
+                }
+            }
+            e.Item.SubItems[6].Text = "false";
+        }
+>>>>>>> Stashed changes
     }
 }
