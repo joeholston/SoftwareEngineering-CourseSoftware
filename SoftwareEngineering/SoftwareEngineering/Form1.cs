@@ -914,8 +914,6 @@ namespace SoftwareEngineering
             }
         }
 
-<<<<<<< Updated upstream
-=======
         private void studentListView_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             List<Course> selectedCourses = Student.findCourse(e.Item.SubItems[0].Text);
@@ -943,6 +941,5 @@ namespace SoftwareEngineering
             }
             e.Item.SubItems[6].Text = "false";
         }
->>>>>>> Stashed changes
     }
 }
