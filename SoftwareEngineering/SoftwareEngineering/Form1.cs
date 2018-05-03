@@ -915,10 +915,6 @@ namespace SoftwareEngineering
         private void studentListView_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             List<Course> selectedCourses = Student.findCourse(e.Item.SubItems[0].Text);
-            System.Text.StringBuilder messageBoxCS = new System.Text.StringBuilder();
-            messageBoxCS.AppendFormat("{0} = {1}", "Item",e.Item);
-            messageBoxCS.AppendLine();
-            MessageBox.Show(messageBoxCS.ToString(), "ItemChecked Event");
             if (e.Item.SubItems[6].Text != "true")
             {
                 if (e.Item.Checked == false)
