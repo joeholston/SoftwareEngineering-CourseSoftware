@@ -28,7 +28,7 @@ namespace SoftwareEngineering
                3 = Thursday
                4 = Friday
         */
-        public void search(string input, int searchSelection, bool[] meetingDays)
+        public void search(string input, int searchSelection, bool[] meetingDays, String startTime, String endTime)
         {
             searchCourses.Clear();
 
@@ -38,10 +38,15 @@ namespace SoftwareEngineering
                 {
                     if (searchDays(meetingDays, i))
                     {
-                        searchCourses.Add(courseDB[i]);
+                        if(searchTime(startTime, endTime, i))
+                        {
+                            searchCourses.Add(courseDB[i]);
+                        }
                     }
                 }
             }
+
+            
         }
         
         private bool searchMethod(string input, int searchSelection, int i)
@@ -63,9 +68,106 @@ namespace SoftwareEngineering
             return false;
         }
 
-        private bool searchTime(DateTime beginTime, DateTime endTime, int i)
+        private bool searchTime(String startTime, String endTime, int i)
         {
-            if (courseDB[i].beginTime > beginTime && courseDB[i].endTime < endTime)
+            int beginTime = 0;
+            switch (startTime)
+            {
+                case "  8 AM":
+                    beginTime = 8;
+                    break;
+                case "  9 AM":
+                    beginTime = 9;
+                    break;
+                case "10 AM":
+                    beginTime = 10;
+                    break;
+                case "11 AM":
+                    beginTime = 11;
+                    break;
+                case "12 PM":
+                    beginTime = 12;
+                    break;
+                case "  1 PM":
+                    beginTime = 13;
+                    break;
+                case "  2 PM":
+                    beginTime = 14;
+                    break;
+                case "  3 PM":
+                    beginTime = 15;
+                    break;
+                case "  4 PM":
+                    beginTime = 16;
+                    break;
+                case "  5 PM":
+                    beginTime = 17;
+                    break;
+                case "  6 PM":
+                    beginTime = 18;
+                    break;
+                case "  7 PM":
+                    beginTime = 19;
+                    break;
+                case "  8 PM":
+                    beginTime = 20;
+                    break;
+                case "  9 PM":
+                    beginTime = 21;
+                    break;
+            }
+
+            int finishTime = 0;
+            switch (endTime)
+            {
+                case "  8 AM":
+                    finishTime = 8;
+                    break;
+                case "  9 AM":
+                    finishTime = 9;
+                    break;
+                case "10 AM":
+                    finishTime = 10;
+                    break;
+                case "11 AM":
+                    finishTime = 11;
+                    break;
+                case "12 PM":
+                    finishTime = 12;
+                    break;
+                case "  1 PM":
+                    finishTime = 13;
+                    break;
+                case "  2 PM":
+                    finishTime = 14;
+                    break;
+                case "  3 PM":
+                    finishTime = 15;
+                    break;
+                case "  4 PM":
+                    finishTime = 16;
+                    break;
+                case "  5 PM":
+                    finishTime = 17;
+                    break;
+                case "  6 PM":
+                    finishTime = 18;
+                    break;
+                case "  7 PM":
+                    finishTime = 19;
+                    break;
+                case "  8 PM":
+                    finishTime = 20;
+                    break;
+                case "  9 PM":
+                    finishTime = 21;
+                    break;
+            }
+
+            int courseStart = courseDB[i].beginTime.Hour;
+            int courseEnd = courseDB[i].endTime.Hour;
+
+            if (courseStart >= beginTime && courseEnd <= finishTime-1)
             {
                 return true;
             }
