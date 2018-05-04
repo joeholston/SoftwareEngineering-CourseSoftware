@@ -15,8 +15,7 @@ namespace SoftwareEngineering
         }
         //This allows to build a test search without having to build a database
         public Search(int x)
-        {
-            
+        {   
         }
         //create two databases, one for the courses and another for the prereqs
         //the prereq database only holds the course code, shortTitle, and LongTitle
@@ -389,7 +388,7 @@ namespace SoftwareEngineering
                 {
                     s = s + "1";
                 }
-                else
+                else if(b[i] == false)
                 {
                     s = s + "0";
                 }

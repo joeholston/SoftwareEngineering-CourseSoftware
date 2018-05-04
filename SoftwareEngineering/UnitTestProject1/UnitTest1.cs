@@ -49,6 +49,35 @@ namespace SoftwareEngineeringTestProject
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void TestMethodBoolArrayToString4()
+        {
+            //Setup
+            Search s = new Search(1);
+            bool[] test1 = {false,};
+            string expected = "0";
+
+            //Act
+            string actual = s.boolArrayToString(test1);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestMethodBoolArrayToString5()
+        {
+            //Setup
+            Search s = new Search(1);
+            bool[] test1 = new bool[5];
+            test1[1] = true;
+            string expected = "01000";
+
+            //Act
+            string actual = s.boolArrayToString(test1);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
 //xunit
