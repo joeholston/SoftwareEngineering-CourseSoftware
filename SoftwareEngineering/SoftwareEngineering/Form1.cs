@@ -135,6 +135,7 @@ namespace SoftwareEngineering
             rLab_2_5.Hide();
             rLab_230_6.Hide();
             rLab_3_450.Hide();
+            mece210.Hide();
 
             fLab_9_10.Hide();
             fLab_1_3.Hide();
@@ -176,6 +177,21 @@ namespace SoftwareEngineering
                     {
                         studentListView.Items.Remove(item);
                     }
+                }
+            }
+
+            if (course.courseCode.ToString().Equals("MECE 210  A"))
+            {
+                updateLabBox(mece210, course, show);
+                if (show)
+                {
+                    r1130.Hide();
+                    r230.Hide();
+                }
+                else
+                {
+                    r1130.Show();
+                    r230.Show();
                 }
             }
 
@@ -589,13 +605,16 @@ namespace SoftwareEngineering
                     }
                     else if (c == 'R')
                     {
-                        if (show)
+                        if (time != 12)
                         {
-                            updateCalendarBox(course, 4, time);
-                        }
-                        else
-                        {
-                            resetCalendarBox(4, time);
+                            if (show)
+                            {
+                                updateCalendarBox(course, 4, time);
+                            }
+                            else
+                            {
+                                resetCalendarBox(4, time);
+                            }
                         }
                     }
                     else if (c == 'F')

@@ -168,6 +168,7 @@
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tLab_1_430 = new System.Windows.Forms.RichTextBox();
             this.rLab_1_430 = new System.Windows.Forms.RichTextBox();
+            this.mece210 = new System.Windows.Forms.RichTextBox();
             this.searchGroup.SuspendLayout();
             this.advancedSearch_Group.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -418,6 +419,7 @@
             // 
             // calendarGroup
             // 
+            this.calendarGroup.Controls.Add(this.mece210);
             this.calendarGroup.Controls.Add(this.rLab_1_430);
             this.calendarGroup.Controls.Add(this.tLab_1_430);
             this.calendarGroup.Controls.Add(this.mLab_3_5);
@@ -1680,6 +1682,16 @@
             this.rLab_1_430.Tag = "1 - 4:30 PM ";
             this.rLab_1_430.Text = "1 - 4:30 PM ";
             // 
+            // mece210
+            // 
+            this.mece210.Location = new System.Drawing.Point(439, 221);
+            this.mece210.Name = "mece210";
+            this.mece210.ReadOnly = true;
+            this.mece210.Size = new System.Drawing.Size(135, 132);
+            this.mece210.TabIndex = 114;
+            this.mece210.Tag = "12:00 - 3:00 PM";
+            this.mece210.Text = "12:00 - 3:00 PM";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1851,6 +1863,7 @@
         private System.Windows.Forms.RichTextBox mLab_3_5;
         private System.Windows.Forms.RichTextBox tLab_1_430;
         private System.Windows.Forms.RichTextBox rLab_1_430;
+        private System.Windows.Forms.RichTextBox mece210;
     }
 }
 
