@@ -841,7 +841,7 @@ namespace SoftwareEngineering
             meetingdays[3] = searchDay_Thursday.Checked;
             meetingdays[4] = searchDay_Friday.Checked;
 
-            s.search(searchString, searchDropDown.SelectedIndex, meetingdays);
+            s.search(searchString, searchDropDown.SelectedIndex, meetingdays, Convert.ToString(startTime.SelectedItem), Convert.ToString(endTime.SelectedItem));
             if (prereqButton.Checked)
             {
                 if(user.studentCompletedCourses !=  null)
@@ -1335,7 +1335,7 @@ namespace SoftwareEngineering
                 {
                     user.deleteCourse(course, true);
 
-                    foreach (ListViewItem courses in courseResults.Items)
+                    foreach (ListViewItem courses in courseResults_prereq.Items)
                     {
                         if (courses.SubItems[0].Text == e.Item.SubItems[0].Text)
                         {
