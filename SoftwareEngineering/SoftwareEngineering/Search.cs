@@ -6,12 +6,22 @@ using System.Threading.Tasks;
 
 namespace SoftwareEngineering
 {
-    class Search
+    public class Search
     {
+        public Search()
+        {
+            courseDB = BuildDB.Instance.courseDatabase;
+            prereqDB = BuildDB.Instance.prereqDatabase;
+        }
+        //This allows to build a test search without having to build a database
+        public Search(int x)
+        {
+            
+        }
         //create two databases, one for the courses and another for the prereqs
         //the prereq database only holds the course code, shortTitle, and LongTitle
-        private List<Course> courseDB = BuildDB.Instance.courseDatabase;
-        private List<Course> prereqDB = BuildDB.Instance.prereqDatabase;
+        private List<Course> courseDB;
+        private List<Course> prereqDB;
 
         //create one list to hold searched courses and another to hold prereq courses
         public List<Course> searchCourses = new List<Course>();
@@ -370,7 +380,7 @@ namespace SoftwareEngineering
             return false;
         }
 
-        private String boolArrayToString(bool[] b)
+        public String boolArrayToString(bool[] b)
         {
             String s = null;
             for (int i = 0; i < b.Length; i++)

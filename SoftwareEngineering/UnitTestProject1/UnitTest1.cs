@@ -8,9 +8,46 @@ namespace SoftwareEngineeringTestProject
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethodBoolArrayToString1()
         {
+            //Setup
+            Search s = new Search(1);
+            bool[] test1 = {true,false,true,false};
+            string expected = "1010";
 
+            //Act
+            string actual = s.boolArrayToString(test1);
+            
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestMethodBoolArrayToString2()
+        {
+            //Setup
+            Search s = new Search(1);
+            bool[] test1 = {};
+            string expected = null;
+
+            //Act
+            string actual = s.boolArrayToString(test1);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void TestMethodBoolArrayToString3()
+        {
+            //Setup
+            Search s = new Search(1);
+            bool[] test1 = { false};
+            string expected = "0";
+
+            //Act
+            string actual = s.boolArrayToString(test1);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
