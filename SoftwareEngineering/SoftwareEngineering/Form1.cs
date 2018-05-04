@@ -975,7 +975,7 @@ namespace SoftwareEngineering
                     }
                     else if (conflicting1.Count !=0 && conflicting2.Count != 0)
                     {
-                        DialogResult conflictBox1 = System.Windows.Forms.MessageBox.Show("Conflicting Courses!\nDo you want to replace the current " + selectedCourses[0].meetingDays + "- " + appendTime(selectedCourses[0].beginTime) + " class AND the current " + selectedCourses[1].meetingDays + "- " + appendTime(selectedCourses[1].beginTime) + " class?", "", MessageBoxButtons.YesNo);
+                        DialogResult conflictBox1 = System.Windows.Forms.MessageBox.Show("Conflicting Courses!\nDo you want to replace the current courses?","", MessageBoxButtons.YesNo);
                         if (conflictBox1 == DialogResult.Yes)
                         {
                             foreach (Course course in conflicting1)
@@ -1044,7 +1044,7 @@ namespace SoftwareEngineering
                         {
                             i = 1;
                         }
-                        DialogResult  conflictBox2 = System.Windows.Forms.MessageBox.Show("Conflicting Courses!\nDo you want to replace the current " + selectedCourses[i].meetingDays + "- " + appendTime(selectedCourses[i].beginTime) + " class?", "", MessageBoxButtons.YesNo);
+                        DialogResult  conflictBox2 = System.Windows.Forms.MessageBox.Show("Conflicting Courses!\nDo you want to replace the current course?", "",MessageBoxButtons.YesNo);
                         if (conflictBox2 == DialogResult.Yes)
                         {
                             if (i==1)
@@ -1144,7 +1144,7 @@ namespace SoftwareEngineering
                     }
                     else
                     {
-                        DialogResult conflictBox3 = System.Windows.Forms.MessageBox.Show("Conflicting Course!\nDo you want to replace the current " + selectedCourses[0].meetingDays + "- " + appendTime(selectedCourses[0].beginTime) + " class?", "", MessageBoxButtons.YesNo);
+                        DialogResult conflictBox3 = System.Windows.Forms.MessageBox.Show("Conflicting Course!\nDo you want to replace the current course(s)", "",MessageBoxButtons.YesNo);
                         if (conflictBox3 == DialogResult.Yes)
                         {
                             foreach (Course course in conflicting)
