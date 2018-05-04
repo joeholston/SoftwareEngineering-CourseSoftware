@@ -112,6 +112,7 @@ namespace SoftwareEngineering
             tLab_2_5.Hide();
             tLab_1_250.Hide();
             tLab_2_450.Hide();
+            tLab_1_430.Hide();
             tLab_3_5.Hide();
             tLab_3_450.Hide();
             tLab_3_4.Hide();
@@ -127,12 +128,14 @@ namespace SoftwareEngineering
             rLab_10_1.Hide();
             rLab_10_11.Hide();
             rLab_1_250.Hide();
+            rLab_1_430.Hide();
             rLab_230_430.Hide();
             rLab_230_5.Hide();
             rLab_230_530.Hide();
             rLab_2_5.Hide();
             rLab_230_6.Hide();
             rLab_3_450.Hide();
+            mece210.Hide();
 
             fLab_9_10.Hide();
             fLab_1_3.Hide();
@@ -177,8 +180,22 @@ namespace SoftwareEngineering
                 }
             }
 
+            if (course.courseCode.ToString().Equals("MECE 210  A"))
+            {
+                updateLabBox(mece210, course, show);
+                if (show)
+                {
+                    r1130.Hide();
+                    r230.Hide();
+                }
+                else
+                {
+                    r1130.Show();
+                    r230.Show();
+                }
+            }
+
             //if it is a lab
-            //if(course.courseCode[course.courseCode.Length - 1] == 'L')
             if (course.LongTitle.Contains("LAB"))
             {
                 foreach (char c in course.meetingDays)
@@ -243,6 +260,7 @@ namespace SoftwareEngineering
                             case "01:00 PM":
                                 switch (appendTime(course.endTime)) {
                                     case "03:00 PM":
+                                    case "02:59 PM":
                                         updateLabBox(tLab_1_3, course, show);
                                         if (show)
                                         {
@@ -262,6 +280,19 @@ namespace SoftwareEngineering
                                         else
                                         {
                                             t230.Show();
+                                        }
+                                        break;
+                                    case "04:29 PM":
+                                        updateLabBox(tLab_1_430, course, show);
+                                        if (show)
+                                        {
+                                            t1.Hide();
+                                            t4.Hide();
+                                        }
+                                        else
+                                        {
+                                            t1.Show();
+                                            t4.Show();
                                         }
                                         break;
                                 }
@@ -312,7 +343,6 @@ namespace SoftwareEngineering
                                         updateLabBox(tLab_230_5, course, show);
                                         break;
                                     case "05:15 PM":
-                                        searchBox.Text = "TEST";
                                         updateLabBox(tLab_230_515, course, show);
                                         break;
                                     case "05:29 PM":
@@ -437,14 +467,30 @@ namespace SoftwareEngineering
                                 }
                                 break;
                             case "01:00 PM":
-                                updateLabBox(rLab_1_250, course, show);
-                                if (show)
+                                switch (appendTime(course.endTime))
                                 {
-                                    r230.Hide();
-                                }
-                                else
-                                {
-                                    r230.Show();
+                                    case "02:50 PM":
+                                        updateLabBox(rLab_1_250, course, show);
+                                        if (show)
+                                        {
+                                            r230.Hide();
+                                        }
+                                        else
+                                        {
+                                            r230.Show();
+                                        }
+                                        break;
+                                    case "04:29 PM":
+                                        updateLabBox(rLab_1_430, course, show);
+                                        if (show)
+                                        {
+                                            r4.Hide();
+                                        }
+                                        else
+                                        {
+                                            r4.Show();
+                                        }
+                                        break;
                                 }
                                 break;
                             case "02:30 PM":
@@ -559,13 +605,16 @@ namespace SoftwareEngineering
                     }
                     else if (c == 'R')
                     {
-                        if (show)
+                        if (time != 12)
                         {
-                            updateCalendarBox(course, 4, time);
-                        }
-                        else
-                        {
-                            resetCalendarBox(4, time);
+                            if (show)
+                            {
+                                updateCalendarBox(course, 4, time);
+                            }
+                            else
+                            {
+                                resetCalendarBox(4, time);
+                            }
                         }
                     }
                     else if (c == 'F')
@@ -606,6 +655,7 @@ namespace SoftwareEngineering
             {
                 resetCalendarBox(i, 8);
                 resetCalendarBox(i, 10);
+                resetCalendarBox(i, 11);
                 resetCalendarBox(i, 1);
                 resetCalendarBox(i, 1);
                 resetCalendarBox(i, 2);
@@ -944,7 +994,7 @@ namespace SoftwareEngineering
                     }
                     else if (conflicting1.Count !=0 && conflicting2.Count != 0)
                     {
-                        DialogResult conflictBox1 = System.Windows.Forms.MessageBox.Show("Conflicting Courses!\nDo you want to replace the current " + selectedCourses[0].meetingDays + "- " + appendTime(selectedCourses[0].beginTime) + " class AND the current " + selectedCourses[1].meetingDays + "- " + appendTime(selectedCourses[1].beginTime) + " class?", "", MessageBoxButtons.YesNo);
+                        DialogResult conflictBox1 = System.Windows.Forms.MessageBox.Show("Conflicting Courses!\nDo you want to replace the current courses?","", MessageBoxButtons.YesNo);
                         if (conflictBox1 == DialogResult.Yes)
                         {
                             foreach (Course course in conflicting1)
@@ -1013,7 +1063,7 @@ namespace SoftwareEngineering
                         {
                             i = 1;
                         }
-                        DialogResult  conflictBox2 = System.Windows.Forms.MessageBox.Show("Conflicting Courses!\nDo you want to replace the current " + selectedCourses[i].meetingDays + "- " + appendTime(selectedCourses[i].beginTime) + " class?", "", MessageBoxButtons.YesNo);
+                        DialogResult  conflictBox2 = System.Windows.Forms.MessageBox.Show("Conflicting Courses!\nDo you want to replace the current course?", "",MessageBoxButtons.YesNo);
                         if (conflictBox2 == DialogResult.Yes)
                         {
                             if (i==1)
@@ -1113,7 +1163,7 @@ namespace SoftwareEngineering
                     }
                     else
                     {
-                        DialogResult conflictBox3 = System.Windows.Forms.MessageBox.Show("Conflicting Course!\nDo you want to replace the current " + selectedCourses[0].meetingDays + "- " + appendTime(selectedCourses[0].beginTime) + " class?", "", MessageBoxButtons.YesNo);
+                        DialogResult conflictBox3 = System.Windows.Forms.MessageBox.Show("Conflicting Course!\nDo you want to replace the current course(s)", "",MessageBoxButtons.YesNo);
                         if (conflictBox3 == DialogResult.Yes)
                         {
                             foreach (Course course in conflicting)
@@ -1211,6 +1261,16 @@ namespace SoftwareEngineering
                 clearCalendar();
                 hideAllLabs();
                 user.studentCourses.Clear();
+                searchBox.Clear();
+                
+                for(int i = courseResults.Items.Count - 1; i >= 0; i--)
+                {
+                    courseResults.Items.RemoveAt(i);
+                }
+                for (int i = studentListView.Items.Count - 1; i >= 0; i--)
+                {
+                    studentListView.Items.RemoveAt(i);
+                }
 
                 StreamReader reader = new StreamReader(load.OpenFile());
                 List<string> inputFromFile = reader.ReadToEnd().Split(',').ToList<string>();
@@ -1262,7 +1322,7 @@ namespace SoftwareEngineering
                 {
                     user.deleteCourse(course, true);
 
-                    foreach (ListViewItem courses in courseResults.Items)
+                    foreach (ListViewItem courses in courseResults_prereq.Items)
                     {
                         if (courses.SubItems[0].Text == e.Item.SubItems[0].Text)
                         {
