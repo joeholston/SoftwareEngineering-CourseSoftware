@@ -13,7 +13,7 @@ OR
 
 UNIT TESTING
 ----------------------------------------------------------------------
-Our Unit Test is contained in SE_Team3_Sprint2\SoftwareEngineering\UnitProject1.
+Our Unit Test is contained in SE_Team3_Sprint2\SoftwareEngineering\UnitTestProject1\SoftwareEngineeringTest.csproj.
 The method tested is boolArrayToString, from the Search class.
 Note that you must be set up for .NET Framework 4.5.2 (or possibly later) for the references to clear.
 This can be changed through Project->Properties->Application->Target framework:
