@@ -151,7 +151,7 @@ namespace SoftwareEngineering
                 lab.Show();
                 lab.BringToFront();
                 lab.Clear();
-                lab.AppendText(appendTime(course.beginTime) + "\n" + course.shortTitle);
+                lab.AppendText(appendTime(course.beginTime) + "\n" + course.courseCode + "\n" + course.shortTitle);
                 lab.Font = new Font(SystemFonts.DefaultFont.FontFamily, SystemFonts.DefaultFont.Size, FontStyle.Bold);
             }
         }
@@ -627,6 +627,7 @@ namespace SoftwareEngineering
 
         private void resetCalendarBox(int day, int time)
         {
+            calendar[day, time].Clear();
             calendar[day, time].Text = calendar[day, time].Tag.ToString();
             calendar[day, time].Font = SystemFonts.DefaultFont;
         }
