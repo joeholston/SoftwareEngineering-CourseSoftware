@@ -1,11 +1,19 @@
-INSTRUCTIONS TO INSTALL SPRINT 1 RELEASE
+INSTRUCTIONS TO INSTALL SPRINT 2 RELEASE
 ----------------------------------------------------------------------
 
-1. Navigate to \SE_Team3_Sprint1\SoftwareEngineering\SoftwareEngineering\bin\Debug
+1. Navigate to \SE_Team3_Sprint2\SoftwareEngineering\SoftwareEngineering\bin\Debug
 2. Run SoftwareEngineering.exe
 
 OR
 
-1. Navigate to \SE_Team3_Sprint1\SoftwareEngineering
+1. Navigate to \SE_Team3_Sprint2\SoftwareEngineering
 2. Open SoftwareEngineering.sln
 3. Once opened, Run with CRTL + F5
+
+
+UNIT TESTING
+----------------------------------------------------------------------
+Our Unit Test is contained in SE_Team3_Sprint2\SoftwareEngineering\UnitProject1.
+The method tested is boolArrayToString, from the Search class.
+Note that you must be set up for .NET Framework 4.5.2 (or possibly later) for the references to clear.
+This can be changed through Project->Properties->Application->Target framework:
