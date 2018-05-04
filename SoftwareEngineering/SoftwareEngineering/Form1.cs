@@ -1322,7 +1322,7 @@ namespace SoftwareEngineering
                 {
                     user.deleteCourse(course, true);
 
-                    foreach (ListViewItem courses in courseResults.Items)
+                    foreach (ListViewItem courses in courseResults_prereq.Items)
                     {
                         if (courses.SubItems[0].Text == e.Item.SubItems[0].Text)
                         {
