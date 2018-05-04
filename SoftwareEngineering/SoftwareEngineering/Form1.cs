@@ -42,6 +42,7 @@ namespace SoftwareEngineering
             createLV(studentListView_prereq);
 
             ActiveControl = searchBox;
+            
         }
 
         private void fillCalendarArray()
@@ -97,6 +98,7 @@ namespace SoftwareEngineering
         private void hideAllLabs()
         {
             mLab_11_12.Hide();
+            mLab_1_3.Hide();
             mLab_2_4.Hide();
             mLab_2_450.Hide();
             mLab_2_5.Hide();
@@ -121,6 +123,7 @@ namespace SoftwareEngineering
             wLab_9_10.Hide();
             wLab_1_5.Hide();
             wLab_2_450.Hide();
+            wLab_2_4.Hide();
             wLab_2_5.Hide();
             wLab_330_530.Hide();
             wLab_3_4.Hide();
@@ -207,9 +210,13 @@ namespace SoftwareEngineering
                             case "11:00 AM":
                                 updateLabBox(mLab_11_12, course, show);
                                 break;
+                            case "01:00 PM":
+                                updateLabBox(mLab_1_3, course, show);
+                                break;
                             case "02:00 PM":
                                 switch (appendTime(course.endTime))
                                 {
+                                    case "04:00 PM":
                                     case "03:59 PM":
                                         updateLabBox(mLab_2_4, course, show);
                                         break;
@@ -241,6 +248,7 @@ namespace SoftwareEngineering
                             case "10:05 AM":
                                 switch (appendTime(course.endTime))
                                 {
+                                    case "10:55 AM":
                                     case "10:59 AM":
                                         updateLabBox(tLab_10_11, course, show);
                                         if (show)
@@ -353,6 +361,7 @@ namespace SoftwareEngineering
                             case "03:00 PM":
                                 switch (appendTime(course.endTime))
                                 {
+                                    case "05:00 PM":
                                     case "04:59 PM":
                                         updateLabBox(tLab_3_5, course, show);
                                         if (show)
@@ -413,6 +422,9 @@ namespace SoftwareEngineering
                                     case "04:59 PM":
                                         updateLabBox(wLab_2_5, course, show);
                                         break;
+                                    case "04:00 PM":
+                                        updateLabBox(wLab_2_4, course, show);
+                                        break;
                                     case "04:50 PM":
                                         updateLabBox(wLab_2_450, course, show);
                                         if (show)
@@ -453,7 +465,8 @@ namespace SoftwareEngineering
                                     case "12:59 PM":
                                         updateLabBox(rLab_10_1, course, show);
                                         break;
-                                    case "10:29 AM":
+                                    case "10:55 AM":
+                                    case "10:59 AM":
                                         updateLabBox(rLab_10_11, course, show);
                                         if (show)
                                         {
@@ -1339,6 +1352,7 @@ namespace SoftwareEngineering
         {
             hideAllLabs();
             clearCalendar();
+
             for (int i=user.studentCourses.Count-1;i>=0;i--)
             {
                 user.deleteCourse(user.studentCourses[i],false);

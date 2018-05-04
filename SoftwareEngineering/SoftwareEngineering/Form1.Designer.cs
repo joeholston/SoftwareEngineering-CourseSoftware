@@ -169,6 +169,8 @@
             this.tLab_1_430 = new System.Windows.Forms.RichTextBox();
             this.rLab_1_430 = new System.Windows.Forms.RichTextBox();
             this.mece210 = new System.Windows.Forms.RichTextBox();
+            this.wLab_2_4 = new System.Windows.Forms.RichTextBox();
+            this.mLab_1_3 = new System.Windows.Forms.RichTextBox();
             this.searchGroup.SuspendLayout();
             this.advancedSearch_Group.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -419,6 +421,8 @@
             // 
             // calendarGroup
             // 
+            this.calendarGroup.Controls.Add(this.mLab_1_3);
+            this.calendarGroup.Controls.Add(this.wLab_2_4);
             this.calendarGroup.Controls.Add(this.mece210);
             this.calendarGroup.Controls.Add(this.rLab_1_430);
             this.calendarGroup.Controls.Add(this.tLab_1_430);
@@ -1444,7 +1448,7 @@
             this.cLocation,
             this.cSeats});
             this.courseResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseResults.Location = new System.Drawing.Point(8, 21);
+            this.courseResults.Location = new System.Drawing.Point(16, 31);
             this.courseResults.Margin = new System.Windows.Forms.Padding(5);
             this.courseResults.Name = "courseResults";
             this.courseResults.Size = new System.Drawing.Size(557, 622);
@@ -1692,6 +1696,26 @@
             this.mece210.Tag = "12:00 - 3:00 PM";
             this.mece210.Text = "12:00 - 3:00 PM";
             // 
+            // wLab_2_4
+            // 
+            this.wLab_2_4.Location = new System.Drawing.Point(296, 313);
+            this.wLab_2_4.Name = "wLab_2_4";
+            this.wLab_2_4.ReadOnly = true;
+            this.wLab_2_4.Size = new System.Drawing.Size(135, 86);
+            this.wLab_2_4.TabIndex = 115;
+            this.wLab_2_4.Tag = "2 - 4 PM";
+            this.wLab_2_4.Text = "2 - 4 PM ";
+            // 
+            // mLab_1_3
+            // 
+            this.mLab_1_3.Location = new System.Drawing.Point(10, 267);
+            this.mLab_1_3.Name = "mLab_1_3";
+            this.mLab_1_3.ReadOnly = true;
+            this.mLab_1_3.Size = new System.Drawing.Size(135, 86);
+            this.mLab_1_3.TabIndex = 116;
+            this.mLab_1_3.Tag = "1 - 3 PM";
+            this.mLab_1_3.Text = "1 - 3 PM ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1864,6 +1888,8 @@
         private System.Windows.Forms.RichTextBox tLab_1_430;
         private System.Windows.Forms.RichTextBox rLab_1_430;
         private System.Windows.Forms.RichTextBox mece210;
+        private System.Windows.Forms.RichTextBox wLab_2_4;
+        private System.Windows.Forms.RichTextBox mLab_1_3;
     }
 }
 
