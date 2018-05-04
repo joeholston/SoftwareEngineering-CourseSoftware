@@ -112,6 +112,7 @@ namespace SoftwareEngineering
             tLab_2_5.Hide();
             tLab_1_250.Hide();
             tLab_2_450.Hide();
+            tLab_1_430.Hide();
             tLab_3_5.Hide();
             tLab_3_450.Hide();
             tLab_3_4.Hide();
@@ -127,6 +128,7 @@ namespace SoftwareEngineering
             rLab_10_1.Hide();
             rLab_10_11.Hide();
             rLab_1_250.Hide();
+            rLab_1_430.Hide();
             rLab_230_430.Hide();
             rLab_230_5.Hide();
             rLab_230_530.Hide();
@@ -178,7 +180,6 @@ namespace SoftwareEngineering
             }
 
             //if it is a lab
-            //if(course.courseCode[course.courseCode.Length - 1] == 'L')
             if (course.LongTitle.Contains("LAB"))
             {
                 foreach (char c in course.meetingDays)
@@ -243,6 +244,7 @@ namespace SoftwareEngineering
                             case "01:00 PM":
                                 switch (appendTime(course.endTime)) {
                                     case "03:00 PM":
+                                    case "02:59 PM":
                                         updateLabBox(tLab_1_3, course, show);
                                         if (show)
                                         {
@@ -262,6 +264,19 @@ namespace SoftwareEngineering
                                         else
                                         {
                                             t230.Show();
+                                        }
+                                        break;
+                                    case "04:29 PM":
+                                        updateLabBox(tLab_1_430, course, show);
+                                        if (show)
+                                        {
+                                            t1.Hide();
+                                            t4.Hide();
+                                        }
+                                        else
+                                        {
+                                            t1.Show();
+                                            t4.Show();
                                         }
                                         break;
                                 }
@@ -312,7 +327,6 @@ namespace SoftwareEngineering
                                         updateLabBox(tLab_230_5, course, show);
                                         break;
                                     case "05:15 PM":
-                                        searchBox.Text = "TEST";
                                         updateLabBox(tLab_230_515, course, show);
                                         break;
                                     case "05:29 PM":
@@ -437,14 +451,30 @@ namespace SoftwareEngineering
                                 }
                                 break;
                             case "01:00 PM":
-                                updateLabBox(rLab_1_250, course, show);
-                                if (show)
+                                switch (appendTime(course.endTime))
                                 {
-                                    r230.Hide();
-                                }
-                                else
-                                {
-                                    r230.Show();
+                                    case "02:50 PM":
+                                        updateLabBox(rLab_1_250, course, show);
+                                        if (show)
+                                        {
+                                            r230.Hide();
+                                        }
+                                        else
+                                        {
+                                            r230.Show();
+                                        }
+                                        break;
+                                    case "04:29 PM":
+                                        updateLabBox(rLab_1_430, course, show);
+                                        if (show)
+                                        {
+                                            r4.Hide();
+                                        }
+                                        else
+                                        {
+                                            r4.Show();
+                                        }
+                                        break;
                                 }
                                 break;
                             case "02:30 PM":
@@ -606,6 +636,7 @@ namespace SoftwareEngineering
             {
                 resetCalendarBox(i, 8);
                 resetCalendarBox(i, 10);
+                resetCalendarBox(i, 11);
                 resetCalendarBox(i, 1);
                 resetCalendarBox(i, 1);
                 resetCalendarBox(i, 2);
@@ -1211,6 +1242,16 @@ namespace SoftwareEngineering
                 clearCalendar();
                 hideAllLabs();
                 user.studentCourses.Clear();
+                searchBox.Clear();
+                
+                for(int i = courseResults.Items.Count - 1; i >= 0; i--)
+                {
+                    courseResults.Items.RemoveAt(i);
+                }
+                for (int i = studentListView.Items.Count - 1; i >= 0; i--)
+                {
+                    studentListView.Items.RemoveAt(i);
+                }
 
                 StreamReader reader = new StreamReader(load.OpenFile());
                 List<string> inputFromFile = reader.ReadToEnd().Split(',').ToList<string>();
