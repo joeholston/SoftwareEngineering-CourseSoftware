@@ -1192,9 +1192,9 @@ namespace SoftwareEngineering
                                         item.Checked = true;
                                     }
                                 }
-                                foreach (Course course2 in user.studentCourses)
+                                for (int j = user.studentCourses.Count - 1; j >= 0; j--)
                                 {
-                                    if (course2.courseCode == course.courseCode)
+                                    if (user.studentCourses[j].courseCode == course.courseCode)
                                     {
                                         user.deleteCourse(course, false);
                                     }
